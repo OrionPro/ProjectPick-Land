@@ -481,7 +481,7 @@ nav[canvas]
 
 // Header
 .header
-	width: 100%
+	width: 100% !important
 	padding-top: 10px
 	padding-bottom: 10px
 	background-color: #fff
@@ -495,25 +495,23 @@ nav[canvas]
 		&:hover
 			text-decoration: none
 /* Effect 5: same word slide in */
-.cl-effect-5 a
+.cl-effect-5 > ul > li > a
 	overflow: hidden
 
-.cl-effect-5 a span
+.cl-effect-5 > ul > li > a span
 	position: relative
 	display: inline-block
 	transition: transform 0.3s
 
-
-.cl-effect-5 a span::before
+.cl-effect-5 > ul > li > a span::before
 	position: absolute
 	top: 100%
 	content: attr(data-hover)
 	color: #ec008c
 	transform: translate3d(0,0,0)
 
-
-.cl-effect-5 a:hover span,
-.cl-effect-5 a:focus span
+.cl-effect-5 > ul > li > a:hover span,
+.cl-effect-5 > ul > li > a:focus span
 	transform: translateY(-100%)
 
 .header__nav
@@ -554,48 +552,172 @@ nav[canvas]
 				display: flex
 				flex-direction: column
 				text-align: center
+				cursor: pointer
+				position: relative
 				p
 					font-size: 16px
 			.header__nav-dropdown-item
 				display: flex
 				align-items: center
+				position: relative
+				z-index: 2
 				i
+					margin-left: 5px
 					color: #ff99e8
 					transform: rotate(0deg)
 					transition: transform 0.3s
 					&.active
 						transform: rotate(180deg)
-				a
-					line-height: 1.2
+				span
+					color: $main_txt_color
+					@include font($main_txt_color, 18, $font_FuturaBook, 1.2)
 			.dropdown-menu
-				display: none
+				width: 270px
+				height: 130px
+				padding: 5px 0 0 20px
+				border: 1px solid #ffd1ee
+				text-align: left
+				display: block
+				visibility: hidden
+				opacity: 0
+				background-color: #ffffff
+				position: absolute
+				top: 70px
+				right: 0
+				z-index: 10
+				transition: 0.3s
+				&.active
+					visibility: visible
+					opacity: 1
+				li
+					display: flex
+					flex-direction: column
+					justify-content: center
+				li > a i
+					padding: 0
+					margin-right: 10px
+					min-width: 15px
+					vertical-align: middle
+					text-align: center
+					color: $main_txt_color
+					font-size: 16px
+				li > a
+					display: inline-block
+					padding: 0
+					font-size: 16px
+					vertical-align: middle
+					&.title
+						color: #ffb1ed
+						text-decoration: underline
+						&:hover
+							text-decoration: none
+						&:active
+							text-decoration: none
+						&:focus
+							text-decoration: none
+						
+					span
+						vertical-align: middle
+
 // Секция top-section
 .top-section
 	min-height: 745px
 	background: url(../img/top-section__bg.jpg) no-repeat
 	background-size: cover
 .top-section__title
-	margin-top: 115px
+	margin-top: 240px
+	padding: 20px 0 0 100px
 	display: flex
 	flex-direction: column
+	background-color: rgba(252, 244, 245, 0.8)
+	h1
+		margin-bottom: 20px
 	p
-		@include fz(30)
-		color: $main_txt_color
-.top-section__bot-txt
-	margin-top: 50px
-	flex: 1 0 auto
-	p
+		margin-top: 7px
+		margin-bottom: 80px
 		@include fz(25)
-		color: #fff
-	.is-sticky
-		p
-			margin: auto
-			left: 0
-			right: 0
-			z-index: 1000 !important
-			background: #000
-.top-section__circle
-	flex: 0 0 auto
+		line-height: 1.3
+		color: $main_txt_color
+	button
+		margin-bottom: 40px
+.top-section__title-divider
+	width: 170px
+	height: 2px
+	background-color: #353535
+	&.center
+		margin: auto
+
+// блок заголовков
+.section-title
+	text-align: center
+	h2
+		margin-bottom: 20px
+		font-weight: normal
+		@include font($main_txt_color, 32, $font_FuturaBook, 1.2)
+	.top-section__title-divider
+		margin-bottom: 10px
+	p
+		@include fz(19)
+// Секция unique-design
+.unique-design
+	padding-top: 75px
+	padding-bottom: 75px
+	background-color: #ffffff
+.unique-design__wrap
+	margin-top: 40px
+	.unique-design__items
+		margin-bottom: 30px
+		&:last-of-type
+			margin-bottom: 0
+		.row
+			.samsung-last
+				order: 0
+			.samsung-first
+				order: 1
+	.unique-design__item
+		min-height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		&.title
+			padding: 20px
+			border: 1px solid #888
+	.unique-design__item-bottom-link
+		text-align: center
+		a
+			color: $main_txt_color
+			text-decoration: dashed
+			transition: 0.5s
+			@include fz(22)
+			position: relative
+			display: inline-block
+			&:after
+				content: ""
+				display: block
+				width: 100%
+				height: 1px
+				border: 1px dashed $main_txt_color
+				position: absolute
+				bottom: 2px
+				left: 0
+				transition: 0.5s
+			&:hover:after
+				border: 1px dashed #ffc5f2
+			&:active:after
+				border: 1px dashed #ffc5f2
+			&:focus:after
+				border: 1px dashed #ffc5f2
+			&:hover
+				color: #ffc5f2
+			&:active
+				color: #ffc5f2
+			&:focus
+				color: #ffc5f2
+// Секция .applying-any-image
+.applying-any-image
+	padding-top: 75px
+	padding-bottom: 75px
+	background-color: $main_color
 // Секция our_advantages
 .our-advantages
 	min-height: 630px

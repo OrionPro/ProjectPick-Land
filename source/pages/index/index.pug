@@ -5,12 +5,81 @@ block main
 	section.top-section
 		.container
 			.row
-				.col-lg-7.offset-lg-5
+				.col-lg-8.offset-lg-4
 					.top-section__title
 						h1
 							| Покажи свою индивидуальность
+						.top-section__title-divider
 						p Создай уникальный и неповторимый дизайн чехла для смартфона по своему вкусу!
 						button(type="text" class="main_btn") Создать чехол
+	// Секция  unique-design
+	section.unique-design
+		.container
+			.section-title
+				h2
+					| Чехлы с уникальным дизайном под твою
+					br
+					| модель смартфона
+				.top-section__title-divider.center
+				p
+					| Более пятиста моделей телефонов разных марок
+
+			.unique-design__wrap
+				.unique-design__items
+					.row
+						.col-sm-3
+							.unique-design__item.title
+								img(src=require("../../img/unique-design__item-iphone.png") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-iphone2.jpg") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-iphone3.jpg") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-iphone4.jpg") class="img-fluid")
+				.unique-design__items
+					.row
+						.col-sm-3.samsung-last
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-samsung1.jpg") class="img-fluid")
+						.col-sm-3.samsung-last
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-samsung2.jpg") class="img-fluid")
+						.col-sm-3.samsung-last
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-samsung3.jpg") class="img-fluid")
+						.col-sm-3.samsung-first
+							.unique-design__item.title
+								img(src=require("../../img/unique-design__item-samsung.png") class="img-fluid")
+				.unique-design__items
+					.row
+						.col-sm-3
+							.unique-design__item.title
+								img(src=require("../../img/unique-design__item-xiaomi.png") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-xiaomi2.jpg") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-xiaomi3.jpg") class="img-fluid")
+						.col-sm-3
+							.unique-design__item
+								img(src=require("../../img/unique-design__item-xiaomi4.jpg") class="img-fluid")
+				.unique-design__item-bottom-link
+					a(href="#") И многие другие марки - перейти в каталог
+
+	// Секция  applying-any-image
+	section.applying-any-image
+		.container
+			.section-title
+				h2
+					| Возможность нанесения абсолютного
+					br
+					| любого изображения
+				.top-section__title-divider.center
+
 	// Секция  our_advantages
 	section#our_advantages.our-advantages
 		.container

@@ -33,8 +33,6 @@ html(class="no-js" lang="ru")
 				top: 50%;
 				position: absolute
 			}
-	// Весь внутренний контент страницы
-	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
 	body
 		div
 			.loader
@@ -42,7 +40,6 @@ html(class="no-js" lang="ru")
 					include ../img/preloader.svg
 		block modal
 			include modal
-		// Элемент cd-transition-layer это тоже для прикольной анимации модалки
 		.cd-transition-layer
 			.bg-layer
 		nav(canvas="" class="")
@@ -78,31 +75,29 @@ html(class="no-js" lang="ru")
 											p.
 												viber  |  whatsapp
 											.header__nav-dropdown-item
-												a(href="#") +38 (096) 098-20-12
+												span +38 (096) 098-20-12
 												i.fa.fa-angle-down
 											.header__nav-dropdown-item
-												a(href="#") +38 (066) 851-87-43
+												span +38 (066) 851-87-43
 											ul.dropdown-menu
 												li
-													a.open_callback
-														span Не дозвонились?
-														| Заказ звонка!
+													a(href='#' class="title")
+														| Не дозвонились? Заказ звонка!
 												li
-													a(href='tel:+7 (000) 000-00-00')
-														i.fa.fa-phone
-														span +7 (000) 000-00-00
+													a(href='tel:+380960982012')
+														i.fa.fa-phone-square
+														span +38 (096) 098-20-12
 												li
-													a(href='viber://add?number=viber')
-														i.fa.fa-whatsapp
-														span viber
-												li
-													a(href='skype:skype?chat')
+													a(href='skype:pickcase?call')
 														i.fa.fa-skype
-														span skype
+														span pickcase
+												li
+													a(href='mailto:smile@pickcase.com.ua')
+														i.fa.fa-envelope
+														span smile@pickcase.com.ua
 									li.divider
 							.header-modal
 								button.main_btn2 Заказать
-			// В блок main пишем весь контент (по умолчанию всё, что мы положим в block main в index.pug будет затираться - смотрим доки по pug, этот комментарий на продакшен стереть )
 			block main
 			block footer
 				// Секция footer

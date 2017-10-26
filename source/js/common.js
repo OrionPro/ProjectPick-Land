@@ -38,6 +38,8 @@ function tabs(obj) {
 function get_name_browser() {
 	// получаем данные userAgent
 	const ua = navigator.userAgent;
+	console.log(ua);
+
 	// с помощью регулярок проверяем наличие текста,
 	// соответствующие тому или иному браузеру
 	if (ua.search(/Edge/) > 0) return 'Edge';
@@ -52,7 +54,24 @@ function get_name_browser() {
 	// для популярных браузеров
 	return 'Не определен';
 }
+
+function heightItemSafari(obj) {
+	let heightItem =  $(obj.itemHeight).height();
+	$(obj.item).css("min-height", heightItem);
+}
 $(document).ready(function () {
+	// Клик на header__nav-dropdown
+	$(document).click(function (event) {
+		if ($(event.target).closest(".header__nav-dropdown").length)
+			return;
+		$('.header__nav ul li .dropdown-menu').removeClass('active');
+		event.stopPropagation();
+		$('.header__nav ul li .header__nav-dropdown-item i').removeClass('active');
+	});
+	$('.header__nav ul li .header__nav-dropdown').click(function() {
+		$('.header__nav ul li .dropdown-menu').toggleClass('active');
+		$('.header__nav ul li .header__nav-dropdown-item i').toggleClass('active');
+	});
 	// вызов tabs
 	tabs({
 		btn:'.tabs-items-wrap > .tabs-item',
@@ -81,8 +100,12 @@ $(document).ready(function () {
 
 	}
 	if (get_name_browser() == "Safari") {
-		
+		heightItemSafari({
+			itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
+			item:  '.unique-design__wrap .unique-design__item.title'
+		});
 	}
+
 	// для инициализации tooltips
 	// $( document ).tooltip({
 	//   track: true
@@ -134,6 +157,12 @@ $(document).ready(function () {
 
 $(window).resize(function () {
 
+	if (get_name_browser() == "Safari") {
+		heightItemSafari({
+			itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
+			item:  '.unique-design__wrap .unique-design__item.title'
+		});
+	}
 });
 
 $(window).scroll(function () {
