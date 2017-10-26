@@ -1,0 +1,126 @@
+doctype html
+html(class="no-js" lang="ru")
+	head
+		meta(charset = 'utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title
+			block title
+		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
+		include ../libs/bootstrap.min.html
+		style(type='text/css').
+			html .loader {
+				background: #fff;
+				bottom: 0;
+				height: 100%;
+				left: 0;
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 100%;
+				z-index: 9999
+			}
+			html .loader .loader_inner {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: #fff;
+				height: 200px;
+				width: 200px;
+				margin-top: -100px;
+				margin-left: -100px;
+				left: 50%;
+				top: 50%;
+				position: absolute
+			}
+	// Весь внутренний контент страницы
+	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
+	body
+		div
+			.loader
+				.loader_inner
+					include ../img/preloader.svg
+		block modal
+			include modal
+		// Элемент cd-transition-layer это тоже для прикольной анимации модалки
+		.cd-transition-layer
+			.bg-layer
+		nav(canvas="" class="")
+			.mnu_btn
+				label(id="nav-button-label")
+					#nav-lines
+						i.nav-line
+						i.nav-line
+						i.nav-line
+						i.nav-line
+
+		div(canvas='container')
+			block header
+				header(class="header")
+					.container
+						.row
+							.header__logo
+								a(href="/" class="logo" title="Логотип")
+									img(src=require("../../img/logo.png"))
+							nav.header__nav.cl-effect-5
+								ul
+									-var links = [{title:'Отзывы', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', href:'#', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн', href:'#', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
+									each i in links
+										li(class=i.className)
+											case i.linksNeeded
+												when 0
+													- break
+												when 1
+													a(href=i.href)
+														span(data-hover=i.title)= i.title
+									li.dropdown
+										.header__nav-dropdown
+											p.
+												viber  |  whatsapp
+											.header__nav-dropdown-item
+												a(href="#") +38 (096) 098-20-12
+												i.fa.fa-angle-down
+											.header__nav-dropdown-item
+												a(href="#") +38 (066) 851-87-43
+											ul.dropdown-menu
+												li
+													a.open_callback
+														span Не дозвонились?
+														| Заказ звонка!
+												li
+													a(href='tel:+7 (000) 000-00-00')
+														i.fa.fa-phone
+														span +7 (000) 000-00-00
+												li
+													a(href='viber://add?number=viber')
+														i.fa.fa-whatsapp
+														span viber
+												li
+													a(href='skype:skype?chat')
+														i.fa.fa-skype
+														span skype
+									li.divider
+							.header-modal
+								button.main_btn2 Заказать
+			// В блок main пишем весь контент (по умолчанию всё, что мы положим в block main в index.pug будет затираться - смотрим доки по pug, этот комментарий на продакшен стереть )
+			block main
+			block footer
+				// Секция footer
+				footer.footer
+		div(off-canvas='id-1 left shift')
+			nav.header_nav_mobile
+				ul.menu
+					-var obj1 = [{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 38 425 961 68', href:'tel:73842596168'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'Примеры', href:'#'}];
+					each i in obj1
+						li
+							a(href=i.href)= i.title
+		div(off-canvas='id-2 right push')
+		div(off-canvas='id-3 top overlay')
+		div(off-canvas='id-4 bottom shift')
+		//[if IE 9]>
+			<script src="libs/html5shiv/es5-shim.min.js"></script>
+			<script src="libs/html5shiv/html5shiv.min.js"></script>
+			<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>`
+			<script src="libs/respond/respond.min.js"></script>
+
+

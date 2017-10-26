@@ -1,0 +1,720 @@
+@import "vars"
+// loads Libs SASS
+@import "animate"
+@import "../libs/magnific-popup.css"
+@import "../libs/tooltipster-follower.min.css"
+@import "../libs/tooltipster.bundle.min.css"
+@import "../libs/tooltipster.main.min.css"
+@import "../libs/font-awesome.min.css"
+@import "../libs/anim-modal.css"
+@import "../libs/slidebars.min.css"
+@import "../libs/select2.min.css"
+@import "../libs/owl.carousel.min.css"
+@import "../libs/owl.theme.default.min.css"
+
+html
+	&.modal
+		margin-right: 12px !important
+html, body
+	font-size: 16px
+	&.flex-footer
+		height: 100%
+	&.slidebars
+		width: 100%
+		overflow: hidden !important
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body
+	margin: 0
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: $font_FuturaBook
+	overflow-x: hidden
+	color: $main_txt_color
+	-webkit-tap-highlight-color: transparent
+	//внешний вид скроллбара
+	scrollbar-base-color: $main_color   //для IE
+	scrollbar-arrow-color: $main_color	//для IE
+	//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		width: 12px
+	&::-webkit-scrollbar-thumb
+		background-color: $main_color
+		&:hover
+			background-color: darken($main_color, 10%)
+	&::-webkit-scrollbar-track-piece
+		background-color: transparent
+//-webkit-font-smoothing: antialiased
+//-moz-osx-font-smoothing: grayscale
+
+h1
+	@include font($main_txt_color, 40, $font_FuturaDemic, 1.2)
+p,ul
+	padding: 0
+	margin: 0
+li
+	list-style: none
+
+.noselect
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+// html .loader
+// 	background: none repeat scroll 0 0 #ffffff
+// 	bottom: 0
+// 	height: 100%
+// 	left: 0
+// 	position: fixed
+// 	right: 0
+// 	top: 0
+// 	width: 100%
+// 	z-index: 9999
+// 	.loader_inner
+// 		background-image: url("../img/preloader.gif")
+// 		background-size: cover
+// 		background-repeat: no-repeat
+// 		background-position: center center
+// 		background-color: #fff
+// 		height: 60px
+// 		width: 60px
+// 		margin-top: -30px
+// 		margin-left: -30px
+// 		left: 50%
+// 		top: 50%
+// 		position: absolute
+.hidden
+	display: none
+// Модальное окно
+.white-popup
+	width: 470px
+	margin: auto
+	max-width: 50em
+	padding: 50px 46px 50px 46px
+	text-align: center
+	position: relative
+	background-color: #fff
+	border-radius: 5px
+	transition: 0.5s
+	p.modal-title
+		@include font($main_txt_color, 24, $font_main_regular, 1.4)
+	p.modal-paragraph
+		margin-bottom: 10px
+		@include font($main_txt_color, 14, $font_main_regular, 1.4)
+	&#popup-success
+		p.success_mail
+			display: block
+		.mfp-close
+			display: none
+	&#popup3
+		width: inherit
+		padding: 0
+		border: none
+		background-color: transparent
+		ul
+			padding: 0
+		li
+			list-style: none
+			a
+				font-size: 30px
+				color: #fff
+		.mfp-close
+			display: none
+	.input_wrap
+		position: relative
+		display: block
+		i
+			display: none
+			position: absolute
+			top: 15px
+			right: 16px
+			@include fz(14)
+			color: #35be70
+	label
+		margin-bottom: 7px
+		margin-left: 5px
+		text-align: left
+		display: block
+		font-family: $font_main_regular
+		@include fz(14)
+		color: $main_txt_color
+		&.active
+			color: $main_color
+	input
+		width: 100%
+		height: 40px
+		margin-bottom: 10px
+		padding-left: 20px
+		padding-right: 37px
+		color: #3a4763
+		@include fz(14)
+		border: 1px solid #cdcdcd
+		background-color: #ffffff
+		border-radius: 5px
+		transition: 1s
+		&:focus
+			outline: 0
+	textarea
+		width: 100%
+		min-height: 100px
+		margin-bottom: 10px
+		padding-left: 20px
+		padding-right: 37px
+		color: #3a4763
+		@include fz(14)
+		border: 1px solid #cdcdcd
+		background-color: #ffffff
+		border-radius: 5px
+		transition: 1s
+		&:focus
+			outline: 0
+	.success_mail
+		@include font($main_color, 24, $font_main_regular, 1.1)
+		display: none
+		&.active
+			display: block
+	input[type=submit]
+		margin-bottom: 0
+		margin-top: 20px
+		padding-left: 0
+		padding-right: 0
+		cursor: pointer
+		@extend .main_btn
+		&:focus
+			outline: 0
+	.select
+		position: relative
+		text-align: left
+		.drop
+			width: 100%
+			max-height: 200px
+			overflow: auto
+			margin: 0 auto
+			padding: 0
+			border-top: none
+			display: none
+			position: absolute
+			background-color: #F4F4F4
+			top: 50px
+			left: 0
+			right: 0
+			z-index: 12
+			li
+				list-style: none
+				border-bottom: none
+				border-top: none
+				cursor: pointer
+				display: block
+				@include font($auxiliary_txt_color, 18, $font_main_regular, 1.2)
+				padding: 7px 15px 7px 25px
+				&:hover
+					background-color: rgba(0,0,0,0.2)
+					outline: 0
+				a
+					text-decoration: none
+		.slct
+			width: 100%
+			height: 40px
+			padding-left: 25px
+			padding-right: 30px
+			margin-bottom: 30px
+			display: block
+			@include font(#000, 18, $font_main_regular, 1.2)
+			background-color: #F4F4F4
+			line-height: 40px
+			box-shadow: 0 1px 0 rgba(0,0,2,.28)
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
+			-o-text-overflow: ellipsis
+			text-decoration: none
+			position: relative
+			transition: color 1s
+			&.active
+				color: #000
+				background-color: #F4F4F4
+
+		.slct_arrow
+			position: absolute
+			top: 5px
+			right: 10px
+			cursor: pointer
+			.fa
+				@include fz(24)
+				color: #000
+				position: relative
+				z-index: 10
+				transition: 0.3s
+			&.active .fa
+				transform: rotate(180deg)
+.mfp-zoom-in.mfp-ready.mfp-bg
+	opacity: 0.7
+.mfp-bg
+	background: rgba(11, 11, 11, 0.46)
+.mfp-close-btn-in .mfp-close
+	position: absolute
+	right: 10px
+	top: -30px
+	display: block
+	color: transparent
+	transition: top 0.5s
+	&:hover i
+		color: $main_color
+	i
+		color: #ffffff
+		transition: color 0.5s
+		@include fz(18)
+	&:hover
+		outline: 0
+	&:active
+		outline: 0
+	&:focus
+		outline: 0
+// конец модального
+// для формы normal обёртка и иконка success
+.input_wrap
+	position: relative
+	display: block
+	i
+		display: none
+		position: absolute
+		top: 15px
+		right: 16px
+		font-size: 14px
+		color: #35be70
+#form-file
+	.file_wrap
+		margin-bottom: 20px
+
+// Бутерброд
+.no-touch #nav-button-label
+	&:hover .nav-line
+		background: $main_bg_color
+.touch #nav-button-label
+	&:active .nav-line
+		background: $main_bg_color
+#nav-button-label
+	height: 35px
+	width: 50px
+	transition: .4s
+	margin-top: 6px
+	cursor: pointer
+	position: relative
+	z-index: 1002
+	pointer-events: all
+
+.nav-on .nav-line:first-child,
+.nav-on .nav-line:last-child
+	transition: .5s
+	width: 0
+	opacity: 0
+	left: 50%
+	top: 11px
+.nav-on
+	#nav-button-label
+		.nav-line
+			margin: 0
+	.nav-line
+		&:nth-child(2)
+			-webkit-transition: .5s
+			-o-transition: .5s
+			transition: .5s
+			-webkit-transform: rotate(45deg)
+			-ms-transform: rotate(45deg)
+			-o-transform: rotate(45deg)
+			transform: rotate(45deg)
+		&:nth-child(3)
+			-webkit-transition: .5s
+			-o-transition: .5s
+			transition: .5s
+			-webkit-transform: rotate(-45deg)
+			-ms-transform: rotate(-45deg)
+			-o-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+label
+	display: inline-block
+	max-width: 100%
+	margin-bottom: 5px
+	font-weight: 700
+
+.nav-line
+	display: block
+	height: 3px
+	background: #fff
+	position: absolute
+	left: 0
+	width: 100%
+	transition: 2s
+	&.active
+		background: $main_color
+	&:nth-child(2)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 14px
+	&:nth-child(1)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 0
+	&:nth-child(4)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 28px
+	&:nth-child(3)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 14px
+
+// внешний вид табов и анимация
+.tabs-items-wrap
+	margin-bottom: 10px
+.tabs-item
+	&.active
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
+.tabs-wrap
+	display: none
+	padding: 20px
+	background-color: rgba(255, 255, 255,0.5)
+
+.tabs-wrap.active
+	display: block
+	animation: fade-bot
+	animation-duration: 0.7s
+
+.tabs-wrap-inner
+	display: none
+	padding: 20px
+
+.tabs-wrap-inner.active
+	display: block
+	animation: fade
+	animation-duration: 0.7s
+	animation-delay: 0.3s
+	animation-fill-mode: backwards
+
+@keyframes fade
+	from
+		opacity: 0
+	to
+		opacity: 1
+@keyframes fade-bot
+	from
+		opacity: 0
+		transform: translateY(20px)
+	to
+		opacity: 1
+		transform: translateY(0)
+
+// Оформление слайдбара
+[canvas]
+	transform: inherit
+[off-canvas]
+	transition: transform 0.4s
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+[off-canvas*=left]
+	width: 255px
+[canvas=container]
+	background-color: transparent
+	-webkit-tap-highlight-color: transparent
+	&.flex
+		display: flex
+		flex-direction: column
+		height: 100%
+		//внешний вид скроллбара
+		scrollbar-base-color: $main_color   //для IE
+		scrollbar-arrow-color: $main_color	//для IE
+		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+		&::-webkit-scrollbar
+			width: 12px
+		&::-webkit-scrollbar-thumb
+			background-color: $main_color
+			&:hover
+				background-color: darken($main_color, 10%)
+		&::-webkit-scrollbar-track-piece
+			background-color: transparent
+nav[canvas]
+	position: fixed	
+	top: 20px
+	left: 20px
+	display: none
+	z-index: 100
+[class*=js-open-], [class*=js-toggle-], [class*=js-close-]
+	cursor: pointer
+[off-canvas]
+	ul
+		&.menu
+			margin: 0
+			padding: 0
+			display: block
+			list-style: none
+
+// Header
+.header
+	width: 100%
+	padding-top: 10px
+	padding-bottom: 10px
+	background-color: #fff
+	z-index: 100 !important
+	.row
+		align-items: center
+.header__logo
+	display: inline-block
+	margin-left: 15px
+	a
+		&:hover
+			text-decoration: none
+/* Effect 5: same word slide in */
+.cl-effect-5 a
+	overflow: hidden
+
+.cl-effect-5 a span
+	position: relative
+	display: inline-block
+	transition: transform 0.3s
+
+
+.cl-effect-5 a span::before
+	position: absolute
+	top: 100%
+	content: attr(data-hover)
+	color: #ec008c
+	transform: translate3d(0,0,0)
+
+
+.cl-effect-5 a:hover span,
+.cl-effect-5 a:focus span
+	transform: translateY(-100%)
+
+.header__nav
+	display: inline-block
+	position: relative
+	margin-left: auto
+	margin-right: 15px
+	ul
+		display: flex
+		align-items: center
+		li
+			height: 28px
+			list-style: none
+			display: inline-block
+			margin-right: 15px
+			&.dropdown
+				height: 100%
+			&:last-of-type
+				margin-right: 0
+			a
+				display: inline-block
+				padding-left: 5px
+				padding-right: 5px
+				color: $main_txt_color
+				@include font($main_txt_color, 18, $font_FuturaBook)
+				text-decoration: none
+				&:hover
+					text-decoration: none
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+			&.divider
+				width: 40px
+				height: 2px
+				background-color: $main_txt_color
+			.header__nav-dropdown
+				display: flex
+				flex-direction: column
+				text-align: center
+				p
+					font-size: 16px
+			.header__nav-dropdown-item
+				display: flex
+				align-items: center
+				i
+					color: #ff99e8
+					transform: rotate(0deg)
+					transition: transform 0.3s
+					&.active
+						transform: rotate(180deg)
+				a
+					line-height: 1.2
+			.dropdown-menu
+				display: none
+// Секция top-section
+.top-section
+	min-height: 745px
+	background: url(../img/top-section__bg.jpg) no-repeat
+	background-size: cover
+.top-section__title
+	margin-top: 115px
+	display: flex
+	flex-direction: column
+	p
+		@include fz(30)
+		color: $main_txt_color
+.top-section__bot-txt
+	margin-top: 50px
+	flex: 1 0 auto
+	p
+		@include fz(25)
+		color: #fff
+	.is-sticky
+		p
+			margin: auto
+			left: 0
+			right: 0
+			z-index: 1000 !important
+			background: #000
+.top-section__circle
+	flex: 0 0 auto
+// Секция our_advantages
+.our-advantages
+	min-height: 630px
+	background-color: #fff
+	padding-top: 75px
+	.our-advantages__title
+		margin-bottom: 10px
+		text-align: center
+		h2
+			color: #626262
+			text-align: center
+			font-size: 35px
+	.our-advantages__item
+		margin-bottom: 30px
+		min-height: 230px
+		h3
+			font-size: 26px
+			text-align: center
+		p
+			margin-top: 15px
+			@include fz(16)
+			line-height: 1.2
+			text-align: center
+		.our-advantages__img
+			text-align: center
+			i
+				@include fz(72)
+				color: #00b6f4
+// Секция main_content
+.main_content
+	text-align: center
+	.owl-carousel.owl-drag .owl-item
+		min-height: 300px
+		background-color: #00b6f4
+		display: flex
+		align-items: center
+		justify-content: center
+	.select2-container
+		width: 300px
+// Пример checkbox
+label.check, label.radio
+	display: inline-flex
+	align-items: center
+	color: #000
+	cursor: pointer
+	font-size: 14px
+	user-select: none
+	i
+		width: 11px
+		display: inline-flex
+		margin-right: 10px
+	span
+		display: inline-flex
+		font-size: 14px
+	input[type=checkbox],
+	input[type=radio]
+		display: none
+		&:not(:checked)  ~ .fa-2
+			display: none
+		&:checked + i
+			&.fa-1
+				display: none
+			&.fa-2
+				display: inline-flex
+// Секция 
+.intermediate
+	text-align: center
+	background-color: #00b6f4
+	padding-top: 50px
+	padding-bottom: 50px
+	.intermediate_title
+		max-width: 650px
+		margin: auto
+		color: #052243
+		h3
+			margin: 0
+			text-transform: uppercase
+			@include fz(24)
+			color: #052243
+	.intermediate_wrap
+		margin-top: 40px
+		form
+		.intermediate_item
+			margin-bottom: 20px
+			input
+				width: 100%
+				display: inline-block
+				border: 1px solid #a2b6c9
+				background: #fff
+				color: #43637f
+				height: 40px
+				padding: 0 0 0 9px
+				&::-webkit-input-placeholder
+					color: #43637f
+				&:-moz-placeholder
+					color: #43637f
+				&::-moz-placeholder
+					color: #43637f
+				&:-ms-input-placeholder
+					color: #43637f
+			input[type=submit]
+				background: #fff
+				color: #43637f
+	
+//	Секция 
+//	Секция
+//	Секция
+//	Секция 
+//	Секция 
+//	Секция
+//	Секция
+
+
+// Секия footer 
+.footer
+	background-color: #333
+	height: 200px
+	flex: 0 0 auto
+
+
+
+

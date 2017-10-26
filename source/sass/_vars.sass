@@ -1,0 +1,138 @@
+@import "fonts"
+@import 'sprite'
+
+$main_color: #dcf4ef
+$main_color2: #def7fe
+$main_color3: #fcf6f7
+$main_txt_color: #353535
+$auxiliary_txt_color: #443133
+$main_bg_color: #fff
+
+
+$font_FuturaBook: "FuturaBook",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_FuturaDemic: "FuturaDemic",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_FuturaLigh: "FuturaLigh",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_main_regular: "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+
+// Миксины font и fz переделывают px в rem
+@mixin font($color, $fz, $ff, $lh: 1.6)
+	color: $color
+	font-size: $fz + px
+	font-size: ($fz/16) + rem
+	font-family: $ff
+	line-height: $lh
+
+@mixin fz($font_px)
+	font-size: $font_px + px
+	font-size: ($font_px/16) + rem
+
+@mixin pseudo($display: block, $pos: absolute, $content: '')
+	content: $content
+	display: $display
+	position: $pos
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false)
+	@include pseudo($pos: $position)
+	width: 0
+	height: 0
+	@if $round
+		border-radius: 3px
+	@if $direction == down
+		border-left: $size solid transparent
+		border-right: $size solid transparent
+		border-top: $size solid $color
+		margin-top: 0 - round( $size / 2.5 )
+	@else if $direction == up
+		border-left: $size solid transparent
+		border-right: $size solid transparent
+		border-bottom: $size solid $color
+		margin-bottom: 0 - round( $size / 2.5 )
+	@else if $direction == right
+		border-top: $size solid transparent
+		border-bottom: $size solid transparent
+		border-left: $size solid $color
+		margin-right: -$siz
+	@else if  $direction == left
+		border-top: $size solid transparent
+		border-bottom: $size solid transparent
+		border-right: $size solid $color
+		margin-left: -$size
+
+@mixin truncate($truncation-boundary)
+	max-width: $truncation-boundary
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+.main_btn
+	width: 370px
+	height: 60px
+	padding: 0 5px
+	border: 2px solid #353535
+	background-color: #fff
+	text-transform: none
+	@include font($main_txt_color, 22, $font_FuturaBook)
+	line-height: 60px
+	transition: 0.5s
+	&:hover
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
+		color: #fff
+		text-decoration: none
+	&:active
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
+		color: #fff
+		text-decoration: none
+	&:focus
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
+		color: #fff
+		text-decoration: none
+.main_btn2
+	width: 170px
+	height: 42px
+	padding: 0 5px
+	border: 2px solid transparent
+	background-color: $main_txt_color
+	text-transform: none
+	@include font(#fff, 18, $font_FuturaBook)
+	line-height: 42px
+	transition: 0.5s
+	&:hover
+		background-color: #fff
+		border: 2px solid $main_txt_color
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
+	&:active
+		background-color: #fff
+		border: 2px solid $main_txt_color
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
+	&:focus
+		background-color: #fff
+		border: 2px solid $main_txt_color
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
+
+.center
+	text-align: center
+.left
+	text-align: left
+.right
+	text-align: right
+
+
+.flex-center
+	display: flex
+	align-items: center
+	justify-content: center
+
+	
+			
+
+
+
+

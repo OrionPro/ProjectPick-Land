@@ -1,0 +1,148 @@
+extends ../base
+block title
+	| Index page
+block main
+	section.top-section
+		.container
+			.row
+				.col-lg-7.offset-lg-5
+					.top-section__title
+						h1
+							| Покажи свою индивидуальность
+						p Создай уникальный и неповторимый дизайн чехла для смартфона по своему вкусу!
+						button(type="text" class="main_btn") Создать чехол
+	// Секция  our_advantages
+	section#our_advantages.our-advantages
+		.container
+			.our-advantages__title
+				h2 Наши преимущества
+				img(src=require("../../img/garant.svg"))
+			.row
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-users
+					h3 Заголовок
+					p Индивидуальный подход к каждому клиенту
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-diamond
+					h3 Заголовок
+					p Неповторимость и практичность каждого проекта мебели
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-list-ol
+					h3 Заголовок
+					p Многообразие материалов и стилевых решений
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-pencil
+					h3 Заголовок
+					p Для вас бесплатно: замер, дизайн-проект, доставка и монтаж
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-credit-card-alt
+					h3 Заголовок
+					p Возможность оформления мебели в кредит
+				.our-advantages__item.col-lg-4.col-md-6
+					.our-advantages__img
+						i.fa.fa-wrench
+					h3 Заголовок
+					p Изготовление мебели только из высококачественных материалов
+	// Тест react
+	section.react
+		.container
+			#app
+	// Секция main_content
+	section.main_content
+		.container
+			h2 Слайдер
+			.owl-carousel.owl-theme
+				.item
+					h3 Слайдер 1
+				.item
+					h3 Слайдер 2
+			div Пример checkbox
+			label.check.noselect
+				input(type='checkbox')
+				i.fa.fa-1.fa-square-o
+				i.fa.fa-2.fa-check-square-o
+				span первый чек
+			label.check.noselect
+				input(type='checkbox')
+				i.fa.fa-1.fa-square-o
+				i.fa.fa-2.fa-check-square-o
+				span второй чек
+			div Пример radio button
+			label.radio.noselect
+				input(type='radio', name='radio')
+				i.fa.fa-1.fa-square-o
+				i.fa.fa-2.fa-check-square-o
+				span первый чек
+			label.radio.noselect
+				input(type='radio', name='radio', checked='')
+				i.fa.fa-1.fa-square-o
+				i.fa.fa-2.fa-check-square-o
+				span второй чек
+			h3 Пример Select на плагине Select2
+				h4 с тегами
+				.select2-container
+					select.select2-tags.form-control(multiple)
+						option angular
+						option react
+						option vui
+						option(disabled) ember
+						option backbone
+				h4 обычный
+				.select2-container
+					select.select2
+						option angular
+						option react
+						option vui
+						option(disabled) ember
+						option backbone
+	// Секция  ask-form-title
+	section.intermediate
+		.container
+			.intermediate_title
+				h3 Заполните форму и мы бесплатно перезвоним и ответим на ваши вопросы
+			.intermediate_wrap
+				form#form-file.clearfix
+					.file_wrap
+						input(type='file' name='field' multiple)
+					.row
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.input_wrap
+								i.fa.fa-check
+								input(name='name', type='text', placeholder='Имя')
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.input_wrap
+								i.fa.fa-check
+								input(name='email', type='email', placeholder='Почта')
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.input_wrap
+								i.fa.fa-check
+								input(name='phone', type='tel', placeholder='Телефон')
+						input(type='hidden', name='form_name', value='')
+						input(type='hidden', name='form_type', value='normal')
+						.intermediate_item.col-lg-3
+							input(type='submit', value='Записаться')
+			h3 Пример табов с вложенностью ещё одного таба
+			.tabs-items-wrap
+				button.main_btn.tabs-item.active Мужские размеры
+				button.main_btn.tabs-item Женские размеры
+			.tabs-wrap.active
+				p.
+					Lorem ipsum dolor sit amet, an eam simul albucius. An ius duis aeque suscipit, ius ullum suscipit eu. Detracto ponderum pertinacia ei his, nonumy omnium adipisci nec ei, ea ludus dictas fuisset qui.
+			.tabs-wrap
+				p.
+					Persius volumus est cu! Ad populo erroribus sed. Timeam legimus maiorum usu te, civibus detracto at vel. Accusata lobortis in sed, et tempor saperet qui. Eu timeam salutandi quaerendum his.
+				h4 Вложенный таб
+				.tabs-items-wrap-inner
+					button.main_btn.tabs-item.active Мужские размеры 2
+					button.main_btn.tabs-item Женские размеры 2
+					.tabs-wrap-inner.active
+						p Detracto ponderum pertinacia ei his, nonumy omnium adipisci nec ei, ea ludus dictas fuisset qui.
+					.tabs-wrap-inner
+						p Accusata lobortis in sed, et tempor saperet qui. Eu timeam salutandi quaerendum his.
+
+
