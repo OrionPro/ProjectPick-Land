@@ -7,7 +7,6 @@ require("../libs/libs").magnific_popup();
 require("../libs/libs").tooltipster_follower();
 require("../libs/libs").tooltipster();
 require("../libs/libs").jqueryValidation();
-require("../libs/libs").select2();
 require("../libs/libs").input_mask();
 require("../libs/libs").sticky();
 import validation from '../js/validation';
@@ -54,10 +53,31 @@ function get_name_browser() {
 	// для популярных браузеров
 	return 'Не определен';
 }
-
+// решаем вопрос с min-height 100% у safari до версии 11
 function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
 	$(obj.item).css("min-height", heightItem);
+}
+//accordion
+function accordion(obj) {
+	let titleClick =  obj.titleClick,
+		allContent = obj.allContent;
+
+	$(titleClick).click(function() {
+		let content = $(this).next();
+		if (content.is(":visible")) { //если нажали на title аккордеона,
+			content.slideUp(500, function() { //и если контент аккордеона видимый, то
+			}); //убираем его
+			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
+
+		} else {
+			$(allContent).slideUp("slow"); //если невидимый, прячем все скрытые
+			$(titleClick).children() //убираем активный класс у стрелки к примеру
+				.removeClass("active");
+			content.slideToggle("200"); //открываем скрытый блок у того что нажали
+			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
+		}
+	});
 }
 $(document).ready(function () {
 	// Клик на header__nav-dropdown
@@ -72,6 +92,11 @@ $(document).ready(function () {
 		$('.header__nav ul li .dropdown-menu').toggleClass('active');
 		$('.header__nav ul li .header__nav-dropdown-item i').toggleClass('active');
 	});
+	// вызов аккордеона
+	accordion({
+		titleClick: '.accordion .accordion_title',
+		allContent: '.accordion .accordion_content'
+	});
 	// вызов tabs
 	tabs({
 		btn:'.tabs-items-wrap > .tabs-item',
@@ -85,7 +110,6 @@ $(document).ready(function () {
 		classBody: 'active',
 		classBtn:'active'
 	});
-
 
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
 		// $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");

@@ -68,7 +68,7 @@ block main
 							.unique-design__item
 								img(src=require("../../img/unique-design__item-xiaomi4.jpg") class="img-fluid")
 				.unique-design__item-bottom-link
-					a(href="#") И многие другие марки - перейти в каталог
+					a(href="#" class="pink-border") И многие другие марки - перейти в каталог
 
 	// Секция  applying-any-image
 	section.applying-any-image
@@ -79,6 +79,144 @@ block main
 					br
 					| любого изображения
 				.top-section__title-divider.center
+			.applying-any-image__items
+				.row
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Своей
+								| фотографии
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Любимого
+								| персонажа
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Собственного
+								| имени
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Различных
+								| текстур
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Бренда или
+								| марки
+					.col-xl-2.col-lg-4.col-md-4.col-sm-6.col-12
+						.applying-any-image__item
+							p
+								| Запечатленного
+								| момента
+	// Секция  three-steps
+	section.three-steps
+		.container
+			.section-title
+				h2
+					| Всего за три шага Вы получите яркий и привлекательный
+					br
+					| аксессуар для своего смартфона!
+				.top-section__title-divider.center
+			.three-steps__wrap
+				.row
+					.col-12.col-xl-6
+						.three-steps__left-img-block
+							img(src=require("../../img/three-steps__left-img-block.jpg") class="img-fluid")
+							.three-steps__left-txt
+								p Через два дня вы заберете свой чехол!
+								.three-steps__left-txt-divider
+					.col-12.col-xl-6
+						.three-steps__right-block
+							.three-steps__right-block-item
+								.three-steps__right-block-item-img
+									img(src=require("../../img/three-steps__right-block-item-img.png"))
+								.three-steps__right-block-item-txt
+									p.title
+										| Выбираете нужную модель телефона
+									p
+										| Выбирайте свою модель из пятиста
+										| моделей телефонов.
+							.three-steps__right-block-item
+								.three-steps__right-block-item-img
+									img(src=require("../../img/three-steps__right-block-item-img2.png"))
+								.three-steps__right-block-item-txt
+									p.title
+										| Создайте собственный дизайн
+									p
+										| Воспользуйтесь удобным конструктором,
+										| и создайте неповторимый дизайн для
+										| своего чехла.
+							.three-steps__right-block-item
+								.three-steps__right-block-item-img
+									img(src=require("../../img/three-steps__right-block-item-img3.png"))
+								.three-steps__right-block-item-txt
+									p.title
+										| Выбираете нужную модель телефона
+									p
+										| И уже через пару дней у вас в руках
+										| крутой чехол для Вашего смартфона.
+
+	// Секция  ready-to-create
+	section.ready-to-create
+		.container
+			.section-title
+				h2
+					| Готовы создать оригинальный дизайн чехла?
+				.top-section__title-divider.center
+				p
+					| Это предельно удобно и быстро!
+			.ready-to-create__video
+				.row
+					.col-12.col-xl-7
+						.ready-to-create__video-inner
+							.ready-to-create__video-inner-img
+								i.fa.fa-picture-o
+							.ready-to-create__video-inner-txt
+								p Качественные и красивые изображения можно найти на:
+								.ready-to-create__video-inner-left-txt-links
+									a(href="#" class="pink-border") pexels.com
+									a(href="#" class="pink-border") depositphotos.com
+									a(href="#" class="pink-border") istockphoto.com
+									a(href="#" class="pink-border") pexels.com
+									a(href="#" class="pink-border") depositphotos.com
+									a(href="#" class="pink-border") istockphoto.com
+					.col-12.col-xl-5
+						.ready-to-create__video-inner
+							.ready-to-create__video-inner-img
+								i.fa.fa-youtube-play
+							.ready-to-create__video-inner-txt
+								p Как создать дизайн чехла за 1 минуту:
+								.ready-to-create__video-inner-left-txt-button
+									button(data-effect="mfp-zoom-in" href="#popup-video" class="open-popup-link main_btn" title='Видео инструкция') Смотреть видео инструкцию
+			.ready-to-create__constructor
+				p тут должен быть конструктор
+
+	// Секция  .can-not-decide
+	section.can-not-decide
+		.container
+			.section-title
+				h2
+					| Готовы создать оригинальный дизайн чехла?
+				.top-section__title-divider.center
+				p
+					| Это предельно удобно и быстро!
+			.accordion
+				.accordion_title
+					p Кликайте, чтобы заполнить форму!
+					i.fa.fa-angle-down
+				.accordion_content
+					.row
+						.col-lg-6
+							input(type="text" name="markPhone" placeholder="Марка телефона")
+						.col-lg-6
+							input(type="text" name="madelModel" placeholder="Модель телефона")
+							input(type="text" name="email" placeholder="E-mail")
+							textarea(name="textarea" placeholder="Дополнительное пожелание")
+					.accordion_content_button
+						button.main_btn Отправить
 
 	// Секция  our_advantages
 	section#our_advantages.our-advantages

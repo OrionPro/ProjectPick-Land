@@ -131,6 +131,8 @@ li
 			display: block
 		.mfp-close
 			display: none
+	&#popup-video
+		width: inherit
 	&#popup3
 		width: inherit
 		padding: 0
@@ -650,6 +652,7 @@ nav[canvas]
 // блок заголовков
 .section-title
 	text-align: center
+	margin-bottom: 40px
 	h2
 		margin-bottom: 20px
 		font-weight: normal
@@ -664,7 +667,6 @@ nav[canvas]
 	padding-bottom: 75px
 	background-color: #ffffff
 .unique-design__wrap
-	margin-top: 40px
 	.unique-design__items
 		margin-bottom: 30px
 		&:last-of-type
@@ -684,40 +686,203 @@ nav[canvas]
 			border: 1px solid #888
 	.unique-design__item-bottom-link
 		text-align: center
-		a
-			color: $main_txt_color
-			text-decoration: dashed
-			transition: 0.5s
-			@include fz(22)
-			position: relative
-			display: inline-block
-			&:after
-				content: ""
-				display: block
-				width: 100%
-				height: 1px
-				border: 1px dashed $main_txt_color
-				position: absolute
-				bottom: 2px
-				left: 0
-				transition: 0.5s
-			&:hover:after
-				border: 1px dashed #ffc5f2
-			&:active:after
-				border: 1px dashed #ffc5f2
-			&:focus:after
-				border: 1px dashed #ffc5f2
-			&:hover
-				color: #ffc5f2
-			&:active
-				color: #ffc5f2
-			&:focus
-				color: #ffc5f2
+a.pink-border
+	color: $main_txt_color
+	text-decoration: dashed
+	transition: 0.5s
+	@include fz(22)
+	position: relative
+	display: inline-block
+	&:after
+		content: ""
+		display: block
+		width: 100%
+		height: 1px
+		border: 1px dashed $main_txt_color
+		position: absolute
+		bottom: 2px
+		left: 0
+		transition: 0.5s
+	&:hover:after
+		border: 1px dashed #ffc5f2
+	&:active:after
+		border: 1px dashed #ffc5f2
+	&:focus:after
+		border: 1px dashed #ffc5f2
+	&:hover
+		color: #ffc5f2
+	&:active
+		color: #ffc5f2
+	&:focus
+		color: #ffc5f2
 // Секция .applying-any-image
 .applying-any-image
 	padding-top: 75px
 	padding-bottom: 75px
 	background-color: $main_color
+.applying-any-image__item
+	width: 170px
+	height: 170px
+	margin: auto
+	padding-left: 20px
+	padding-right: 20px
+	border-radius: 50%
+	background-color: white
+	display: flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	@include fz(18)
+	line-height: 1.2
+	box-shadow: 0px 0px 12px 2px rgba(229, 123, 181,0.6)
+// Секция .three-steps
+.three-steps
+	padding-top: 75px
+	padding-bottom: 75px
+	background-color: #ffffff
+.three-steps__left-img-block
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+.three-steps__left-txt
+	width: 370px
+	height: 160px
+	margin: auto
+	padding-top: 45px
+	background-color: white
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	p
+		width: 230px
+		margin: 0 auto 20px
+		text-align: center
+		color: $main_txt_color
+		font-size: 19px
+		line-height: 1.2
+	.three-steps__left-txt-divider
+		width: 170px
+		height: 2px
+		margin: auto
+		background-color: #353535
+.three-steps__right-block
+	display: flex
+	flex-direction: column
+	padding-left: 20px
+	padding-top: 30px
+.three-steps__right-block-item
+	display: flex
+	margin-bottom: 60px
+.three-steps__right-block-item-img
+	width: 170px
+	height: 130px
+	margin-right: 50px
+	background-color: white
+	border: 1px solid #ffd1ee
+	display: flex
+	align-items: center
+	justify-content: center
+.three-steps__right-block-item-txt
+	width: 320px
+	display: flex
+	flex-direction: column
+	justify-content: center
+	@include fz(18)
+	.title
+		color: $main_txt_color
+		margin-bottom: 20px
+	p
+		color: #878787
+		line-height: 1.2
+// Секция ready-to-create
+.ready-to-create
+	padding-top: 75px
+	padding-bottom: 75px
+	background-color: $main_color2
+.ready-to-create__video
+	padding: 30px
+	background-color: white
+	border: 1px solid #ffd1ee
+	@include fz(22)
+.ready-to-create__video-inner
+	display: flex
+.ready-to-create__video-inner-img
+	margin-right: 20px
+.ready-to-create__video-inner-left-txt-links
+	display: flex
+	flex-wrap: wrap
+	margin-top: 5px
+	a
+		margin-right: 30px
+.ready-to-create__video-inner-txt
+	line-height: 1.2
+.ready-to-create__video-inner-left-txt-button
+	margin-top: 25px
+	button
+		width: 345px
+		height: 38px
+		line-height: 38px
+// Секция can-not-decide
+.can-not-decide
+	padding-top: 75px
+	padding-bottom: 75px
+	background-color: #ffffff
+	.accordion_title
+		min-height: 50px
+		background-color: $main_color2
+		line-height: 50px
+		padding-left: 20px
+		cursor: pointer
+		position: relative
+		color: $main_txt_color
+		@include fz(22)
+		i
+			position: absolute
+			top: 14px
+			right: 20px
+			transition: 0.5s
+	.accordion_title i.active
+		transform: rotate(180deg)
+	.accordion_content
+		display: none
+		padding: 30px 30px 40px 30px
+		background-color: white
+		border: 1px solid #ffd1ee
+		input
+			width: 100%
+			height: 60px
+			padding-left: 20px
+			margin-bottom: 20px
+			border: 0.31px solid #353535
+			transition: 0.5s
+			&:hover
+				outline: 0
+			&:active
+				border: 0.31px solid #ec008c
+				outline: 0
+			&:focus
+				border: 0.31px solid #ec008c
+				outline: 0
+		textarea
+			width: 100%
+			min-height: 142px
+			padding-left: 20px
+			margin-bottom: 20px
+			border: 0.31px solid #353535
+			transition: 0.5s
+			&:hover
+				outline: 0
+			&:active
+				border: 0.31px solid #ec008c
+				outline: 0
+			&:focus
+				border: 0.31px solid #ec008c
+				outline: 0
+	.accordion_content_button
+		text-align: center
 // Секция our_advantages
 .our-advantages
 	min-height: 630px

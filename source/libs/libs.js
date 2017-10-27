@@ -20,10 +20,6 @@ exports.magnific_popup = function () {
 	return require("magnific-popup");
 };
 
-exports.select2 = function () {
-	return require("select2");
-};
-
 exports.input_mask = function () {
 	return require("jquery-inputmask");
 };

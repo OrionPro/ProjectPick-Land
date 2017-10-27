@@ -30,17 +30,6 @@ $(document).ready(function () {
 		dots: true,
 		nav: true
 	});
-	// инициализация select2
-	$(".select2").select2({
-		//minimumResultsForSearch: -1, // выключам поле ввода поиска
-		tags: false,
-		width: null
-	});
-	$(".select2-tags").select2({
-		tags: true,
-		placeholder: "Выберите один или несколько тегов",
-		width: null // если null то будет шириной родителя
-	});
 	// Инициализация маски в input
 	$(".mask").mask("+38(999) 999-99-99");
 });
