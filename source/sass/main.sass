@@ -11,6 +11,7 @@
 @import "../libs/select2.min.css"
 @import "../libs/owl.carousel.min.css"
 @import "../libs/owl.theme.default.min.css"
+@import "../libs/jquery.mCustomScrollbar.min.css"
 
 html
 	&.modal
@@ -274,15 +275,28 @@ li
 				transition: 0.3s
 			&.active .fa
 				transform: rotate(180deg)
+.mCS-my-theme
+	&.mCSB_scrollTools
+		width: 5px
+		.mCSB_draggerRail
+			height: 0
+		.mCSB_dragger
+			z-index: 10
+			.mCSB_dragger_bar
+				width: 5px
+				margin: 0
+				background-color: #ffd1ee
+.mCSB_inside>.mCSB_container
+	margin-right: 0
 .select
 	position: relative
 	text-align: left
 	.drop
 		width: 100%
 		max-height: 200px
-		overflow: auto
 		margin: 0 auto
 		padding: 0
+		overflow: hidden
 		display: none
 		position: absolute
 		background-color: #fff
@@ -1012,6 +1026,21 @@ a.pink-border
 		flex-direction: column
 		&:first-of-type
 			margin-right: 20px
+// секция .select-cover
+.select-cover
+	background-color: #ffffff
+.select-cover__select-wrap
+	.select
+		.slct
+			border: none
+			background-color: $main_color
+		.drop
+			border: 1px solid #ffd1ee
+			border-top: none
+			li
+				transition: 0.5s
+				&:hover
+					background-color: #ffd1ee
 // Секция our_advantages
 .our-advantages
 	min-height: 630px

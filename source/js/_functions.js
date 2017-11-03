@@ -132,11 +132,11 @@ $(document).ready(function () {
 
 				/* Находим наш скрытый инпут и передаем в него
 				 значение из переменной selectResult */
-				$(this).parent().parent().find('input').val(selectResult);
+				$(this).parents(".select").find('input').val(selectResult);
 
 				/* Передаем значение переменной selectResult в ссылку которая
 				 открывает наш выпадающий список и удаляем активность */
-				$(this).parent().parent().find(".slct").removeClass('active').html(selectResult);
+				$(this).parents(".select").find(".slct").removeClass('active').html(selectResult);
 				$(".slct_arrow").removeClass('active');
 
 				/* Скрываем выпадающий блок */

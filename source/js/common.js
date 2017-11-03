@@ -9,6 +9,7 @@ require("../libs/libs").tooltipster();
 require("../libs/libs").jqueryValidation();
 require("../libs/libs").input_mask();
 require("../libs/libs").sticky();
+require("../libs/libs").mCustomScrollbar();
 import validation from '../js/validation';
 import modal from '../js/modal';
 
@@ -77,7 +78,22 @@ function accordion(obj) {
 		}
 	});
 }
+// Создаём цикл для инициализации mCustomScrollbar в нужных select
+function customScrollbar() {
+	$(document).find('.select .drop').each(function () {
+		// var log = '';
+		// var height = $(this).height();
+		// log += 'Высота элементов: ' + height;
+		// console.log(log);
+		if ($(this).height() >= 190) {
+			$(this).mCustomScrollbar({
+				theme: "my-theme"
+			});
+		}
+	});
+}
 $(document).ready(function () {
+	customScrollbar();
 	// Клик на header__nav-dropdown
 	$(document).click(function (event) {
 		if ($(event.target).closest(".header__nav-dropdown").length)
