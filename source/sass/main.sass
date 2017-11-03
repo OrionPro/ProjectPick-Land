@@ -274,6 +274,72 @@ li
 				transition: 0.3s
 			&.active .fa
 				transform: rotate(180deg)
+.select
+	position: relative
+	text-align: left
+	.drop
+		width: 100%
+		max-height: 200px
+		overflow: auto
+		margin: 0 auto
+		padding: 0
+		display: none
+		position: absolute
+		background-color: #fff
+		border: 0.31px solid #353535
+		border-top: none
+		top: 60px
+		left: 0
+		right: 0
+		z-index: 12
+		li
+			list-style: none
+			border-bottom: none
+			border-top: none
+			cursor: pointer
+			display: block
+			@include font($auxiliary_txt_color, 18, $font_main_regular, 1.2)
+			padding: 15px 15px 15px 20px
+			&:hover
+				background-color: rgba(0,0,0,0.2)
+				outline: 0
+			a
+				text-decoration: none
+	.slct
+		width: 100%
+		height: 60px
+		padding-left: 20px
+		padding-right: 30px
+		margin-bottom: 30px
+		display: block
+		@include font($main_txt_color, 22, $font_FuturaBook, 1.2)
+		background-color: #fff
+		line-height: 60px
+		border: 0.31px solid #353535
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		-o-text-overflow: ellipsis
+		text-decoration: none
+		position: relative
+		transition: color 1s
+		&.active
+			color: #000
+			background-color: #F4F4F4
+
+	.slct_arrow
+		position: absolute
+		top: 20px
+		right: 20px
+		cursor: pointer
+		.fa
+			@include fz(22)
+			color: $main_txt_color
+			position: relative
+			z-index: 10
+			transition: 0.3s
+		&.active .fa
+			transform: rotate(180deg)
 .mfp-zoom-in.mfp-ready.mfp-bg
 	opacity: 0.7
 .mfp-bg
@@ -873,6 +939,7 @@ a.pink-border
 			width: 100%
 			min-height: 142px
 			padding-left: 20px
+			padding-top: 15px
 			margin-bottom: 20px
 			border: 0.31px solid #353535
 			transition: 0.5s
@@ -886,6 +953,65 @@ a.pink-border
 				outline: 0
 	.accordion_content_button
 		text-align: center
+	.accordion__select-wrap
+		.select
+			display: inline-block
+			.slct
+				display: flex
+				align-items: center
+				padding-right: 40px
+			i.color
+				width: 30px
+				height: 30px
+				display: inline-block
+				margin-left: auto
+				&.blue
+					background-color: blue
+				&.red
+					background-color: red
+				&.green
+					background-color: green
+				&.black
+					background-color: black
+			li
+				width: 100%
+				padding-right: 40px
+				display: inline-flex
+			&.sex
+				margin-right: 26px
+				.slct
+					width: 239px
+			&.color
+				.slct
+					width: 270px
+	.accordion__check-list-items
+		display: flex
+		padding-left: 20px
+		@include fz(22)
+		padding-bottom: 20px
+		&>span
+			width: 140px
+			margin-right: 25px
+		label
+			&.check
+				flex-basis: auto
+				span
+					@include fz(22)
+					line-height: 1.2
+					font-weight: normal
+				i
+					width: 19px
+					@include fz(22)
+					margin-right: 15px
+					&.fa-2
+						color: #ec008c
+	.accordion__check-list
+		width: 170px
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column
+		&:first-of-type
+			margin-right: 20px
 // Секция our_advantages
 .our-advantages
 	min-height: 630px

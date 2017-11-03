@@ -211,13 +211,88 @@ block main
 					.row
 						.col-lg-6
 							input(type="text" name="markPhone" placeholder="Марка телефона")
+							.accordion__select-wrap
+								.select.sex
+									.slct_arrow
+										i.fa.fa-angle-down
+									a(href="#" class="slct") Пол
+									ul.drop
+										li Мужской
+										li Женский
+									input(type="hidden" name="sex")
+								.select.color
+									.slct_arrow
+										i.fa.fa-angle-down
+									a(href="#" class="slct") Любимый цвет
+										i.color.blue
+									ul.drop
+										li Любимый цвет
+											i.color.red
+										li Любимый цвет
+											i.color.green
+										li Любимый цвет
+											i.color.black
+								input(type="hidden" name="services")
+							.accordion__check-list-items
+								span
+									| Стиль дизайна:
+								.accordion__check-list
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Классический
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Классический
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Поп-арт
+								.accordion__check-list
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Винтаж
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Винтаж
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Анимация
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Анимация
 						.col-lg-6
 							input(type="text" name="madelModel" placeholder="Модель телефона")
 							input(type="text" name="email" placeholder="E-mail")
 							textarea(name="textarea" placeholder="Дополнительное пожелание")
 					.accordion_content_button
 						button.main_btn Отправить
-
+	// Секция  .select-cover
+	section.select-cover
+		.container
+			.section-title
+				h2
+					| Выберите чехол с уже готовым дизайном
+				.top-section__title-divider.center
 	// Секция  our_advantages
 	section#our_advantages.our-advantages
 		.container

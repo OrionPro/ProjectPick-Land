@@ -37,8 +37,6 @@ function tabs(obj) {
 function get_name_browser() {
 	// получаем данные userAgent
 	const ua = navigator.userAgent;
-	console.log(ua);
-
 	// с помощью регулярок проверяем наличие текста,
 	// соответствующие тому или иному браузеру
 	if (ua.search(/Edge/) > 0) return 'Edge';
