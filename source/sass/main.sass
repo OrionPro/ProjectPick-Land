@@ -1029,6 +1029,7 @@ a.pink-border
 // секция .select-cover
 .select-cover
 	background-color: #ffffff
+	padding-bottom: 80px
 .select-cover__select-wrap
 	.select
 		.slct
@@ -1041,34 +1042,52 @@ a.pink-border
 				transition: 0.5s
 				&:hover
 					background-color: #ffd1ee
+.select-cover__items
+	margin-bottom: 40px
+.select-cover__item
+	height: 255px
+	border: 1px solid rgba(53, 53, 53, 0.1)
+	margin-bottom: 30px
+	display: flex
+	align-items: center
+	justify-content: center
+.select-cover__button
+	text-align: center
+	button
+		width: 270px
+.get-discounts
+	padding-bottom: 80px
+	padding-top: 70px
+	background-color: $main_color3
+	.row
+		justify-content: center
+	p
+		margin-bottom: 35px
+		padding-left: 40px
+		padding-right: 40px
+		text-align: center
+		@include fz(25)
+		line-height: 1.2
+	.section-title
+		margin-bottom: 10px
+.get-discounts__btn
+	text-align: center
+	button
+		width: 270px
 // Секция our_advantages
 .our-advantages
 	min-height: 630px
 	background-color: #fff
 	padding-top: 75px
-	.our-advantages__title
-		margin-bottom: 10px
-		text-align: center
-		h2
-			color: #626262
-			text-align: center
-			font-size: 35px
 	.our-advantages__item
 		margin-bottom: 30px
-		min-height: 230px
-		h3
-			font-size: 26px
-			text-align: center
+		min-height: 236px
+		padding-left: 16px
+		padding-right: 16px
 		p
-			margin-top: 15px
-			@include fz(16)
+			@include fz(22)
 			line-height: 1.2
 			text-align: center
-		.our-advantages__img
-			text-align: center
-			i
-				@include fz(72)
-				color: #00b6f4
 // Секция main_content
 .main_content
 	text-align: center
@@ -1127,11 +1146,11 @@ label.check, label.radio
 			margin-bottom: 20px
 			input
 				width: 100%
+				height: 40px
 				display: inline-block
 				border: 1px solid #a2b6c9
 				background: #fff
 				color: #43637f
-				height: 40px
 				padding: 0 0 0 9px
 				&::-webkit-input-placeholder
 					color: #43637f
