@@ -26,9 +26,26 @@ $(document).ready(function () {
 	//  Активация слайдера
 	$(".owl-carousel").owlCarousel({
 		loop: true,
-		items: 1,
+		items: 2,
+		video:true,
 		dots: true,
-		nav: true
+		lazyLoad:true,
+		center:true,
+		margin: 30,
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:1,
+			},
+			767:{
+				items:2,
+			},
+			991:{
+				items:2,
+			}
+		},
+		videoHeight: '100%'
+
 	});
 	// Инициализация маски в input
 	$(".mask").mask("+38(999) 999-99-99");

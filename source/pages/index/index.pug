@@ -322,39 +322,75 @@ block main
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 					.col-6.col-md-4.col-xl-2
 						.select-cover__item
 							img(src=require("../../img/select-cover__item-img.jpg"))
+							.select-cover__cart
+								a(href="#")
+									i.fa.fa-cart-arrow-down
 			.select-cover__button
 				button(type="button" class="main_btn") Перейти в каталог
 	// Секция .get-discounts
@@ -383,14 +419,14 @@ block main
 					| для ежедневного использования
 				.top-section__title-divider.center
 			.row
-				.col-lg-4.col-md-6
+				.col-lg-4.col-12.item
 					.our-advantages__item
 						p
 							| Наши чехлы отлично защищают
 							| от царапини потертостей корпуса.
 							| Предотвращают появление вмятин и
 							| сколов при падении смартфона.
-				.col-lg-4.col-md-6
+				.col-lg-4.col-12.item
 					.our-advantages__item
 						p
 							| По-настоящему качественная печать:
@@ -399,108 +435,81 @@ block main
 							| солнце и не стирается при ношении
 							| телефона в кармане.
 							|
-				.col-lg-4.col-md-6
+				.col-lg-4.col-12.item
 					.our-advantages__item
 						p
 							| Низкая стоимость, всего 199 грн..
 							| Скидки для оптовых покупателей
 							| и для тех, кто создат чехол через
 							| онлайн конструктор.
-	// Тест react
-	section.react
-		.container
-			#app
+
 	// Секция main_content
-	section.main_content
+	section.join
 		.container
-			h2 Слайдер
-			.owl-carousel.owl-theme
+			.section-title
+				h2
+					| Чехлы от Pickcase - это идеальное сочетание качества и красоты
+					br
+					| для ежедневного использования
+				.top-section__title-divider.center
+			.join-slider.owl-carousel.owl-theme
 				.item
-					h3 Слайдер 1
+					.item-slider-video(class="item-video")
+						a(href="https://www.youtube.com/embed/_MwXt3WmVsc?showinfo=0" class="owl-video")
+					.item-slider__user
+						.item-slider__img-mini
+							img(src=require("../../img/item-slider__img-mini.png"))
+						.item-slider__name
+							span rachel.ojey
 				.item
-					h3 Слайдер 2
-			div Пример checkbox
-			label.check.noselect
-				input(type='checkbox')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span первый чек
-			label.check.noselect
-				input(type='checkbox')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span второй чек
-			div Пример radio button
-			label.radio.noselect
-				input(type='radio', name='radio')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span первый чек
-			label.radio.noselect
-				input(type='radio', name='radio', checked='')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span второй чек
-			h3 Пример Select на плагине Select2
-				h4 с тегами
-				.select2-container
-					select.select2-tags.form-control(multiple)
-						option angular
-						option react
-						option vui
-						option(disabled) ember
-						option backbone
-				h4 обычный
-				.select2-container
-					select.select2
-						option angular
-						option react
-						option vui
-						option(disabled) ember
-						option backbone
+					.item-slider-video(class="item-video")
+						a(href="https://www.youtube.com/embed/SDrzn-94Pog" class="owl-video")
+					.item-slider__user
+						.item-slider__img-mini
+							img(src=require("../../img/item-slider__img-mini.png"))
+						.item-slider__name
+							span rachel.ojey
+				.item
+					.item-slider-video(class="item-video")
+						a(href="https://www.youtube.com/embed/_MwXt3WmVsc?showinfo=0" class="owl-video")
+					.item-slider__user
+						.item-slider__img-mini
+							img(src=require("../../img/item-slider__img-mini.png"))
+						.item-slider__name
+							span rachel.ojey
 	// Секция  ask-form-title
 	section.intermediate
 		.container
-			.intermediate_title
-				h3 Заполните форму и мы бесплатно перезвоним и ответим на ваши вопросы
+			.section-title
+				h2
+					| Появились вопросы?
+				.top-section__title-divider.center
+				p
+					| Оставьте свой номер телефона и наши консультанты с радостью ответят на них.
 			.intermediate_wrap
-				form#form-file.clearfix
-					.file_wrap
-						input(type='file' name='field' multiple)
+				form
 					.row
-						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+						.intermediate_item.col-lg-4.col-md-4.col-sm-4
 							.input_wrap
 								i.fa.fa-check
-								input(name='name', type='text', placeholder='Имя')
-						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+								input(name='name', type='text', placeholder='Ваше имя')
+						.intermediate_item.col-lg-4.col-md-4.col-sm-4
 							.input_wrap
 								i.fa.fa-check
-								input(name='email', type='email', placeholder='Почта')
-						.intermediate_item.col-lg-3.col-md-4.col-sm-4
-							.input_wrap
-								i.fa.fa-check
-								input(name='phone', type='tel', placeholder='Телефон')
+								input(name='phone_mask', class="mask", type='tel', placeholder='+38(___) ___-__-__')
 						input(type='hidden', name='form_name', value='')
 						input(type='hidden', name='form_type', value='normal')
-						.intermediate_item.col-lg-3
-							input(type='submit', value='Записаться')
-			h3 Пример табов с вложенностью ещё одного таба
-			.tabs-items-wrap
-				button.main_btn.tabs-item.active Мужские размеры
-				button.main_btn.tabs-item Женские размеры
-			.tabs-wrap.active
-				p.
-					Lorem ipsum dolor sit amet, an eam simul albucius. An ius duis aeque suscipit, ius ullum suscipit eu. Detracto ponderum pertinacia ei his, nonumy omnium adipisci nec ei, ea ludus dictas fuisset qui.
-			.tabs-wrap
-				p.
-					Persius volumus est cu! Ad populo erroribus sed. Timeam legimus maiorum usu te, civibus detracto at vel. Accusata lobortis in sed, et tempor saperet qui. Eu timeam salutandi quaerendum his.
-				h4 Вложенный таб
-				.tabs-items-wrap-inner
-					button.main_btn.tabs-item.active Мужские размеры 2
-					button.main_btn.tabs-item Женские размеры 2
-					.tabs-wrap-inner.active
-						p Detracto ponderum pertinacia ei his, nonumy omnium adipisci nec ei, ea ludus dictas fuisset qui.
-					.tabs-wrap-inner
-						p Accusata lobortis in sed, et tempor saperet qui. Eu timeam salutandi quaerendum his.
-
-
+						.intermediate_item.col-lg-4
+							input(type='submit', value='Отправить', class="main_btn")
+	// Секция delivery
+	section.delivery
+		.container
+			.row
+				.col-xl-2.col-md-1
+					.delivery__divider
+				.col-xl-4.col-md-5
+					.delivery__circle
+				.col-xl-4.col-md-5
+					.delivery__circle
+				.col-xl-2.col-md-1
+					.delivery__divider

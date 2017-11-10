@@ -741,6 +741,7 @@ nav[canvas]
 		margin-bottom: 10px
 	p
 		@include fz(19)
+		color: #878787
 // Секция unique-design
 .unique-design
 	padding-top: 75px
@@ -1051,6 +1052,36 @@ a.pink-border
 	display: flex
 	align-items: center
 	justify-content: center
+	position: relative
+	&:hover .select-cover__cart
+		transform: translateY(0)
+		opacity: 1
+.select-cover__cart
+	width: 38px
+	height: 38px
+	background-color: #ec008c
+	position: absolute
+	right: 11px
+	bottom: 11px
+	opacity: 0
+	transform: translateY(20px)
+	transition: 0.5s
+	a
+		width: 100%
+		height: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		&:hover
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+
+	i
+		color: #fff
+		font-size: 18px
 .select-cover__button
 	text-align: center
 	button
@@ -1058,7 +1089,7 @@ a.pink-border
 .get-discounts
 	padding-bottom: 80px
 	padding-top: 70px
-	background-color: $main_color3
+	background: $main_color3 url(../img/get-discounts__bg.jpg) center top no-repeat
 	.row
 		justify-content: center
 	p
@@ -1076,29 +1107,67 @@ a.pink-border
 		width: 270px
 // Секция our_advantages
 .our-advantages
-	min-height: 630px
 	background-color: #fff
 	padding-top: 75px
+	padding-bottom: 40px
+	.item
+		&:first-of-type .our-advantages__item
+			background-color: $main_color2
+		&:nth-of-type(2) .our-advantages__item
+			background-color: $main_color
+		&:last-of-type .our-advantages__item
+			background-color: $main_color3
 	.our-advantages__item
 		margin-bottom: 30px
 		min-height: 236px
 		padding-left: 16px
 		padding-right: 16px
+		display: flex
+		align-items: center
 		p
 			@include fz(22)
 			line-height: 1.2
 			text-align: center
 // Секция main_content
-.main_content
+.join
 	text-align: center
+	padding-bottom: 40px
 	.owl-carousel.owl-drag .owl-item
-		min-height: 300px
-		background-color: #00b6f4
+		width: 570px
+		height: 503px
+		padding-top: 30px
+		background-color: white
+		border: 1px solid #ffd1ee
 		display: flex
-		align-items: center
 		justify-content: center
+	.item-slider-video
+		width: 510px
+		height: 363px
+		margin-bottom: 30px
 	.select2-container
 		width: 300px
+	.item.item-video
+		width: 100%
+		height: 300px
+	.owl-video-tn
+		background-size: cover
+	.owl-theme .owl-dots .owl-dot span
+		width: 16px
+		height: 16px
+		background-color: $main_txt_color
+	.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span
+		background-color: #ff99e8
+	.item-slider__user
+		display: flex
+		align-items: center
+	.item-slider__img-mini
+		width: 50px
+		height: 50px
+		margin-right: 20px
+		border-radius: 50%
+	.item-slider__name
+		span
+			@include fz(22)
 // Пример checkbox
 label.check, label.radio
 	display: inline-flex
@@ -1127,31 +1196,24 @@ label.check, label.radio
 // Секция 
 .intermediate
 	text-align: center
-	background-color: #00b6f4
+	background-color: $main_color2
 	padding-top: 50px
-	padding-bottom: 50px
-	.intermediate_title
-		max-width: 650px
-		margin: auto
-		color: #052243
-		h3
-			margin: 0
-			text-transform: uppercase
-			@include fz(24)
-			color: #052243
+	padding-bottom: 60px
 	.intermediate_wrap
 		margin-top: 40px
-		form
 		.intermediate_item
 			margin-bottom: 20px
-			input
+			input:not([type=submit])
 				width: 100%
-				height: 40px
+				height: 60px
+				padding-left: 30px
 				display: inline-block
-				border: 1px solid #a2b6c9
-				background: #fff
+				border: none
+				@include fz(22)
+				border-bottom: 2px solid $main_txt_color
+				background: transparent
 				color: #43637f
-				padding: 0 0 0 9px
+				transition: border 0.5s
 				&::-webkit-input-placeholder
 					color: #43637f
 				&:-moz-placeholder
@@ -1160,11 +1222,33 @@ label.check, label.radio
 					color: #43637f
 				&:-ms-input-placeholder
 					color: #43637f
-			input[type=submit]
-				background: #fff
-				color: #43637f
+				&:hover
+					outline: 0
+				&:active
+					outline: 0
+					border-bottom: 2px solid #ec008c
+				&:focus
+					outline: 0
+					border-bottom: 2px solid #ec008c
+			.input_wrap
+				i
+					top: 20px
 	
-//	Секция 
+//	Секция delivery
+.delivery
+	padding-top: 80px
+	padding-bottom: 80px
+	background-color: #ffffff
+	.row
+		align-items: center
+.delivery__divider
+	height: 2px
+	background-color: #353535
+.delivery__circle
+	height: 370px
+	box-shadow: 0 0 12px 3px rgba(229, 123, 181,0.6)
+	border-radius: 50%
+	background-color: rgb(252, 244, 245)
 //	Секция
 //	Секция
 //	Секция 
