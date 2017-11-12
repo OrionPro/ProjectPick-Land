@@ -191,7 +191,7 @@ block main
 								p Как создать дизайн чехла за 1 минуту:
 								.ready-to-create__video-inner-left-txt-button
 									button(data-effect="mfp-zoom-in" href="#popup-video" class="open-popup-link main_btn" title='Видео инструкция') Смотреть видео инструкцию
-			.ready-to-create__constructor
+			.ready-to-create__constructor#ready-to-create__constructor
 				p тут должен быть конструктор
 
 	// Секция  .can-not-decide
@@ -209,7 +209,7 @@ block main
 					i.fa.fa-angle-down
 				.accordion_content
 					.row
-						.col-lg-6
+						.col-md-6.col-12
 							input(type="text" name="markPhone" placeholder="Марка телефона")
 							.accordion__select-wrap
 								.select.sex
@@ -280,7 +280,7 @@ block main
 											i.fa.fa-1.fa-square-o
 											i.fa.fa-2.fa-check-square-o
 											span Анимация
-						.col-lg-6
+						.col-md-6.col-12
 							input(type="text" name="madelModel" placeholder="Модель телефона")
 							input(type="text" name="email" placeholder="E-mail")
 							textarea(name="textarea" placeholder="Дополнительное пожелание")
@@ -295,7 +295,7 @@ block main
 				.top-section__title-divider.center
 			.select-cover__select-wrap
 				.row
-					.col-md-4
+					.col-lg-4.col-md-6.col-sm-12
 						.select
 							.slct_arrow
 								i.fa.fa-angle-down
@@ -306,7 +306,7 @@ block main
 								li Kumi Kumi
 								li Kumi Kumi
 							input(type="hidden" name="mark")
-					.col-md-4
+					.col-lg-4.col-md-6.col-sm-12
 						.select
 							.slct_arrow
 								i.fa.fa-angle-down
@@ -315,8 +315,9 @@ block main
 								li 123
 								li 456
 							input(type="hidden" name="mark")
-					.col-md-4
-						button(type="text" class="main_btn") Показать
+					.col-lg-4.col-md-6
+						.select-cover__btn
+							button(type="text" class="main_btn") Показать
 			.select-cover__items
 				.row
 					.col-6.col-md-4.col-xl-2
@@ -400,10 +401,10 @@ block main
 				h2
 					| Закажи оригинальный чехол для себя и близкого человека,
 					br
-					| и получи СКИДКУ!
+					|  и получи СКИДКУ!
 				.top-section__title-divider.center
 			.row
-				.col-10
+				.col-12.col-sm-10
 					p
 						| При заказе двух чехлов предоставляется скидка в размере 50% на второй чехол.
 						| Теперь еще легче радовать родных и близких необычными подарками!
@@ -416,7 +417,7 @@ block main
 				h2
 					| Чехлы от Pickcase - это идеальное сочетание качества и красоты
 					br
-					| для ежедневного использования
+					|  для ежедневного использования
 				.top-section__title-divider.center
 			.row
 				.col-lg-4.col-12.item
@@ -448,9 +449,9 @@ block main
 		.container
 			.section-title
 				h2
-					| Чехлы от Pickcase - это идеальное сочетание качества и красоты
+					| Уже больше 1000 человек со всей Украины получили уникальный
 					br
-					| для ежедневного использования
+					|  аксессуар для своего телефона от Pickcase - ПРИСОЕДИНЯЙСЯ!
 				.top-section__title-divider.center
 			.join-slider.owl-carousel.owl-theme
 				.item
@@ -489,27 +490,60 @@ block main
 			.intermediate_wrap
 				form
 					.row
-						.intermediate_item.col-lg-4.col-md-4.col-sm-4
+						.intermediate_item.col-lg-4.col-md-6.col-sm-12
 							.input_wrap
 								i.fa.fa-check
 								input(name='name', type='text', placeholder='Ваше имя')
-						.intermediate_item.col-lg-4.col-md-4.col-sm-4
+						.intermediate_item.col-lg-4.col-md-6.col-sm-12
 							.input_wrap
 								i.fa.fa-check
 								input(name='phone_mask', class="mask", type='tel', placeholder='+38(___) ___-__-__')
 						input(type='hidden', name='form_name', value='')
 						input(type='hidden', name='form_type', value='normal')
-						.intermediate_item.col-lg-4
+						.intermediate_item.col-lg-4.col-md-5
 							input(type='submit', value='Отправить', class="main_btn")
 	// Секция delivery
 	section.delivery
 		.container
 			.row
-				.col-xl-2.col-md-1
+				.col-xl-2.col-lg-1.col-md-hide
 					.delivery__divider
-				.col-xl-4.col-md-5
+				.col-xl-4.col-lg-5.col-md-6.col-sm-8
 					.delivery__circle
-				.col-xl-4.col-md-5
+						p.title Оперативная доставка
+						.delivery__circle-divider
+						p.gray В течении 1-2 дней
+						.delivery__circle-img
+							img(src=require("../../img/delivery__circle-img.png") class="img-fluid")
+						.delivery__circle-txt
+							p
+								| Новая почта
+								br
+								| Укрпочта
+				.col-xl-4.col-lg-5.col-md-6.col-sm-8
 					.delivery__circle
-				.col-xl-2.col-md-1
+						p.title Удобная оплата
+						.delivery__circle-divider
+						p.gray Комфортным для вас способом
+						.delivery__circle-img
+							img(src=require("../../img/delivery__circle-img2.png") class="img-fluid")
+						.delivery__circle-txt
+							p
+								| Онлайн, перевод на карту
+								br
+								| Наличными при получении
+				.col-xl-2.col-lg-1.col-md-0
 					.delivery__divider
+	// Секция  go-to-the-constructor
+	section.go-to-the-constructor
+		.container
+			.section-title
+				h2
+					| Создайте дизайн чехла, который обязательно понравится Вам и
+					br
+					|  окружающим! Оригинальный, яркий чехол будет радовать
+					br
+					| Вас каждый раз, когда Вы будете пользоваться смартфоном!
+				.top-section__title-divider.center
+			.go-to-the-constructor__btn
+				button(type="button" class="main_btn scroll_to" data-scroll="ready-to-create__constructor") Перейти в конструктор

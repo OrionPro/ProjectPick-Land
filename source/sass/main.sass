@@ -1043,6 +1043,9 @@ a.pink-border
 				transition: 0.5s
 				&:hover
 					background-color: #ffd1ee
+.select-cover__btn
+	button
+		width: 100%
 .select-cover__items
 	margin-bottom: 40px
 .select-cover__item
@@ -1119,7 +1122,7 @@ a.pink-border
 			background-color: $main_color3
 	.our-advantages__item
 		margin-bottom: 30px
-		min-height: 236px
+		height: 236px
 		padding-left: 16px
 		padding-right: 16px
 		display: flex
@@ -1212,16 +1215,16 @@ label.check, label.radio
 				@include fz(22)
 				border-bottom: 2px solid $main_txt_color
 				background: transparent
-				color: #43637f
+				color: $main_txt_color
 				transition: border 0.5s
 				&::-webkit-input-placeholder
-					color: #43637f
+					color: $main_txt_color
 				&:-moz-placeholder
-					color: #43637f
+					color: $main_txt_color
 				&::-moz-placeholder
-					color: #43637f
+					color: $main_txt_color
 				&:-ms-input-placeholder
-					color: #43637f
+					color: $main_txt_color
 				&:hover
 					outline: 0
 				&:active
@@ -1233,7 +1236,8 @@ label.check, label.radio
 			.input_wrap
 				i
 					top: 20px
-	
+			input[type=submit]
+				width: 100%
 //	Секция delivery
 .delivery
 	padding-top: 80px
@@ -1246,10 +1250,39 @@ label.check, label.radio
 	background-color: #353535
 .delivery__circle
 	height: 370px
+	padding-top: 65px
+	text-align: center
 	box-shadow: 0 0 12px 3px rgba(229, 123, 181,0.6)
 	border-radius: 50%
 	background-color: rgb(252, 244, 245)
-//	Секция
+	.title
+		margin-bottom: 15px
+		@include fz(20)
+	p
+		line-height: 1.2
+		@include fz(20)
+	.gray
+		margin-bottom: 15px
+		@include fz(18)
+		color: #878787
+.delivery__circle-divider
+	width: 170px
+	height: 2px
+	background-color: #353535
+	margin: 0 auto 15px
+.delivery__circle-img
+	margin-bottom: 15px
+//	Секция go-to-the-constructor
+.go-to-the-constructor
+	padding-top: 70px
+	padding-bottom: 80px
+	background: #f8f7fc url(../img/go-to-the-constructor__bg.jpg) center top no-repeat
+	.section-title
+		margin-bottom: 50px
+.go-to-the-constructor__btn
+	text-align: center
+.footer__email
+	text-align: center
 //	Секция
 //	Секция 
 //	Секция 
@@ -1259,10 +1292,46 @@ label.check, label.radio
 
 // Секия footer 
 .footer
-	background-color: #333
-	height: 200px
-	flex: 0 0 auto
-
-
+	padding-top: 70px
+	padding-bottom: 70px
+	background-color: #fff
+	@include fz(20)
+	text-align: center
+.footer__email
+	a
+		text-decoration: none
+		color: $main_txt_color
+		transition: 0.5s
+		&:hover
+			text-decoration: none
+			color: #ec008c
+		&:active
+			text-decoration: none
+			color: #ec008c
+		&:focus
+			text-decoration: none
+			color: #ec008c
+.footer__social
+	a
+		color: $main_txt_color
+		&:hover
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+		&:hover i
+			color: #ec008c
+	ul
+		display: flex
+		justify-content: center
+		li
+			line-height: 1
+			margin-right: 30px
+			&:last-of-type
+				margin-right: 0
+			i
+				font-size: 30px
+				transition: 0.5s
 
 

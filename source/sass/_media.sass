@@ -33,6 +33,11 @@
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.section-title
+		h2
+			br
+				display: none
+
 	.header__nav
 		display: none
 	.header__logo
@@ -48,6 +53,55 @@
 			height: 190px
 		.owl-carousel.owl-drag .owl-item
 			height: 330px
+	.delivery__divider
+		display: none
+	.delivery__circle
+		height: 330px
+		padding-top: 55px
+		.title
+			@include fz(18)
+		p
+			@include fz(18)
+		.gray
+			@include fz(16)
+	.delivery__circle-img
+		width: 64px
+		margin: 0 auto 12px
+	.intermediate
+		.row
+			justify-content: center
+		.intermediate_wrap
+			.intermediate_item
+				margin-bottom: 40px
+				&:last-of-type
+					margin-bottom: 0
+				input:not([type=submit])
+					height: 48px
+				input[type=submit]
+					height: 47px
+					line-height: 47px
+	.our-advantages
+		.our-advantages__item
+			padding-top: 20px
+			padding-bottom: 20px
+			height: inherit
+	.select-cover
+		.row
+			justify-content: center
+		.select-cover__btn
+			margin-bottom: 40px
+	.can-not-decide
+		.accordion__select-wrap
+			.select.sex
+				.slct
+					width: 100%
+			.select.color
+				.slct
+					width: 100%
+		.accordion__check-list-items
+			flex-direction: column
+	.ready-to-create__video-inner-left-txt-links
+		margin-bottom: 20px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -96,7 +150,19 @@
 	.can-not-decide
 		.accordion__check-list-items
 			flex-direction: column
-
+	.delivery
+		.row
+			justify-content: center
+	.delivery__circle
+		margin-bottom: 20px
+	.footer
+		.row
+			flex-direction: column
+			.footer__email
+				margin-bottom: 7px
+			.copyright
+				display: inline-block
+				margin-bottom: 15px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
@@ -108,6 +174,9 @@
 				min-height: 270px
 				margin: 0 auto 7px
 				padding: 15px
+	.delivery__circle
+		width: 330px
+		margin: 0 auto 20px
 // Extra small devices (portrait phones, less than 521px)
 @media only screen and (max-width : 520px)
 	/**/
@@ -120,6 +189,25 @@
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
+	.ready-to-create__video
+		padding: 10px
+	.ready-to-create__video-inner-left-txt-links
+		margin-bottom: 20px
+		display: block
+		a
+			display: table
+			margin-right: 0
+	.three-steps__left-txt
+		width: 90%
+	.three-steps__right-block-item-img
+		margin-right: 10px
+	.ready-to-create__video-inner-left-txt-button
+		button
+			width: 95%
+	.can-not-decide
+		.accordion_content_button
+			button
+				width: 100%
 	.our-advantages .our-advantages__item .our-advantages__img i
 		font-size: 37px
 	.header__title
@@ -131,7 +219,14 @@
 		.intermediate_title
 			h3
 				font-size: 20px
-
+	.delivery__circle
+		width: 280px
+		height: 280px
+	html
+		font-size: 12px
+	.go-to-the-constructor__btn
+		button
+			width: 280px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
