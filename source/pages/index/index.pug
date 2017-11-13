@@ -5,13 +5,13 @@ block main
 	section.top-section
 		.container
 			.row
-				.col-lg-8.offset-lg-4
+				.col-xl-8.offset-xl-4.col-lg-10
 					.top-section__title
 						h1
 							| Покажи свою индивидуальность
 						.top-section__title-divider
 						p Создай уникальный и неповторимый дизайн чехла для смартфона по своему вкусу!
-						button(type="text" class="main_btn") Создать чехол
+						button(type="button" class="main_btn scroll_to" data-scroll="ready-to-create__constructor") Создать чехол
 	// Секция  unique-design
 	section.unique-design
 		.container
@@ -445,7 +445,7 @@ block main
 							| онлайн конструктор.
 
 	// Секция main_content
-	section.join
+	section.join#join
 		.container
 			.section-title
 				h2

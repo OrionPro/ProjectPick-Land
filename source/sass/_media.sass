@@ -11,14 +11,46 @@
 			top: 10px
 			i
 				color: #000000
+@media only screen and (max-width : 1500px)
+	/**/
+	.header__cloud
+		display: none
+	.header-modal-cloud
+		display: block
+	.header-modal
+		display: none
 // Large devices (desktops, less than 1200px)
 @media only screen and (max-width : 1199px)
 	/**/
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
-	.header__modal
-		margin-top: 20px
+	.header__logo
+		img
+			width: 80px
+	.header-modal
+		button
+			width: 130px
+	.header__nav
+		ul
+			li.divider
+				width: 20px
+	.top-section
+		min-height: 100%
+		padding-bottom: 50px
+		.row
+			align-items: center
+			justify-content: center
+	.top-section__title
+		margin-top: 45px
+		padding: 30px 40px 40px 40px
+		align-items: center
+		justify-content: center
+		p
+			text-align: center
+			margin-bottom: 30px
+		button
+			margin-bottom: 0
 	.intermediate
 		.intermediate_wrap
 			margin-bottom: 20px
@@ -38,8 +70,13 @@
 			br
 				display: none
 
+
 	.header__nav
-		display: none
+		margin-right: auto
+		ul
+			display: none
+		.visible-mobile
+			display: flex
 	.header__logo
 		display: block
 		margin-top: 0
@@ -93,15 +130,22 @@
 	.can-not-decide
 		.accordion__select-wrap
 			.select.sex
+				width: 100%
 				.slct
 					width: 100%
 			.select.color
+				width: 100%
 				.slct
 					width: 100%
 		.accordion__check-list-items
 			flex-direction: column
 	.ready-to-create__video-inner-left-txt-links
 		margin-bottom: 20px
+
+// Small devices (landscape phones, less than 768px)
+@media only screen and (max-width : 860px)
+	.header__logo
+		margin-left: 60px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -125,11 +169,14 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
-	
-	.header__title
+
+	.header__logo
+		margin-left: 15px
+	.top-section__title
 		h1
-			font-size: 30px
-			margin-top: 40px
+			@include fz(30)
+		p
+			@include fz(18)
 	.header__modal
 		margin-top: 40px
 	[off-canvas*=left]
@@ -163,9 +210,28 @@
 			.copyright
 				display: inline-block
 				margin-bottom: 15px
+	.sticky-wrapper
+		&.is-sticky
+			.header
+				height:  auto!important
+// Extra small devices (portrait phones, less than 576px)
+@media only screen and (max-width : 665px)
+	.header__logo
+		margin-left: 40px
+@media only screen and (max-width : 605px)
+	.header__logo
+		margin-left: 70px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
+	nav[canvas]
+		top: 11px
+		left: 10px
+	.header__logo
+		margin-left: 85px
+	.header-modal
+		margin-right: 10px
+		margin-left: auto
 	.unique-design__wrap
 		.unique-design__item
 			margin-bottom: 15px
@@ -177,6 +243,15 @@
 	.delivery__circle
 		width: 330px
 		margin: 0 auto 20px
+	.top-section__title
+		padding: 10px 10px 20px 10px
+		button
+			width: 90%
+	.header__nav
+		display: none
+	.sticky-wrapper
+		.header
+			height:  62px
 // Extra small devices (portrait phones, less than 521px)
 @media only screen and (max-width : 520px)
 	/**/
@@ -227,6 +302,8 @@
 	.go-to-the-constructor__btn
 		button
 			width: 280px
+	a.pink-border
+		line-height: 1.6
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

@@ -13,9 +13,6 @@ $(document).ready(function () {
 		topSpacing: 0,
 		widthFromWrapper: false
 	});
-
-	// пример анимации через библиотечку animat (но лучше анимировать через GSAP)
-	$('.our_advantages h2').animated("fadeInUp");
 	// инициализация tooltipster
 	if (window.matchMedia("(min-width: 992px)").matches) {
 		$(".header__modal a").tooltipster({
@@ -52,7 +49,10 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
-
+	$(".header").sticky({
+		topSpacing: 0,
+		widthFromWrapper: false
+	});
 });
 
 $(window).scroll(function () {

@@ -56,20 +56,52 @@ html(class="no-js" lang="ru")
 				header(class="header")
 					.container
 						.row
+							.header__cloud
+								img(src=require("../../img/header__cloud.png"))
+								a(href="#popup" data-effect="mfp-zoom-in" class="open-popup-link") Скидка на чехол ТУТ
 							.header__logo
 								a(href="/" class="logo" title="Логотип")
 									img(src=require("../../img/logo.png"))
 							nav.header__nav.cl-effect-5
 								ul
-									-var links = [{title:'Отзывы', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', href:'#', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн', href:'#', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
+									-var links = [{title:'Отзывы', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', classNameLink: 'open-popup-link', href:'#popup', dataEffect: 'mfp-zoom-in', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн',attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#ready-to-create__constructor', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
 									each i in links
 										li(class=i.className)
 											case i.linksNeeded
 												when 0
 													- break
 												when 1
-													a(href=i.href)
+													a(href=i.href data-scroll=i.attr class=i.classNameLink data-effect=i.dataEffect)
 														span(data-hover=i.title)= i.title
+
+									li.dropdown
+										.header__nav-dropdown
+											p.
+												viber  |  whatsapp
+											.header__nav-dropdown-item
+												span +38 (096) 098-20-12
+												i.fa.fa-angle-down
+											.header__nav-dropdown-item
+												span +38 (066) 851-87-43
+											ul.dropdown-menu
+												li
+													a(href='#' class="title")
+														| Не дозвонились? Заказ звонка!
+												li
+													a(href='tel:+380960982012')
+														i.fa.fa-phone-square
+														span +38 (096) 098-20-12
+												li
+													a(href='skype:pickcase?call')
+														i.fa.fa-skype
+														span pickcase
+												li
+													a(href='mailto:smile@pickcase.com.ua')
+														i.fa.fa-envelope
+														span smile@pickcase.com.ua
+									li.divider
+								ul.visible-mobile
+									li.divider
 									li.dropdown
 										.header__nav-dropdown
 											p.
@@ -98,6 +130,8 @@ html(class="no-js" lang="ru")
 									li.divider
 							.header-modal
 								button.main_btn2 Заказать
+							.header-modal-cloud
+								button(type="button" class="main_btn2 open-popup-link" data-effect="mfp-zoom-in" data-mfp-src="#popup") Скидка ТУТ
 			block main
 			block footer
 				// Секция footer
@@ -124,10 +158,15 @@ html(class="no-js" lang="ru")
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu
-					-var obj1 = [{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 38 425 961 68', href:'tel:73842596168'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'Примеры', href:'#'}];
-					each i in obj1
-						li
-							a(href=i.href)= i.title
+					-var links = [{title:'Отзывы', attr: 'join', href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{title:'Доставка и оплата', linksNeeded: 1},{title:'Свой дизайн', href:'#', attr: 'ready-to-create__constructor', href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{title:'+38 (096) 098-20-12', href:'tel:+380960982012',linksNeeded: 1},{title:'+38 (066) 851-87-43', href:'tel:+380668518743',linksNeeded: 1},{title:'pickcase', href:'skype:pickcase?call',linksNeeded: 1},{title:'smile@pickcase.com.ua', href:'mailto:smile@pickcase.com.ua',linksNeeded: 1},{title:'Не дозвонились? Заказ звонка!', href:'#',linksNeeded: 1}];
+					each i in links
+						li(class=i.className)
+							case i.linksNeeded
+								when 0
+									- break
+								when 1
+									a(href=i.href data-scroll=i.attr class=i.classNameLink)
+										span(data-hover=i.title)= i.title
 		div(off-canvas='id-2 right push')
 		div(off-canvas='id-3 top overlay')
 		div(off-canvas='id-4 bottom shift')
