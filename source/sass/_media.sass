@@ -2,13 +2,13 @@
 @media only screen and (min-width : 1199px) and (max-height : 685px)
 	.mfp-close-btn-in
 		.mfp-close
-			top: 10px
+			top: 20px
 			i
 				color: #000000
 @media only screen and (max-width : 1199px) and (max-height : 666px)
 	.mfp-close-btn-in
 		.mfp-close
-			top: 10px
+			top: 20px
 			i
 				color: #000000
 @media only screen and (max-width : 1500px)
@@ -29,6 +29,9 @@
 		img
 			width: 80px
 	.header-modal
+		button
+			width: 130px
+	.header-modal-cloud
 		button
 			width: 130px
 	.header__nav
@@ -221,6 +224,23 @@
 @media only screen and (max-width : 605px)
 	.header__logo
 		margin-left: 70px
+	.white-popup
+		&.popup-sign
+			width: 100%
+			padding: 40px 20px 20px 20px
+			p.modal-title
+				br
+					display: none
+			.instagram-vidget
+				width: 100%
+		&.popup-delivery
+			padding: 40px 10px 10px 10px
+			p
+				text-indent: 15px
+				margin-bottom: 15px
+			ul
+				padding-left: 15px
+				margin-bottom: 15px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
@@ -229,7 +249,7 @@
 		left: 10px
 	.header__logo
 		margin-left: 85px
-	.header-modal
+	.header-modal-cloud
 		margin-right: 10px
 		margin-left: auto
 	.unique-design__wrap

@@ -5,14 +5,14 @@
 1 verbose cli   'start',
 1 verbose cli   '--scripts-prepend-node-path=auto' ]
 2 info using npm@3.10.10
-3 info using node@v6.11.0
+3 info using node@v6.11.5
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle webpack-app@1.0.0~prestart: webpack-app@1.0.0
 6 silly lifecycle webpack-app@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle webpack-app@1.0.0~start: webpack-app@1.0.0
 8 verbose lifecycle webpack-app@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle webpack-app@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;D:\work\pickcase-land\node_modules\.bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;c:\Program Files\wget\;C:\Users\Orion\AppData\Local\Microsoft\WindowsApps;
-10 verbose lifecycle webpack-app@1.0.0~start: CWD: D:\work\pickcase-land
+9 verbose lifecycle webpack-app@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;D:\work\project\ProjectPick-Land\node_modules\.bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\wget;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files\tidy\tidy.exe;C:\Users\Александр\AppData\Local\Microsoft\WindowsApps;C:\Users\Александр\AppData\Roaming\npm
+10 verbose lifecycle webpack-app@1.0.0~start: CWD: D:\work\project\ProjectPick-Land
 11 silly lifecycle webpack-app@1.0.0~start: Args: [ '/d /s /c', 'webpack-dev-server --env development' ]
 12 silly lifecycle webpack-app@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle webpack-app@1.0.0~start: Failed to exec start script
@@ -24,13 +24,13 @@
 14 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:891:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose stack     at maybeClose (internal/child_process.js:920:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid webpack-app@1.0.0
-16 verbose cwd D:\work\pickcase-land
-17 error Windows_NT 10.0.15063
+16 verbose cwd D:\work\project\ProjectPick-Land
+17 error Windows_NT 10.0.14393
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start" "--scripts-prepend-node-path=auto"
-19 error node v6.11.0
+19 error node v6.11.5
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
 22 error webpack-app@1.0.0 start: `webpack-dev-server --env development`

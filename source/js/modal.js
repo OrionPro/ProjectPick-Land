@@ -24,7 +24,9 @@ $(document).ready(function () {
 		magnificPopup.close();
 	});
 // 	// Открываем модальное окно
-	$(".open-popup-link").click(function () {
+	$(document).on('click', '.open-popup-link', function () {
+		console.log('тут');
+
 		let id = $(this).attr('href');
 		let idBtn = $(this).data('mfp-src');
 		let txt = $(this).data('info');

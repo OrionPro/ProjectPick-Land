@@ -51,8 +51,6 @@ $(window).scroll(function () {
 	// Close Slidebar links
 	$('[off-canvas] a').on('click', function (event) {
 		event.preventDefault();
-		event.stopPropagation();
-
 		var url = $(this).attr('href'),
 			target = $(this).attr('target') ? $(this).attr('target') : '_self';
 

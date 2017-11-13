@@ -3,50 +3,69 @@
 	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
 	form
 		p.modal-title.
-			Введите данные
-		p.modal-paragraph.
-			и мы Вам перезвоним
+			Заказ звонка
 		div
 			.input_wrap
 				i.fa.fa-check
-				input(name="name" type="text" placeholder="Имя")
-			.input_wrap
-				i.fa.fa-check
-				input(name="phone" type="tel" placeholder="Введите свой телефон")
+				input(name="name" type="text" placeholder="Ваше имя")
 			.input_wrap
 				i.fa.fa-check
 				input(name="phone_mask" type="tel" class="mask" placeholder="+38(___) ___-__-__")
-			.input_wrap
-				i.fa.fa-check
-				input(name="email" type="email" placeholder="E-mail")
-			.input_wrap
-				i.fa.fa-check
-				textarea(name="textarea" type="text" placeholder="Описание заяки")
-			.select
-				.slct_arrow
-					i.fa.fa-angle-down
-				a(href="#" class="slct") Выбор заголовков:
-				ul.drop
-					li Вы крутые
-					li Я в Вас влюбился
-					li Быстрей Вас только Флеш
-				input(type="hidden" name="services")
-			.select
-				.slct_arrow
-					i.fa.fa-angle-down
-				a(href="#" class="slct") Выбор заголовков:
-				ul.drop
-					li Вы крутые
-					li Я в Вас влюбился
-					li Быстрей Вас только Флеш
-				input(type="hidden" name="services")
-		input(type="hidden" name="form_name" value="")
+		input(type="hidden" name="form_name" value="Не дозвонились? Заказ звонка!")
 		input(type="hidden" name="form_type" value="modal")
-		input(type="submit" value="Отправить")
-.overlay
+		input(type="submit" value="Заказать")
+	.overlay
+//Модальное окно sign
+#popup-sign.mfp-hide.white-popup.mfp-with-anim.popup.popup-sign
+	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
+	form
+		p.modal-title
+			| Подпишись на наш Instagram,
+			br
+			| и получи скидку на чехол
+			span  39 грн.
+			| !
+		.instagram-vidget
+		input(type="hidden" name="form_name" value="Не дозвонились? Заказ звонка!")
+		input(type="hidden" name="form_type" value="modal")
+	.overlay
+//Модальное окно delivery
+#popup-delivery.mfp-hide.white-popup.mfp-with-anim.popup.popup-sign.popup-delivery
+	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
+	form
+		p.modal-title
+			| Доставка и оплата
+		p
+			| On the other hand, we denounce with righteous indignation and dislike
+			| men who are so beguiled and demoralized by the charms of pleasure of
+			| the moment, so blinded by desire, that they cannot foresee the pain and t
+			| rouble that are bound to ensue; and equal blame belongs to those who
+			| fail in their duty through weakness of will, which is the same as saying through
+			| shrinking from toil and pain.
+		ul
+			li
+				| 1. hese cases are perfectly simple and easy to distinguish;
+			li
+				| 2. a free hour, when our power of choice is untrammelled;
+			li
+				| 3. and when nothing prevents our being able to do what;
+		p
+			| But in certain circumstances and owing to the claims of duty or the
+			| obligations of business it will frequently occur that pleasures have to be
+			| repudiated and annoyances accepted.
+		ul
+			li
+				| - The wise man therefore always holds in these matters to this principle;
+			li
+				| - Рof selection: he rejects pleasures to secure other greater pleasures;
+			li
+				| - Рor else he endures pains to avoid worse pains.
+		input(type="hidden" name="form_name" value="Не дозвонились? Заказ звонка!")
+		input(type="hidden" name="form_type" value="modal")
+	.overlay
 #popup-video.mfp-hide.white-popup.mfp-with-anim.popup
 	iframe(width="100%" height="380" src="https://www.youtube.com/embed/NTVVaUIgCzY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen)
-.overlay
+	.overlay
 // Модальное окно success
 #popup-success.mfp-hide.white-popup.mfp-with-anim.popup
 	p.success_mail Заявка отправлена
