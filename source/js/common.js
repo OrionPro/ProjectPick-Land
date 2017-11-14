@@ -15,23 +15,23 @@ import '../sass/main.sass';
 import functions from '../js/_functions.js';
 
 // табы tabs
-function tabs(obj) {
-	const buttons = document.querySelectorAll(obj.btn);
-	const bodyTabs = document.querySelectorAll(obj.tabsBody);
-
-	let func = function(){
-		"use strict";
-		for( let i = buttons.length; i--; ){
-			buttons[i].classList.remove(obj.classBtn);
-			bodyTabs[i].classList.remove(obj.classBody);
-		}
-		this.classList.add(obj.classBtn);
-		let item = [].indexOf.call(buttons,this);
-		bodyTabs[item].classList.add(obj.classBody)
-	};
-
-	[].forEach.call(buttons,item => item.addEventListener('click',func));
-}
+// function tabsIndex(obj) {
+// 	const buttons = document.querySelectorAll(obj.btn);
+// 	const bodyTabs = document.querySelectorAll(obj.tabsBody);
+//
+// 	let func = function(){
+// 		"use strict";
+// 		for( let i = buttons.length; i--; ){
+// 			buttons[i].classList.remove(obj.classBtn);
+// 			bodyTabs[i].classList.remove(obj.classBody);
+// 		}
+// 		this.classList.add(obj.classBtn);
+// 		let item = [].indexOf.call(buttons,this);
+// 		bodyTabs[item].classList.add(obj.classBody)
+// 	};
+//
+// 	[].forEach.call(buttons,item => item.addEventListener('click',func));
+// }
 // Определения браузера
 function get_name_browser() {
 	// получаем данные userAgent
@@ -109,19 +109,7 @@ $(document).ready(function () {
 		titleClick: '.accordion .accordion_title',
 		allContent: '.accordion .accordion_content'
 	});
-	// вызов tabs
-	tabs({
-		btn:'.tabs-items-wrap > .tabs-item',
-		tabsBody:'.tabs-wrap',
-		classBody:'active',
-		classBtn: 'active'
-	});
-	tabs({
-		btn:'.tabs-items-wrap-inner > .tabs-item',
-		tabsBody:'.tabs-wrap-inner',
-		classBody: 'active',
-		classBtn:'active'
-	});
+
 
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
 		// $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");

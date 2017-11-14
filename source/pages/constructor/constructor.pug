@@ -1,0 +1,176 @@
+doctype html
+html(class="no-js" lang="ru")
+	head
+		meta(charset = 'utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title
+			block title
+		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
+		include ../../libs/bootstrap.min.html
+	body
+		section.constructor-section
+			.container
+				.ready-to-create__constructor
+					.ready-to-create__constructor-header
+						.row
+							.offset-lg-1.col-lg-3
+								.ready-to-create__constructor-steps
+									.ready-to-create__constructor-step.active
+										.ready-to-create__constructor-step-info
+											span.ready-to-create__constructor-step-info-value Выбери
+											i.fa.fa-close
+										span.ready-to-create__constructor-step-value 1. iPhone 7
+							.col-lg-4
+								.ready-to-create__constructor-steps
+									.ready-to-create__constructor-step.center-step
+										.ready-to-create__constructor-step-info
+											span.ready-to-create__constructor-step-info-value Задизайни
+											i.fa.fa-close
+										span.ready-to-create__constructor-step-value 2. Дизайн чехла
+							.col-lg-3
+								.ready-to-create__constructor-steps
+									.ready-to-create__constructor-step
+										.ready-to-create__constructor-step-info
+											span.ready-to-create__constructor-step-info-value Закажи
+											i.fa.fa-close
+										span.ready-to-create__constructor-step-value 3. Оформить заказ
+					.tabs-wrap.active(data-tab="1")
+						.ready-to-create__constructor-title
+							p.ready-to-create__constructor-title-val Выберите модель телефона
+							.ready-to-create__constructor-divider
+						.ready-to-create__constructor-model-canvas-container
+							// картинка для примера
+							img(src=require("../../img/constructor-model-canvas-container.jpg"))
+						.ready-to-create__constructor-phonegroup
+							.row
+								.offset-lg-1.col-lg-3
+									.ready-to-create__constructor-phonegroup-item
+										.select
+											.slct_arrow
+												i.fa.fa-angle-down
+											a(href="#" class="slct") Apple
+											ul.drop
+												li Apple
+												li Sumsung
+												li Xiaomi
+												li Meizu
+												li Nokia
+												li Microsoft
+												li Lenovo
+											input(type="hidden" name="phonegroup-manufacturer")
+								.col-lg-4
+									.ready-to-create__constructor-phonegroup-item.center-select
+										.select
+											.slct_arrow
+												i.fa.fa-angle-down
+											a(href="#" class="slct") Nexus 6
+											ul.drop
+												li Nexus
+												li Nexus 6
+												li Nexus 6
+												li Nexus 5
+												li Nexus 6
+										input(type="hidden" name="phonegroup-model")
+								.col-lg-3
+									.ready-to-create__constructor-phonegroup-item
+										button(type="submit" class="main_btn tabs-item" data-tab="2") Создать чехол
+					.tabs-wrap(data-tab="2")
+						.ready-to-create__constructor-title
+							p.ready-to-create__constructor-title-val Открыть подсказки ЗДЕСЬ
+							.ready-to-create__constructor-divider
+						.ready-to-create__constructor-model-canvas-container
+							// картинка для примера
+							img(src=require("../../img/constructor-model-canvas-container.jpg"))
+						.ready-to-create__constructor-design
+							.ready-to-create__constructor-design-load
+								.row
+									.col-lg-3.offset-lg-1
+										.ready-to-create__constructor-design-txt
+											p.title Выберите изображение:
+											p.description
+												| Фото должно быть формата .jpg, .png,
+												| .gif и не менее 1000 пикселей в высоту.
+									.col-lg-2
+										button(type="button" class="main_btn") Галерея
+									.col-lg-2
+										form
+											.ready-to-create__constructor-design-input-file
+												span Загрузить с ПК
+												input(type="file" name='field' multiple)
+									.col-lg-3
+										.ready-to-create__constructor-design-social-item
+											p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
+											.ready-to-create__constructor-design-social
+												a(href="#")
+													img(src=require("../../img/constructor-design-social-vk.jpg"))
+												a(href="#")
+													img(src=require("../../img/constructor-design-social-fb.jpg"))
+												a(href="#")
+													img(src=require("../../img/constructor-design-social-inst.jpg"))
+						.ready-to-create__constructor-design-option
+							.row
+								.col-lg-10.offset-lg-1
+									.select
+										.slct_arrow
+											i.fa.fa-angle-down
+										a(href="#" class="slct") Verdana
+										ul.drop
+											li Roboto
+											li Helvetica
+											li Segoe
+											li BlinkMacSystemFont
+											li sans-serif
+											li Arial
+										input(type="hidden" name="design-option")
+								.col-lg-10.offset-lg-1
+									input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
+								.col-lg-10.offset-lg-1
+									.ready-to-create__constructor-design-option-wrap
+										.ready-to-create__constructor-design-option-color-switchs
+											.ready-to-create__constructor-design-option-text-texture-switchs
+												span Цвет шрифта:
+											.ready-to-create__constructor-design-option-font-btn
+												.ready-to-create__constructor-design-option-font-btn-item
+
+												.ready-to-create__constructor-design-option-font-btn-item
+
+												.ready-to-create__constructor-design-option-font-btn-wrap
+													button
+										.ready-to-create__constructor-design-option-color-switchs
+											.ready-to-create__constructor-design-option-text-texture-switchs
+												span Текстура шрифта:
+											.ready-to-create__constructor-design-option-font-btn
+												.ready-to-create__constructor-design-option-font-btn-item
+													img(src=require("../../img/three-steps__left-img-block.jpg"))
+												.ready-to-create__constructor-design-option-font-btn-item
+
+												.ready-to-create__constructor-design-option-font-btn-wrap
+													button
+										.ready-to-create__constructor-design-option-toolbar
+											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
+												i.fa.fa-angle-double-left
+												| Назад
+											.ready-to-create__constructor-design-option-toolbar-content
+												.ready-to-create__constructor-design-option-toolbar-content-item
+												.ready-to-create__constructor-design-option-toolbar-content-item
+
+												.ready-to-create__constructor-design-option-toolbar-content-item
+												.ready-to-create__constructor-design-option-toolbar-content-item
+												.ready-to-create__constructor-design-option-toolbar-content-item
+
+											.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
+												| Заказать
+												i.fa.fa-angle-double-right
+					.tabs-wrap(data-tab="3")
+						.ready-to-create__constructor-title
+							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone 7 готов
+							.ready-to-create__constructor-divider
+						.ready-to-create__constructor-model-canvas-container
+							// картинка для примера
+							img(src=require("../../img/constructor-model-canvas-container.jpg"))
+						.ready-to-create__constructor-design-option-wrap
+							.ready-to-create__constructor-design-option-toolbar
+								.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
+									i.fa.fa-angle-double-left
+									| Назад
