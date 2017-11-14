@@ -25,8 +25,6 @@ $(document).ready(function () {
 	});
 // 	// Открываем модальное окно
 	$(document).on('click', '.open-popup-link', function () {
-		console.log('тут');
-
 		let id = $(this).attr('href');
 		let idBtn = $(this).data('mfp-src');
 		let txt = $(this).data('info');

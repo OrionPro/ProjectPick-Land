@@ -169,8 +169,30 @@ html(class="no-js" lang="ru")
 						.ready-to-create__constructor-model-canvas-container
 							// картинка для примера
 							img(src=require("../../img/constructor-model-canvas-container.jpg"))
-						.ready-to-create__constructor-design-option-wrap
-							.ready-to-create__constructor-design-option-toolbar
-								.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
-									i.fa.fa-angle-double-left
-									| Назад
+						.ready-to-create__constructor-checkout
+							.row
+								.col-lg-10.offset-lg-1
+									form
+										.select
+											.slct_arrow
+												i.fa.fa-angle-down
+											a(href="#" class="slct") Verdana
+											ul.drop
+												li Roboto
+												li Helvetica
+												li Segoe
+												li BlinkMacSystemFont
+												li sans-serif
+												li Arial
+											input(type="hidden" name="constructor-checkout")
+										div
+											input(type="text" placeholder="Введите e-mail" class="ready-to-create__constructor-checkout-input")
+										div
+											input(type="text" placeholder="Введите номер телефона" class="ready-to-create__constructor-checkout-input")
+										div
+											textarea(placeholder="Введите ваш комментарий" class="ready-to-create__constructor-checkout-textarea")
+									.ready-to-create__constructor-design-option-wrap
+										.ready-to-create__constructor-design-option-toolbar
+											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
+												i.fa.fa-angle-double-left
+												| Назад

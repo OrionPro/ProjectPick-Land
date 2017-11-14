@@ -7,10 +7,8 @@ body
 	margin: 0
 	min-width: 320px
 	position: relative
-	line-height: 1.6
-	font-family: $font_FuturaBook
+	@include font($main_txt_color, 16, $font_FuturaBook, 1.6)
 	overflow-x: hidden
-	color: $main_txt_color
 	-webkit-tap-highlight-color: transparent
 p,ul
 	padding: 0
@@ -288,6 +286,7 @@ li
 		margin-bottom: 30px
 		padding-left: 20px
 		@include fz(22)
+		font-family: $font_FuturaBook
 		border: 1px solid #353535
 		transition: 0.5s
 		&:hover
@@ -364,6 +363,46 @@ li
 	margin-right: 5px
 	&:last-of-type
 		margin-right: 0
+.ready-to-create__constructor-checkout
+	.select
+		display: block
+		.slct
+			width: 100%
+.ready-to-create__constructor-checkout-input
+	width: 100%
+	height: 60px
+	margin-bottom: 10px
+	padding-left: 20px
+	@include fz(22)
+	font-family: $font_FuturaBook
+	border: 1px solid #353535
+	transition: 0.5s
+	&:hover
+		outline: 0
+	&:active
+		border: 1px solid #ec008c
+		outline: 0
+	&:focus
+		outline: 0
+		border: 1px solid #ec008c
+.ready-to-create__constructor-checkout-textarea
+	width: 100%
+	height: 130px
+	margin-bottom: 10px
+	padding-left: 20px
+	padding-top: 10px
+	@include fz(22)
+	font-family: $font_FuturaBook
+	border: 1px solid #353535
+	transition: 0.5s
+	&:hover
+		outline: 0
+	&:active
+		border: 1px solid #ec008c
+		outline: 0
+	&:focus
+		outline: 0
+		border: 1px solid #ec008c
 // media
 
 // Large devices (desktops, less than 1200px)
