@@ -335,6 +335,8 @@ li
 .ready-to-create__constructor-design-option-toolbar
 	display: flex
 	align-items: center
+	&.mobile
+		display: none
 .ready-to-create__constructor-design-option-toolbar-backward
 	@include fz(22)
 	cursor: pointer
@@ -403,23 +405,119 @@ li
 	&:focus
 		outline: 0
 		border: 1px solid #ec008c
+.ready-to-create__constructor-checkout-btn
+	text-align: center
+.ready-to-create__constructor-checkout
+	.ready-to-create__constructor-design-option-toolbar
+		margin-top: -45px
 // media
 
 // Large devices (desktops, less than 1200px)
 @media only screen and (max-width : 1199px)
 	/**/
+	.ready-to-create__constructor-steps
+		.ready-to-create__constructor-step
+			&.center-step-mobile
+				margin: auto
+	.ready-to-create__constructor-phonegroup-item
+		&.center-select-mobile
+			text-align: center
+	.ready-to-create__constructor-design-txt
+		padding-left: 10px
+		margin-bottom: 20px
+
+	.ready-to-create__constructor-design-option-toolbar-content-item
+		margin-bottom: 5px
+
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.ready-to-create__constructor
+		.select
+			display: block
+			.slct
+				width: 100%
+	.ready-to-create__constructor-steps
+		.ready-to-create__constructor-step
+			width: 200px
+	.ready-to-create__constructor-design-option
+		padding-left: 10px
+		padding-right: 10px
+	.ready-to-create__constructor-checkout
+		padding-left: 10px
+		padding-right: 10px
+	.ready-to-create__constructor-phonegroup-item
+		button
+			width: 200px
+	.ready-to-create__constructor-phonegroup
+		padding-left: 10px
+		padding-right: 10px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
+	.ready-to-create__constructor-steps
+		padding-top: 10px
+		.ready-to-create__constructor-step
+			&.center-step-mobile
+				margin: 0 auto 10px
+			&.center-step
+				margin: 0 auto 10px
+	.ready-to-create__constructor-step-info
+		display: none
+	.ready-to-create__constructor-design-load
+		padding-left: 10px
+		padding-right: 10px
+		button
+			&:first-of-type
+				margin-bottom: 10px
+	.ready-to-create__constructor-design-input-file
+		margin-bottom: 20px
+	.ready-to-create__constructor-phonegroup
+		padding-left: 10px
+		padding-right: 10px
+	.ready-to-create__constructor
+		.select
+			display: block
+			.slct
+				width: 100%
+	.ready-to-create__constructor-design-option-wrap
+		padding-left: 0
+	.ready-to-create__constructor-design-option-toolbar-content
+		flex-direction: column
+	.ready-to-create__constructor-design-option-toolbar-content-item
+		margin-right: 0
+	.ready-to-create__constructor-checkout .ready-to-create__constructor-design-option-toolbar
+		margin-top: 10px
+	.ready-to-create__constructor-design-option-toolbar
+		display: flex
+		align-items: center
+		justify-content: center
+		.ready-to-create__constructor-design-option-toolbar-order
+			display: none
+		.ready-to-create__constructor-design-option-toolbar-backward
+			display: none
+		&.mobile
+			margin-top: 10px
+			display: block
+			text-align: center
+			.ready-to-create__constructor-design-option-toolbar-order
+				display: block
+			.ready-to-create__constructor-design-option-toolbar-backward
+				display: block
+		&.mobile-step3
+			.ready-to-create__constructor-design-option-toolbar-backward
+				display: block
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
+	.ready-to-create__constructor-checkout-btn
+		button
+			width: 100%
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
+	.ready-to-create__constructor-design-option-text-texture-switchs
+		line-height: 1
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

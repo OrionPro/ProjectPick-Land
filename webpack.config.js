@@ -49,11 +49,13 @@ const common = merge([
 			}),
 			new HtmlWebpackPlugin({
 				filename: 'constructor.html',
-				chunks: ['constructor', 'common'],
+				chunks: ['constructor'],
 				template: PATHS.source + '/pages/constructor/constructor.pug'
 			}),
 			new webpack.optimize.CommonsChunkPlugin({
-				name: 'common'
+				name: 'common',
+				chunks: ["index"],
+				minChunks: 2
 			}),
 			new webpack.ProvidePlugin({
 				$: 'jquery',

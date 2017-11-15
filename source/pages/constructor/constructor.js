@@ -1,6 +1,6 @@
-require("../../libs/libs").jqueryui();
-require("../../libs/libs").matchMedia();
-require("../../libs/libs").mCustomScrollbar();
+require("../../libs/jquery-ui.min");
+require("../../libs/matchMedia");
+require("../../libs/jquery.mCustomScrollbar.concat.min");
 import './constructor.sass';
 
 import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
@@ -20,31 +20,10 @@ function tabs(parent) {
 
 	});
 }
-// Определения браузера
-function get_name_browser() {
-	// получаем данные userAgent
-	const ua = navigator.userAgent;
-	// с помощью регулярок проверяем наличие текста,
-	// соответствующие тому или иному браузеру
-	if (ua.search(/Edge/) > 0) return 'Edge';
-	if (ua.search(/Chrome/) > 0) return 'Google Chrome';
-	if (ua.search(/Firefox/) > 0) return 'Firefox';
-	if (ua.search(/Opera/) > 0) return 'Opera';
-	if (ua.search(/Safari/) > 0) return 'Safari';
-	if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
-	if (ua.search(/Trident/) > 0) return 'Trident';
-	// условий может быть и больше.
-	// сейчас сделаны проверки только
-	// для популярных браузеров
-	return 'Не определен';
-}
+
 // Создаём цикл для инициализации mCustomScrollbar в нужных select
 function customScrollbar() {
 	$(document).find('.select .drop').each(function () {
-		// var log = '';
-		// var height = $(this).height();
-		// log += 'Высота элементов: ' + height;
-		// console.log(log);
 		if ($(this).height() >= 190) {
 			$(this).mCustomScrollbar({
 				theme: "my-theme"

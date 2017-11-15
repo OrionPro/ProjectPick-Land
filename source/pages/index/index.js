@@ -1,6 +1,6 @@
 import common from '../../js/common';
 
-require("../../libs/libs").owl_carousel();
+require("../../libs/owl.carousel.min");
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.sass';
