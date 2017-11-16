@@ -4,12 +4,27 @@ require("../libs/libs").DrawSVG();
 
 class Animation {
 	constructor() {
-		this.tl1 = new TimelineMax();
-		this.tl1.pause();
+		this.tl1 = new TimelineMax({repeat: -1});
 	}
 
 	description() {
-
+		this.tl1.to('.header__cloud', 1, {
+			rotation: 5,
+			transformOrigin: "top center",
+			ease: Power0.easeNone
+		}).to('.header__cloud', 1, {
+			rotation: 0,
+			transformOrigin: "top center",
+			ease: Power0.easeNone
+		}).to('.header__cloud', 1, {
+			rotation: -5,
+			transformOrigin: "top center",
+			ease: Power0.easeNone
+		}).to('.header__cloud', 1, {
+			rotation: 0,
+			transformOrigin: "top center",
+			ease: Power0.easeNone
+		});
 	}
 
 	activeSection(section, startTop = 0, startBotton = 0) {
@@ -24,18 +39,19 @@ class Animation {
 	}
 
 	play() {
+
 	}
 }
 
 var anim = new Animation;
 
-$(window).scroll(function() {
+$(window).scroll(function () {
 	if (document.documentElement.clientWidth >= 1200) {
 		anim.play();
 	}
 });
 
-$(window).ready(function() {
+$(window).ready(function () {
 
 	if (document.documentElement.clientWidth >= 1200) {
 		anim.description();

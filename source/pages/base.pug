@@ -64,7 +64,7 @@ html(class="no-js" lang="ru")
 									img(src=require("../../img/logo.png"))
 							nav.header__nav.cl-effect-5
 								ul
-									-var links = [{title:'Отзывы', attr: 'join', href:'#', classNameLink: 'scroll_to', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', classNameLink: 'open-popup-link', href:'#popup-delivery', dataEffect: 'mfp-zoom-in', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн',attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#ready-to-create__constructor', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
+									-var links = [{title:'Отзывы', attr: 'join', href:'#', classNameLink: 'scroll_to', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', classNameLink: 'open-popup-link', href:'#popup-delivery', dataEffect: 'mfp-zoom-in', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн', attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
 									each i in links
 										li(class=i.className)
 											case i.linksNeeded
@@ -129,7 +129,7 @@ html(class="no-js" lang="ru")
 														span smile@pickcase.com.ua
 									li.divider
 							.header-modal
-								button.main_btn2 Заказать
+								button(class="scroll_to main_btn2" data-scroll="ready-to-create__constructor") Заказать
 							.header-modal-cloud
 								button(type="button" class="main_btn2 open-popup-link" data-effect="mfp-zoom-in" data-mfp-src="#popup-sign") Скидка ТУТ
 			block main

@@ -1148,35 +1148,21 @@ a.pink-border
 	align-items: center
 	justify-content: center
 	position: relative
-	&:hover .select-cover__cart
-		transform: translateY(0)
-		opacity: 1
-.select-cover__cart
-	width: 38px
-	height: 38px
-	background-color: #ec008c
-	position: absolute
-	right: 11px
-	bottom: 11px
-	opacity: 0
-	transform: translateY(20px)
 	transition: 0.5s
-	a
-		width: 100%
-		height: 100%
-		display: flex
-		align-items: center
-		justify-content: center
-		&:hover
-			text-decoration: none
-		&:active
-			text-decoration: none
-		&:focus
-			text-decoration: none
-
-	i
-		color: #fff
-		font-size: 18px
+	&:hover
+		border: 1px solid #ec008c
+.select-cover__link
+	position: absolute
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	&:hover
+		text-decoration: none
+	&:active
+		text-decoration: none
+	&:focus
+		text-decoration: none
 .select-cover__button
 	text-align: center
 	button
