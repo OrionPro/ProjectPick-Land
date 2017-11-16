@@ -128,13 +128,15 @@ $(document).ready(function () {
 				 списка по которому кликнули */
 				var selectResult = $(this).html();
 
-				/* Находим наш скрытый инпут и передаем в него
-				 значение из переменной selectResult */
-				$(this).parents(".select").find('input').val(selectResult);
-
 				/* Передаем значение переменной selectResult в ссылку которая
 				 открывает наш выпадающий список и удаляем активность */
 				$(this).parents(".select").find(".slct").removeClass('active').html(selectResult);
+				// Если у нас в li лежит картина или прочее то мы берём тект у ссылки, куда передался тест li
+				var linkVal = $(this).parents(".select").find(".slct").text();
+				/* Находим наш скрытый инпут и передаем в него
+				 значение из переменной linkVal */
+				$(this).parents(".select").find('input').val(linkVal);
+
 				$(".slct_arrow").removeClass('active');
 
 				/* Скрываем выпадающий блок */
