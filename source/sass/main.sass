@@ -753,7 +753,7 @@ nav[canvas]
 				opacity: 0
 				background-color: #ffffff
 				position: absolute
-				top: 70px
+				top: 50px
 				right: 0
 				z-index: 10
 				transition: 0.3s
@@ -1248,8 +1248,21 @@ a.pink-border
 		margin-right: 20px
 		border-radius: 50%
 	.item-slider__name
-		span
+		a
+			color: $main_txt_color
 			@include fz(22)
+			text-decoration: none
+			transition: 0.5s
+			&:hover
+				color: #ff99e8
+				text-decoration: none
+			&:active
+				color: #ff99e8
+				text-decoration: none
+			&:focus
+				color: #ff99e8
+				text-decoration: none
+
 // Пример checkbox
 label.check, label.radio
 	display: inline-flex

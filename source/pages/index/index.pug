@@ -208,84 +208,87 @@ block main
 					p Кликайте, чтобы заполнить форму!
 					i.fa.fa-angle-down
 				.accordion_content
-					.row
-						.col-md-6.col-12
-							input(type="text" name="markPhone" placeholder="Марка телефона")
-							.accordion__select-wrap
-								.select.sex
-									.slct_arrow
-										i.fa.fa-angle-down
-									a(href="#" class="slct") Пол
-									ul.drop
-										li Мужской
-										li Женский
-									input(type="hidden" name="sex")
-								.select.color
-									.slct_arrow
-										i.fa.fa-angle-down
-									a(href="#" class="slct") Любимый цвет
-										i.color.blue
-									ul.drop
-										li Любимый цвет
-											i.color.red
-										li Любимый цвет
-											i.color.green
-										li Любимый цвет
-											i.color.black
-								input(type="hidden" name="services")
-							.accordion__check-list-items
-								span
-									| Стиль дизайна:
-								.accordion__check-list
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Классический
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Классический
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Поп-арт
-								.accordion__check-list
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Винтаж
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Винтаж
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Анимация
-									.accordion__check
-										label.check.noselect
-											input(type='checkbox')
-											i.fa.fa-1.fa-square-o
-											i.fa.fa-2.fa-check-square-o
-											span Анимация
-						.col-md-6.col-12
-							input(type="text" name="madelPhone" placeholder="Модель телефона")
-							input(type="text" name="email" placeholder="E-mail")
-							textarea(name="textarea" placeholder="Дополнительное пожелание")
-					.accordion_content_button
-						button.main_btn Отправить
+					form
+						.row
+							.col-md-6.col-12
+								input(type="text" name="markPhone" placeholder="Марка телефона")
+								.accordion__select-wrap
+									.select.sex
+										.slct_arrow
+											i.fa.fa-angle-down
+										a(href="#" class="slct") Пол
+										ul.drop
+											li Мужской
+											li Женский
+										input(type="hidden" name="sex")
+									.select.color
+										.slct_arrow
+											i.fa.fa-angle-down
+										a(href="#" class="slct") Любимый цвет
+											i.color.blue
+										ul.drop
+											li Красный
+												i.color.red
+											li Зелёный
+												i.color.green
+											li Чёрный
+												i.color.black
+									input(type="hidden" name="color")
+								.accordion__check-list-items
+									span
+										| Стиль дизайна:
+									.accordion__check-list
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox' name="designStyle")
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Классический
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Классический
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Поп-арт
+									.accordion__check-list
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Винтаж
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Винтаж
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Анимация
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Анимация
+							.col-md-6.col-12
+								input(type="text" name="modelPhone" placeholder="Модель телефона")
+								input(type="text" name="email" placeholder="E-mail")
+								textarea(name="textarea" placeholder="Дополнительное пожелание")
+								input(type="hidden" name="form_name" value="Кликайте, чтобы заполнить форму!")
+								input(type="hidden" name="form_type" value="normal")
+						.accordion_content_button
+							button.main_btn(type="submit") Отправить
 	// Секция  .select-cover
 	section.select-cover
 		.container
@@ -437,7 +440,8 @@ block main
 						.item-slider__img-mini
 							img(src=require("../../img/item-slider__img-mini.png"))
 						.item-slider__name
-							span rachel.ojey
+							a(href="#")
+								| rachel.ojey
 				.item
 					.item-slider-video(class="item-video")
 						a(href="https://www.youtube.com/embed/SDrzn-94Pog" class="owl-video")
@@ -445,7 +449,8 @@ block main
 						.item-slider__img-mini
 							img(src=require("../../img/item-slider__img-mini.png"))
 						.item-slider__name
-							span rachel.ojey
+							a(href="#")
+								| rachel.ojey
 				.item
 					.item-slider-video(class="item-video")
 						a(href="https://www.youtube.com/embed/_MwXt3WmVsc?showinfo=0" class="owl-video")
@@ -453,7 +458,8 @@ block main
 						.item-slider__img-mini
 							img(src=require("../../img/item-slider__img-mini.png"))
 						.item-slider__name
-							span rachel.ojey
+							a(href="#")
+								| rachel.ojey
 	// Секция  ask-form-title
 	section.intermediate
 		.container

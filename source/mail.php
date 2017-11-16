@@ -11,7 +11,7 @@ if ($_POST) {
 		$json['form_type'] = $id_form;
 	}
 
-   
+
 	 if (isset($_POST['form_name']) and $_POST['form_name'] != "") {
 		$form_name = $_POST['form_name'];
 		$message .= '
@@ -38,14 +38,29 @@ if ($_POST) {
 		$textarea = $_POST['textarea'];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Описание в texarea: ' . $textarea . '</div>';
 	}
-	 if(isset($_POST["services"]) and $_POST['services'] != "") {
-		$services = $_POST["services"];
-		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Select: ' . $services . '</div>';
+	 if(isset($_POST["sex"]) and $_POST['sex'] != "") {
+		$sex = $_POST["sex"];
+		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Пол: ' . $sex . '</div>';
 	}
-
+    if(isset($_POST["color"]) and $_POST['color'] != "") {
+        $color = $_POST["color"];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Цвет: ' . $color . '</div>';
+    }
+	if(isset($_POST["markPhone"]) and $_POST['markPhone'] != "") {
+		$markPhone = $_POST["markPhone"];
+		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Марка телефона: ' . $markPhone . '</div>';
+	}
+	if(isset($_POST["madelPhone"]) and $_POST['madelPhone'] != "") {
+		$modelPhone = $_POST["madelPhone"];
+		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Модель телефона: ' . $modelPhone . '</div>';
+	}
+    if(isset($_POST["designStyle"]) and $_POST['designStyle'] != "") {
+        $designStyle = $_POST["designStyle"];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Стиль дизайна: ' . $designStyle . '</div>';
+    }
 
 	$mailer = new PHPMailer();
-	$subject = "Заявка с сайта Название сайта";
+	$subject = "Заявка с сайта pickcase.com.ua";
 	$to = 'orionpro79@gmail.com';
  //   $mailer->IsSMTP();
 	$mailer->Host = 'smtp.yandex.ru';
@@ -54,8 +69,8 @@ if ($_POST) {
 	$mailer->SMTPAuth = true;
 	$mailer->Username = 'efimenko-i-d@yandex.ua';
 	$mailer->Password = 'TabvtyrjBujhm06';
-	$mailer->From = 'you@example.com';
-	$mailer->FromName = 'Your Name';
+	$mailer->From = 'smile@pickcase.com.ua';
+	$mailer->FromName = 'pickcase';
 	$mailer->CharSet = "UTF-8";
 	$mailer->Subject = $subject;
 	$mailer->MsgHTML($message);
