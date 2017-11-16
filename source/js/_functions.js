@@ -108,7 +108,7 @@ $(document).ready(function () {
 	});
 	$('.slct').click(function () {
 		/* Заносим выпадающий список в переменную */
-		var dropBlock = $(this).parent().find('.drop');
+		const dropBlock = $(this).parent().find('.drop');
 		//  закрываем все открытые
 		$('.slct').removeClass('active').parent().find('.drop').slideUp("fast");
 		$('.slct').siblings('.slct_arrow').removeClass('active');
@@ -126,16 +126,16 @@ $(document).ready(function () {
 
 				/* Заносим в переменную HTML код элемента
 				 списка по которому кликнули */
-				var selectResult = $(this).html();
-
+				const selectAllResult = $(this).html();
+				const selectText = $(this).text();
 				/* Передаем значение переменной selectResult в ссылку которая
 				 открывает наш выпадающий список и удаляем активность */
-				$(this).parents(".select").find(".slct").removeClass('active').html(selectResult);
+				$(this).parents(".select").find(".slct").removeClass('active').html(selectAllResult);
 				// Если у нас в li лежит картина или прочее то мы берём тект у ссылки, куда передался тест li
-				var linkVal = $(this).parents(".select").find(".slct").text();
+				const linkVal = $(this).parents(".select").find(".slct").text();
 				/* Находим наш скрытый инпут и передаем в него
 				 значение из переменной linkVal */
-				$(this).parents(".select").find('input').val(linkVal);
+				$(this).parents(".select").find('input').val(selectText);
 
 				$(".slct_arrow").removeClass('active');
 
