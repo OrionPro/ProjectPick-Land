@@ -12,7 +12,7 @@ function tabs(parent) {
 
 		parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
 		parent.find(".ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab]").removeClass('active');
-		let data = $(this).data('tab'); //создаём переменную с датой
+		let data = $(this).data('tab');
 		parent.find('.ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab=' + data + ']').addClass('active');
 		parent.find('.tabs-wrap[data-tab]').removeClass("active"); //убираем активные состояния у табов
 		parent.find('.tabs-wrap[data-tab=' + data + ']').addClass('active'); //если таб соответствует тому, какой data
