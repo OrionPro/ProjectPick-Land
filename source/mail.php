@@ -42,10 +42,6 @@ if ($_POST) {
 		$sex = $_POST["sex"];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Пол: ' . $sex . '</div>';
 	}
-    if(isset($_POST["color"]) and $_POST['color'] != "") {
-        $color = $_POST["color"];
-        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Цвет: ' . $color . '</div>';
-    }
 	if(isset($_POST["markPhone"]) and $_POST['markPhone'] != "") {
 		$markPhone = $_POST["markPhone"];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Марка телефона: ' . $markPhone . '</div>';
@@ -54,11 +50,18 @@ if ($_POST) {
 		$modelPhone = $_POST["madelPhone"];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Модель телефона: ' . $modelPhone . '</div>';
 	}
+    if(isset($_POST["color"]) and $_POST['color'] != "") {
+        $color = $_POST["color"];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Цвет: ' . $color . '</div>';
+    }
     if(isset($_POST["designStyle"]) and $_POST['designStyle'] != "") {
         $designStyle = $_POST["designStyle"];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Стиль дизайна: ' . $designStyle . '</div>';
     }
-
+    if(isset($_POST["favorite_chocolate"]) and $_POST['favorite_chocolate'] != "") {
+        $favorite_chocolate = $_POST["favorite_chocolate"];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Любимый шоколад: ' . $favorite_chocolate . '</div>';
+    }
 	$mailer = new PHPMailer();
 	$subject = "Заявка с сайта pickcase.com.ua";
 	$to = 'orionpro79@gmail.com';

@@ -248,16 +248,11 @@ block main
 											li Розовый
 												i.color.pink
 										input(type="hidden" name="color")
-								.accordion__check-list-items
+								.accordion__check-list-items#accordion__check
 									span
 										| Стиль дизайна:
+									input(type="hidden" name="designStyle")
 									.accordion__check-list
-										.accordion__check
-											label.check.noselect
-												input(type='checkbox' name="designStyle")
-												i.fa.fa-1.fa-square-o
-												i.fa.fa-2.fa-check-square-o
-												span Классический
 										.accordion__check
 											label.check.noselect
 												input(type='checkbox')
@@ -270,31 +265,78 @@ block main
 												i.fa.fa-1.fa-square-o
 												i.fa.fa-2.fa-check-square-o
 												span Поп-арт
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Минимализм
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Винтаж
+										.accordion__check
+											label.check.noselect
+												input(type='checkbox')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Абстракция
 									.accordion__check-list
 										.accordion__check
 											label.check.noselect
 												input(type='checkbox')
 												i.fa.fa-1.fa-square-o
 												i.fa.fa-2.fa-check-square-o
-												span Винтаж
+												span Надписи
 										.accordion__check
 											label.check.noselect
 												input(type='checkbox')
 												i.fa.fa-1.fa-square-o
 												i.fa.fa-2.fa-check-square-o
-												span Винтаж
+												span Текстуры
 										.accordion__check
 											label.check.noselect
 												input(type='checkbox')
 												i.fa.fa-1.fa-square-o
 												i.fa.fa-2.fa-check-square-o
-												span Анимация
+												span Новинки
 										.accordion__check
 											label.check.noselect
 												input(type='checkbox')
 												i.fa.fa-1.fa-square-o
 												i.fa.fa-2.fa-check-square-o
-												span Анимация
+												span Популярные
+								.accordion__check-list-items#accordion__radio
+									span
+										| Любимый шоколад:
+									input(type="hidden" name="favorite_chocolate")
+									.accordion__check-list
+										.accordion__check
+											label.radio.noselect
+												input(type='radio', name='radio')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Молочный
+										.accordion__check
+											label.radio.noselect
+												input(type='radio', name='radio')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Черный
+										.accordion__check
+											label.radio.noselect
+												input(type='radio', name='radio')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Молочный с орехами
+										.accordion__check
+											label.radio.noselect
+												input(type='radio', name='radio')
+												i.fa.fa-1.fa-square-o
+												i.fa.fa-2.fa-check-square-o
+												span Белый
 							.col-md-6.col-12
 								input(type="text" name="modelPhone" placeholder="Модель телефона")
 								input(type="text" name="email" placeholder="E-mail")

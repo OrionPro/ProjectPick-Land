@@ -1094,6 +1094,7 @@ a.pink-border
 				width: 100%
 				padding-right: 40px
 				display: inline-flex
+				align-items: center
 			&.sex
 				margin-right: 26px
 				.slct
@@ -1109,12 +1110,25 @@ a.pink-border
 		&>span
 			width: 140px
 			margin-right: 25px
+			line-height: 1
 		label
 			&.check
 				flex-basis: auto
 				span
 					@include fz(22)
-					line-height: 1.2
+					line-height: 1
+					font-weight: normal
+				i
+					width: 19px
+					@include fz(22)
+					margin-right: 15px
+					&.fa-2
+						color: #ec008c
+			&.radio
+				flex-basis: auto
+				span
+					@include fz(22)
+					line-height: 1
 					font-weight: normal
 				i
 					width: 19px

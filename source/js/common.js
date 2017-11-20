@@ -55,6 +55,20 @@ function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
 	$(obj.item).css("min-height", heightItem);
 }
+// Создаём цикл для инициализации mCustomScrollbar в нужных select
+function customScrollbar() {
+	$(document).find('.select .drop').each(function () {
+		// var log = '';
+		// var height = $(this).height();
+		// log += 'Высота элементов: ' + height;
+		// console.log(log);
+		if ($(this).height() >= 190) {
+			$(this).mCustomScrollbar({
+				theme: "my-theme"
+			});
+		}
+	});
+}
 //accordion
 function accordion(obj) {
 	let titleClick =  obj.titleClick,
@@ -74,23 +88,46 @@ function accordion(obj) {
 			content.slideToggle("200"); //открываем скрытый блок у того что нажали
 			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
 		}
+		customScrollbar();
 	});
 }
-// Создаём цикл для инициализации mCustomScrollbar в нужных select
-function customScrollbar() {
-	$(document).find('.select .drop').each(function () {
-		// var log = '';
-		// var height = $(this).height();
-		// log += 'Высота элементов: ' + height;
-		// console.log(log);
-		if ($(this).height() >= 190) {
-			$(this).mCustomScrollbar({
-				theme: "my-theme"
-			});
+
+let i_check = 0;
+function searchCheckbox (id,array){
+
+	$(`#${id} input[type='checkbox']`).change(function(){
+		if(this.checked){
+			array[i_check] = " " + $(this).siblings('span').text();
+			i_check++;
+		}else{
+			var val = $(this).siblings('span').text();
+			var index = array.indexOf(val);
+
+			console.log(index);
+			array.splice(index, 1);
+			i_check--;
 		}
+		$("#"+id+" input[type='hidden']").val(array);
+	});
+}
+
+function searchRadio (id,array){
+
+	$(`#${id} input[type='radio']`).change(function(){
+		if(this.checked){
+			array = [];
+			array = $(this).siblings('span').text();
+		}
+		$("#"+id+" input[type='hidden']").val(array);
 	});
 }
 $(document).ready(function () {
+
+	var arr_check = [];
+	searchCheckbox('accordion__check', arr_check);
+	var arr_radio = [];
+	searchRadio('accordion__radio', arr_radio);
+	//
 	customScrollbar();
 	// Клик на header__nav-dropdown
 	$(document).click(function (event) {
