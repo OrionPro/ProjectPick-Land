@@ -135,24 +135,57 @@ html(class="no-js" lang="ru")
 				// Секция footer
 				footer.footer
 					.container
-						.row
-							.col-lg-3.offset-lg-1.col-md-4.col-12
-								.footer__email
-									a(href="mailto:smile@pickcase.com.ua") smile@pickcase.com.ua
-							.col-lg-4.col-md-4.col-12
-								span.copyright Copyright Pickcase 2017
-							.col-lg-4.col-md-4.col-12
-								.footer__social
+						.footer__top-block
+							.row
+								.col-xl-3.col-lg-4
+									ul
+										li
+											p
+												| viber  |  whatsapp
+											a(href="tel:+380960982012") +38 (096) 098-20-12
+											div
+												a(href="tel:+380668518743") +38 (066) 851-87-43
+								.col-xl-3.col-lg-4
+									ul
+										li
+											a(href="skype:pickcase?call")
+												span live:pickcase
+										li
+											a(href="mailto:smile@pickcase.com.ua")
+												span smile@pickcase.com.ua
+									.footer__social
+										ul
+											li
+												a(href="#")
+													i.fa.fa-instagram
+											li
+												a(href="#")
+													i.fa.fa-facebook
+											li
+												a(href="#")
+													i.fa.fa-vk
+								.col-xl-2.col-lg-4
 									ul
 										li
 											a(href="#")
-												i.fa.fa-instagram
+												| Свой дизайн
 										li
 											a(href="#")
-												i.fa.fa-facebook
+												| Именной чехол
 										li
 											a(href="#")
-												i.fa.fa-vk
+												| Доставка и оплата
+										li
+											a(href="#")
+												| Отзывы
+								.col-xl-4.col-12
+									.footer__sign-up
+										p Подпишись и получи скидку
+										.footer__sign-up-widget
+						.row
+							.col-12
+								span.copyright Copyright Pickcase 2017
+
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu
