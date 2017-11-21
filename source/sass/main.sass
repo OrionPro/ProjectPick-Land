@@ -1085,6 +1085,7 @@ a.pink-border
 				&.yellow
 					background-color: yellow
 				&.white
+					border: 1px solid #c4c4c4
 					background-color: white
 				&.gray
 					background-color: gray
@@ -1127,6 +1128,7 @@ a.pink-border
 			&.radio
 				flex-basis: auto
 				span
+					max-width: 125px
 					@include fz(22)
 					line-height: 1
 					font-weight: normal
@@ -1409,15 +1411,17 @@ label.check, label.radio
 // Секия footer 
 .footer
 	padding-top: 40px
-	padding-bottom: 30px
+	padding-bottom: 10px
 	background-color: #fff
 	@include fz(18)
 	text-align: center
 .footer__top-block
 	padding-bottom: 20px
-	margin-bottom: 20px
+	margin-bottom: 10px
 	text-align: left
 	border-bottom: 1px solid rgba(53, 53, 53, 0.1)
+	p
+		padding-left: 25px
 	a
 		color: $main_txt_color
 		transition: 0.5s
@@ -1430,6 +1434,8 @@ label.check, label.radio
 		&:focus
 			text-decoration: none
 			color: #ec008c
+	i
+		margin-right: 10px
 .footer__sign-up-widget
 	height: 100px
 	background-color: $main_color3
