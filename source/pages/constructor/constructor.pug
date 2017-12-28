@@ -76,12 +76,31 @@ html(class="no-js" lang="ru")
 									.ready-to-create__constructor-phonegroup-item.center-select-mobile
 										button(type="submit" class="main_btn tabs-item" data-tab="2") Создать чехол
 					.tabs-wrap(data-tab="2")
-						.ready-to-create__constructor-title
-							p.ready-to-create__constructor-title-val Открыть подсказки ЗДЕСЬ
+						.ready-to-create__constructor-title.tab2
+							p.ready-to-create__constructor-title-val Инструкция
 							.ready-to-create__constructor-divider
-						.ready-to-create__constructor-model-canvas-container
-							// картинка для примера
-							img(src=require("../../img/constructor-model-canvas-container.jpg"))
+						.row
+
+							.col-lg-3.col-xl-3.offset-xl-1
+								.ready-to-create__constructor-instruction
+									.ready-to-create__constructor-instruction-item
+										.ready-to-create__constructor-instruction-item-img
+											.ready-to-create__constructor-instruction-item-img-digi-block
+										.ready-to-create__constructor-instruction-item-txt
+											p Выберите изображение в галерее, на вашем компьютере или загрузите из соц. сетей.
+							.col-lg-4
+								.ready-to-create__constructor-model-canvas-container
+									// картинка для примера
+									img(src=require("../../img/constructor-model-canvas-container.jpg"))
+							.col-lg-3
+								.ready-to-create__constructor-design-option-toolbar-content
+									.ready-to-create__constructor-design-option-toolbar-content-item
+									.ready-to-create__constructor-design-option-toolbar-content-item
+
+									.ready-to-create__constructor-design-option-toolbar-content-item
+									.ready-to-create__constructor-design-option-toolbar-content-item
+									.ready-to-create__constructor-design-option-toolbar-content-item
+
 						.ready-to-create__constructor-design
 							.ready-to-create__constructor-design-load
 								.row
@@ -150,15 +169,7 @@ html(class="no-js" lang="ru")
 										.ready-to-create__constructor-design-option-toolbar
 											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
 												i.fa.fa-angle-double-left
-												| Назад
-											.ready-to-create__constructor-design-option-toolbar-content
-												.ready-to-create__constructor-design-option-toolbar-content-item
-												.ready-to-create__constructor-design-option-toolbar-content-item
-
-												.ready-to-create__constructor-design-option-toolbar-content-item
-												.ready-to-create__constructor-design-option-toolbar-content-item
-												.ready-to-create__constructor-design-option-toolbar-content-item
-
+												| Выбрать модель
 											.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
 												| Заказать
 												i.fa.fa-angle-double-right
@@ -168,7 +179,7 @@ html(class="no-js" lang="ru")
 												i.fa.fa-angle-double-right
 											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
 												i.fa.fa-angle-double-left
-												| Назад
+												| Выбрать модель
 					.tabs-wrap(data-tab="3")
 						.ready-to-create__constructor-title
 							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone 7 готов
@@ -204,4 +215,4 @@ html(class="no-js" lang="ru")
 										.ready-to-create__constructor-design-option-toolbar.mobile-step3
 											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
 												i.fa.fa-angle-double-left
-												| Назад
+												| Свой дизайн
