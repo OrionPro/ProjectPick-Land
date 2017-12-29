@@ -9,6 +9,71 @@ html(class="no-js" lang="ru")
 		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
 		include ../../libs/bootstrap.min.html
 	body
+		//Модальное окно
+		#popup-constructor.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
+			form
+				p.title-modal-top
+					span Выберите изображение:
+					|
+					| Фото должно быть формата .jpg, .png,
+					| .gif и не менее 1000 пикселей в высоту.
+				.modal-loaders
+					.ready-to-create__constructor-design-social-item
+						p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
+						.ready-to-create__constructor-design-social
+							a(href="#")
+								img(src=require("../../img/constructor-design-social-vk.jpg"))
+							a(href="#")
+								img(src=require("../../img/constructor-design-social-fb.jpg"))
+							a(href="#")
+								img(src=require("../../img/constructor-design-social-inst.jpg"))
+					.ready-to-create__constructor-design-input-file
+						span Загрузить с ПК
+						input(type="file" name='field' multiple)
+				.popup-constructor__image-categories
+					.popup-constructor__image-categories-links
+						p.popup-constructor__image-categories-links-title
+							| Категории изображений:
+						a(href="#").pink-border стиль дизайна длинный
+						a(href="#").pink-border стиль дизайна 5
+						a(href="#").pink-border стиль дизайна 5
+						a(href="#").pink-border стиль дизайна 5
+					.popup-constructor__image-categories-wrap
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+		#popup-constructor-textures.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
+			form
+				.popup-constructor__image-categories
+					.popup-constructor__image-categories-links
+						p.popup-constructor__image-categories-links-title
+							| Категории текструр:
+						a(href="#").pink-border стиль дизайна длинный
+						a(href="#").pink-border стиль дизайна 5
+						a(href="#").pink-border стиль дизайна 5
+						a(href="#").pink-border стиль дизайна 5
+					.popup-constructor__image-categories-wrap
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+						.popup-constructor__image-categories-item
+							a(href="#")
+								img(src=require("../../img/popup-constructor__image-categories.jpg"))
 		section.constructor-section
 			.container
 				.ready-to-create__constructor
@@ -81,18 +146,50 @@ html(class="no-js" lang="ru")
 							.ready-to-create__constructor-divider
 						.row
 
-							.col-lg-3.col-xl-3.offset-xl-1
+							.col-lg-12.col-xl-3.offset-xl-1
 								.ready-to-create__constructor-instruction
 									.ready-to-create__constructor-instruction-item
 										.ready-to-create__constructor-instruction-item-img
 											.ready-to-create__constructor-instruction-item-img-digi-block
+												span 1
 										.ready-to-create__constructor-instruction-item-txt
 											p Выберите изображение в галерее, на вашем компьютере или загрузите из соц. сетей.
-							.col-lg-4
+									.ready-to-create__constructor-instruction-item
+										.ready-to-create__constructor-instruction-item-img
+											.ready-to-create__constructor-instruction-item-img-digi-block
+												span 2
+										.ready-to-create__constructor-instruction-item-txt
+											p
+												| Дождитесь загрузки вашего изображения в
+												| конструктор.
+									.ready-to-create__constructor-instruction-item
+										.ready-to-create__constructor-instruction-item-img
+											.ready-to-create__constructor-instruction-item-img-digi-block
+												span 3
+										.ready-to-create__constructor-instruction-item-txt
+											p
+												| Разместите картинку на макете, используя
+												| возможности управления в конструкторе.
+									.ready-to-create__constructor-instruction-item
+										.ready-to-create__constructor-instruction-item-img
+											img(src=require("../../img/ready-to-create__constructor-instruction-item-img.jpg"))
+										.ready-to-create__constructor-instruction-item-txt
+											p
+												| Для движения картинки нажмите на нее
+												| левой кнопкой мышки и перемещайте.
+									.ready-to-create__constructor-instruction-item
+										.ready-to-create__constructor-instruction-item-img
+											img(src=require("../../img/ready-to-create__constructor-instruction-item-img2.jpg"))
+										.ready-to-create__constructor-instruction-item-txt
+											p
+												| Для изменения размера изображение
+												| используйте инструмент конструктора, для
+												| увеличения или уменьшения изображения.
+							.col-lg-12.col-xl-4
 								.ready-to-create__constructor-model-canvas-container
 									// картинка для примера
 									img(src=require("../../img/constructor-model-canvas-container.jpg"))
-							.col-lg-3
+							.col-lg-12.col-xl-3
 								.ready-to-create__constructor-design-option-toolbar-content
 									.ready-to-create__constructor-design-option-toolbar-content-item
 									.ready-to-create__constructor-design-option-toolbar-content-item
@@ -111,7 +208,7 @@ html(class="no-js" lang="ru")
 												| Фото должно быть формата .jpg, .png,
 												| .gif и не менее 1000 пикселей в высоту.
 									.col-xl-2.col-lg-3.col-md-3
-										button(type="button" class="main_btn") Галерея
+										button(type="button" class="main_btn open-popup-link" data-mfp-src="#popup-constructor") Галерея
 									.col-xl-2.col-lg-3.col-md-3
 										form
 											.ready-to-create__constructor-design-input-file
@@ -129,7 +226,7 @@ html(class="no-js" lang="ru")
 													img(src=require("../../img/constructor-design-social-inst.jpg"))
 						.ready-to-create__constructor-design-option
 							.row
-								.col-lg-10.offset-lg-1
+								.col-lg-4.col-xl-3.offset-xl-1
 									.select
 										.slct_arrow
 											i.fa.fa-angle-down
@@ -142,9 +239,9 @@ html(class="no-js" lang="ru")
 											li sans-serif
 											li Arial
 										input(type="hidden" name="design-option")
-								.col-lg-10.offset-lg-1
+								.col-lg-4.col-xl-3
 									input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
-								.col-lg-10.offset-lg-1.col-md-12
+								.col-lg-2.col-md-12
 									.ready-to-create__constructor-design-option-wrap
 										.ready-to-create__constructor-design-option-color-switchs
 											.ready-to-create__constructor-design-option-text-texture-switchs
@@ -156,30 +253,33 @@ html(class="no-js" lang="ru")
 
 												.ready-to-create__constructor-design-option-font-btn-wrap
 													button
-										.ready-to-create__constructor-design-option-color-switchs
-											.ready-to-create__constructor-design-option-text-texture-switchs
-												span Текстура шрифта:
-											.ready-to-create__constructor-design-option-font-btn
-												.ready-to-create__constructor-design-option-font-btn-item
-													img(src=require("../../img/three-steps__left-img-block.jpg"))
-												.ready-to-create__constructor-design-option-font-btn-item
+								.col-lg-2.col-md-12
+									.ready-to-create__constructor-design-option-color-switchs
+										.ready-to-create__constructor-design-option-text-texture-switchs
+											span Текстура шрифта:
+										.ready-to-create__constructor-design-option-font-btn
+											.ready-to-create__constructor-design-option-font-btn-item
+												img(src=require("../../img/three-steps__left-img-block.jpg"))
+											.ready-to-create__constructor-design-option-font-btn-item
 
-												.ready-to-create__constructor-design-option-font-btn-wrap
-													button
-										.ready-to-create__constructor-design-option-toolbar
-											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
-												i.fa.fa-angle-double-left
-												| Выбрать модель
-											.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
-												| Заказать
-												i.fa.fa-angle-double-right
-										.ready-to-create__constructor-design-option-toolbar.mobile
-											.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
-												| Заказать
-												i.fa.fa-angle-double-right
-											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
-												i.fa.fa-angle-double-left
-												| Выбрать модель
+											.ready-to-create__constructor-design-option-font-btn-wrap
+												button(class="open-popup-link" data-mfp-src="#popup-constructor-textures")
+						.row
+							.col-12.col-xl-10.offset-xl-1
+								.ready-to-create__constructor-design-option-toolbar
+									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
+										i.fa.fa-angle-double-left
+										| Выбрать модель
+									.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
+										| Заказать
+										i.fa.fa-angle-double-right
+								.ready-to-create__constructor-design-option-toolbar.mobile
+									.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
+										| Заказать
+										i.fa.fa-angle-double-right
+									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
+										i.fa.fa-angle-double-left
+										| Выбрать модель
 					.tabs-wrap(data-tab="3")
 						.ready-to-create__constructor-title
 							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone 7 готов

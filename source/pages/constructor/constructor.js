@@ -1,6 +1,7 @@
 require("../../libs/jquery-ui.min");
 require("../../libs/matchMedia");
 require("../../libs/jquery.mCustomScrollbar.concat.min");
+require("../../libs/libs").magnific_popup();
 import './constructor.sass';
 
 import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
@@ -33,7 +34,74 @@ function customScrollbar() {
 
 
 $(document).ready( function() {
+	// Модальные окна
+	// Определения браузера
+	function get_name_browser() {
+		// получаем данные userAgent
+		const ua = navigator.userAgent;
+		// с помощью регулярок проверяем наличие текста,
+		// соответствующие тому или иному браузеру
+		if (ua.search(/Edge/) > 0) return 'Edge';
+		if (ua.search(/Chrome/) > 0) return 'Google Chrome';
+		if (ua.search(/Firefox/) > 0) return 'Firefox';
+		if (ua.search(/Opera/) > 0) return 'Opera';
+		if (ua.search(/Safari/) > 0) return 'Safari';
+		if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+		if (ua.search(/Trident/) > 0) return 'Trident';
+		// условий может быть и больше.
+		// сейчас сделаны проверки только
+		// для популярных браузеров
+		return 'Не определен';
+	}
 
+	// Вешаем обработочик на свою кнопку close
+	$(document).on("click", ".mfp-close", function () {
+		let magnificPopup = $.magnificPopup.instance;
+		magnificPopup.close();
+	});
+// 	// Открываем модальное окно
+	$(document).on('click', '.open-popup-link', function () {
+		let id = $(this).attr('href');
+		let idBtn = $(this).data('mfp-src');
+		let txt = $(this).data('info');
+		// var title =  $(this).data('title'); // для изменения title в модалке
+		if(id) {
+			if(txt){
+				$(`.popup${id} input[name=form_name]`).val(txt);
+			}
+		} else if(idBtn) {
+			if(txt){
+				$(`.popup${idBtn} input[name=form_name]`).val(txt);
+			}
+		}
+		// $(`.popup${id} .modal-title`).html(title); // прописать в ссылку data-title="нужный title"
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			if (get_name_browser() == "Google Chrome") {
+				$("html").addClass("modal");
+			}
+		}
+	});
+	$(document).on('click', '.open-popup-link', function () {
+		$(this).magnificPopup({
+			type: 'inline',
+			callbacks: {
+				beforeOpen: function () {
+				},
+				close: function () {
+					if (get_name_browser() == "Google Chrome") {
+						$("html").removeClass("modal");
+					}
+				},
+				open: function () {
+				}
+			},
+			closeOnBgClick: true,
+			closeOnContentClick: false,
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-close"></i></button>',
+			tClose: 'Закрыть (Esc)',
+		}).magnificPopup('open');
+	});
+	// Инициализация табов
 	tabs($(".ready-to-create__constructor"));
 	// инициализация скробара в салектах
 	customScrollbar();
