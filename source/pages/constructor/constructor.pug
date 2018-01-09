@@ -74,6 +74,18 @@ html(class="no-js" lang="ru")
 						.popup-constructor__image-categories-item
 							a(href="#")
 								img(src=require("../../img/popup-constructor__image-categories.jpg"))
+		#popup-constructor-order-created.mfp-hide.white-popup.mfp-with-anim.popup-constructor-order-created
+			.order-created__title
+				| СПАСИБО ЗА ЗАКАЗ!
+			p
+				| С Вами свяжется наш представитель для подтверждения заказа.
+			img(src=require("../../img/popup-constructor-order-created__smile.png"))
+		#popup-constructor-order-not-created.mfp-hide.white-popup.mfp-with-anim.popup-constructor-order-created.popup-constructor-order-not-created
+			.order-created__title
+				| ВАШ ЗАКАЗ НЕ СОЗДАН!
+			p
+				| Проверьте правильность данных!
+			img(src=require("../../img/popup-constructor-order-created__sad.png"))
 		section.constructor-section
 			.container
 				.ready-to-create__constructor
