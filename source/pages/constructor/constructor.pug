@@ -9,7 +9,17 @@ html(class="no-js" lang="ru")
 		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
 		include ../../libs/bootstrap.min.html
 	body
-		//Модальное окно
+		// Модальное окно
+		//
+			Их можно активировать
+			$.magnificPopup.open({
+			items: {
+			src: $('#popup-constructor-order-created')
+			},
+			type: 'inline'
+			});
+			Или закрыть модальное окно
+			$.magnificPopup.close();
 		#popup-constructor.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
 			form
 				p.title-modal-top
