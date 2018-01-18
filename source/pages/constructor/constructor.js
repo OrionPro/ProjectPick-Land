@@ -1,10 +1,10 @@
-require("../../libs/jquery-ui.min");
+
 require("../../libs/matchMedia");
 require("../../libs/jquery.mCustomScrollbar.concat.min");
 require("../../libs/libs").magnific_popup();
 import './constructor.sass';
 
-import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
+//import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
 // табы tabs
 function tabs(parent) {

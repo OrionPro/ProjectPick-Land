@@ -10,16 +10,9 @@ html(class="no-js" lang="ru")
 		include ../../libs/bootstrap.min.html
 	body
 		// Модальное окно
-		//
-			Их можно активировать
-			$.magnificPopup.open({
-			items: {
-			src: $('#popup-constructor-order-created')
-			},
-			type: 'inline'
-			});
-			Или закрыть модальное окно
-			$.magnificPopup.close();
+		.hide-links-modal
+			button(type="button" class="main_btn open-popup-link" id="success" data-mfp-src="#popup-constructor-order-created")
+			button(type="button" class="main_btn open-popup-link" id="error" data-mfp-src="#popup-constructor-order-not-created")
 		#popup-constructor.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
 			form
 				p.title-modal-top
