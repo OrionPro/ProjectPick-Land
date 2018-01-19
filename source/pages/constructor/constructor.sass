@@ -1,7 +1,6 @@
 @import "../../sass/vars.sass"
 @import "../../libs/font-awesome.min.css"
 @import "../../libs/magnific-popup.css"
-@import "../../libs/jquery.mCustomScrollbar.min.css"
 html, body
 	font-size: 16px
 body
@@ -112,19 +111,6 @@ li
 		outline: 0
 	&:focus
 		outline: 0
-.mCS-my-theme
-	&.mCSB_scrollTools
-		width: 5px
-		.mCSB_draggerRail
-			height: 0
-		.mCSB_dragger
-			z-index: 10
-			.mCSB_dragger_bar
-				width: 5px
-				margin: 0
-				background-color: #ffd1ee
-.mCSB_inside>.mCSB_container
-	margin-right: 0
 a.pink-border
 	color: $main_txt_color
 	text-decoration: dashed
@@ -163,7 +149,7 @@ a.pink-border
 		max-height: 200px
 		margin: 0 auto
 		padding: 0
-		overflow: hidden
+		overflow: auto
 		display: none
 		position: absolute
 		background-color: #fff
@@ -186,6 +172,18 @@ a.pink-border
 				outline: 0
 			a
 				text-decoration: none
+		//внешний вид скроллбара
+		scrollbar-base-color: $main_color   //для IE
+		scrollbar-arrow-color: $main_color	//для IE
+		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+		&::-webkit-scrollbar
+			width: 5px
+		&::-webkit-scrollbar-thumb
+			background-color: #ffd1ee
+			&:hover
+				background-color: darken(#ffd1ee, 10%)
+		&::-webkit-scrollbar-track-piece
+			background-color: lighten(#ffd1ee, 60%)
 	.slct
 		width: 100%
 		height: 60px

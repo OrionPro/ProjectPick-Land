@@ -1,6 +1,5 @@
 
 require("../../libs/matchMedia");
-require("../../libs/jquery.mCustomScrollbar.concat.min");
 require("../../libs/libs").magnific_popup();
 import './constructor.sass';
 
@@ -20,18 +19,6 @@ function tabs(parent) {
 
 	});
 }
-
-// Создаём цикл для инициализации mCustomScrollbar в нужных select
-function customScrollbar() {
-	$(document).find('.select .drop').each(function () {
-		if ($(this).height() >= 190) {
-			$(this).mCustomScrollbar({
-				theme: "my-theme"
-			});
-		}
-	});
-}
-
 
 $(document).ready( function() {
 	// Модальные окна
@@ -103,8 +90,7 @@ $(document).ready( function() {
 	});
 	// Инициализация табов
 	tabs($(".ready-to-create__constructor"));
-	// инициализация скробара в салектах
-	customScrollbar();
+
 	$('.ready-to-create__constructor-step-info i').on('click', function () {
 		$(this).parent().hide('300');
 	});
