@@ -8,6 +8,32 @@ html(class="no-js" lang="ru")
 			block title
 		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
 		include ../../libs/bootstrap.min.html
+		style(type='text/css').
+			html .loader {
+				background: #fff;
+				bottom: 0;
+				height: 100%;
+				left: 0;
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 100%;
+				z-index: 9999
+			}
+
+			html .loader .loader_inner {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: #fff;
+				height: 296px;
+				width: 296px;
+				margin-top: -148px;
+				margin-left: -148px;
+				left: 50%;
+				top: 50%;
+				position: absolute
+			}
 	body
 		// Модальное окно
 		//
@@ -20,6 +46,10 @@ html(class="no-js" lang="ru")
 			});
 			Или закрыть модальное окно
 			$.magnificPopup.close();
+		div
+			.loader
+				.loader_inner
+					img(src=require("../../img/loader.gif"))
 		#popup-constructor.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
 			form
 				p.title-modal-top
