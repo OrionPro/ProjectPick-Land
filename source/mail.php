@@ -64,7 +64,7 @@ if ($_POST) {
     }
 	$mailer = new PHPMailer();
 	$subject = "Заявка с сайта pickcase.com.ua";
-	$to = 'orionpro79@gmail.com';
+	$to = 'smile@pickcase.com.ua';
  //   $mailer->IsSMTP();
 	$mailer->Host = 'smtp.yandex.ru';
 	$mailer->Port = 465;

@@ -8,11 +8,11 @@ require("../libs/libs").jqueryValidation();
 require("../libs/libs").input_mask();
 require("../libs/libs").sticky();
 require("../libs/libs").mCustomScrollbar();
-import validation from '../js/validation';
-import modal from '../js/modal';
+import '../js/validation';
+import '../js/modal';
 
 import '../sass/main.sass';
-import functions from '../js/_functions.js';
+import '../js/_functions.js';
 
 // табы tabs
 // function tabsIndex(obj) {

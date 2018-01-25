@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 	//  Отправка форм
 // initialize tooltipster on text input elements

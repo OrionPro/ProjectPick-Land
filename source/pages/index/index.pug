@@ -67,7 +67,7 @@ block main
 						.col-sm-3
 							.unique-design__item
 								img(src=require("../../img/unique-design__item-xiaomi4.jpg") class="img-fluid")
-				.unique-design__item-bottom-link
+				//.unique-design__item-bottom-link
 					a(href="#" class="pink-border") И многие другие марки - перейти в каталог
 
 	// Секция  applying-any-image
@@ -190,9 +190,9 @@ block main
 							.ready-to-create__video-inner-txt
 								p Как создать дизайн чехла за 1 минуту:
 								.ready-to-create__video-inner-left-txt-button
-									button(data-effect="mfp-zoom-in" href="#popup-video" class="open-popup-link main_btn" title='Видео инструкция') Смотреть видео инструкцию
-			.ready-to-create__constructor#ready-to-create__constructor
-				p тут должен быть конструктор
+									button(data-effect="mfp-zoom-in" data-mfp-src="#popup-video" class="open-popup-link main_btn" title='Видео инструкция') Смотреть видео инструкцию
+		.ready-to-create__constructor#ready-to-create__constructor
+			iframe(src="http://dev.pickcase.com.ua/" frameborder="0")
 
 	// Секция  .can-not-decide
 	section.can-not-decide
@@ -346,7 +346,7 @@ block main
 						.accordion_content_button
 							button.main_btn(type="submit") Отправить
 	// Секция  .select-cover
-	section.select-cover
+	//section.select-cover
 		.container
 			.section-title
 				h2
