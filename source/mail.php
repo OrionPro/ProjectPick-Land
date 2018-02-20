@@ -42,13 +42,13 @@ if ($_POST) {
 		$sex = $_POST["sex"];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Пол: ' . $sex . '</div>';
 	}
-	if(isset($_POST["markPhone"]) and $_POST['markPhone'] != "") {
-		$markPhone = $_POST["markPhone"];
-		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Марка телефона: ' . $markPhone . '</div>';
-	}
-	if(isset($_POST["madelPhone"]) and $_POST['madelPhone'] != "") {
-		$modelPhone = $_POST["madelPhone"];
+	if(isset($_POST["modelPhone"]) and $_POST['modelPhone'] != "") {
+		$modelPhone = $_POST["modelPhone"];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Модель телефона: ' . $modelPhone . '</div>';
+	}
+	if(isset($_POST["numPhone"]) and $_POST['numPhone'] != "") {
+		$numPhone = $_POST["numPhone"];
+		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Номер телефона: ' . $numPhone . '</div>';
 	}
     if(isset($_POST["color"]) and $_POST['color'] != "") {
         $color = $_POST["color"];
