@@ -64,7 +64,7 @@ html(class="no-js" lang="ru")
 									img(src=require("../../img/logo.png"))
 							nav.header__nav.cl-effect-5
 								ul
-									-var links = [{title:'Отзывы', attr: 'join', href:'#', classNameLink: 'scroll_to', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Доставка и оплата', classNameLink: 'open-popup-link', href:'#popup-delivery', dataEffect: 'mfp-zoom-in', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн', attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
+									-var links = [{title:'Отзывы', attr: 'join', href:'#', classNameLink: 'scroll_to', href:'#',linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Условия', classNameLink: 'open-popup-link', href:'#popup-delivery', dataEffect: 'mfp-zoom-in', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Свой дизайн', attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Именной чехол', attr: 'ready-to-create__constructor',scroll_to: 1 , href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0},{title:'Помочь?', attr: 'can-not-decide',scroll_to: 1 , href:'#', classNameLink: 'scroll_to', linksNeeded: 1},{className: 'divider', linksNeeded: 0}];
 									each i in links
 										li(class=i.className)
 											case i.linksNeeded
@@ -179,7 +179,7 @@ html(class="no-js" lang="ru")
 												| Именной чехол
 										li
 											a(href="#")
-												| Доставка и оплата
+												| Условия
 										li
 											a(href="#")
 												| Отзывы
@@ -218,7 +218,7 @@ html(class="no-js" lang="ru")
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu
-					-var links = [{title:'Отзывы', attr: 'join', href: '#', classNameLink: 'scroll_to'},{title:'Доставка и оплата', dataEffect: 'mfp-zoom-in', classNameLink: 'open-popup-link', href: '#popup-delivery'},{title:'Свой дизайн', href: '#', attr: 'ready-to-create__constructor', classNameLink: 'scroll_to'},{title:'+38 (096) 098-20-12', href:'tel:+380960982012'},{title:'+38 (066) 851-87-43', href:'tel:+380668518743'},{title:'pickcase', href:'skype:pickcase?call'},{title:'smile@pickcase.com.ua', href:'mailto:smile@pickcase.com.ua'},{title:'Не дозвонились? Заказ звонка!', dataEffect: 'mfp-zoom-in', classNameLink: 'open-popup-link', href:'#popup'}];
+					-var links = [{title:'Отзывы', attr: 'join', href: '#', classNameLink: 'scroll_to'},{title:'Условия', dataEffect: 'mfp-zoom-in', classNameLink: 'open-popup-link', href: '#popup-delivery'},{title:'Свой дизайн', href: '#', attr: 'ready-to-create__constructor', classNameLink: 'scroll_to'},{title:'Именой чехол', href: '#', attr: 'ready-to-create__constructor', classNameLink: 'scroll_to'},{title:'Помочь?', href: '#', attr: 'can-not-decide', classNameLink: 'scroll_to'},{title:'+38 (096) 098-20-12', href:'tel:+380960982012'},{title:'+38 (066) 851-87-43', href:'tel:+380668518743'},{title:'pickcase', href:'skype:pickcase?call'},{title:'smile@pickcase.com.ua', href:'mailto:smile@pickcase.com.ua'},{title:'Не дозвонились? Заказ звонка!', dataEffect: 'mfp-zoom-in', classNameLink: 'open-popup-link', href:'#popup'}];
 					each i in links
 						li(class=i.className)
 							a(href=i.href data-scroll=i.attr data-effect=i.dataEffect class=i.classNameLink)= i.title

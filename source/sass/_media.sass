@@ -25,6 +25,20 @@
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
+	.header__nav
+		margin-right: auto
+		ul
+			display: none
+		.visible-mobile
+			display: flex
+	.header__logo
+		display: block
+		margin-top: 0
+		margin-left: 10%
+	.header__modal
+		margin-top: 40px
+	nav[canvas]
+		display: block
 	.header__logo
 		img
 			width: 80px
@@ -75,25 +89,13 @@
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.header__logo
+		margin-left: 2%
 	.section-title
 		h2
 			br
 				display: none
 
-
-	.header__nav
-		margin-right: auto
-		ul
-			display: none
-		.visible-mobile
-			display: flex
-	.header__logo
-		display: block
-		margin-top: 0
-	.header__modal
-		margin-top: 40px
-	nav[canvas]
-		display: block
 	.join
 		.item-slider-video
 			width: 270px
@@ -230,10 +232,12 @@
 		&.is-sticky
 			.header
 				height:  auto!important
+	.ready-to-create__video-inner-left-txt-links
+		column-count: auto
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 665px)
 	.header__logo
-		margin-left: 40px
+		margin-left: 10%
 @media only screen and (max-width : 605px)
 	.header__logo
 		margin-left: 70px
