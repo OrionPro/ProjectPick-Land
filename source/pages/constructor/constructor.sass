@@ -89,6 +89,10 @@ li
 		margin-right: 15px
 		font-size: 22px
 		flex-shrink: 0
+		a
+			margin-right: 10px
+			&:last-of-type
+				margin-right: 0
 	.popup-constructor__image-categories-links-title
 		margin-bottom: 5px
 	.popup-constructor__image-categories-wrap
@@ -97,10 +101,48 @@ li
 		display: flex
 		flex-wrap: wrap
 		.popup-constructor__image-categories-item
+			width: 74px
+			height: 74px
 			flex-shrink: 0
 			margin-bottom: 10px
-			padding-left: 5px
-			padding-right: 5px
+			margin-left: 5px
+			margin-right: 5px
+			img
+				max-width: 100%
+				height: auto
+	.popup-constructor__image-categories-pagination
+		display: flex
+	.wrap__pagination
+		text-align: center
+		margin-top: 10px
+		.pagination
+			li
+				display: inline-block
+				a
+					font-size: 14px
+					border-radius: 5px
+					background-color: $main_txt_color
+					color: #fff
+					padding: 3px 8.5px
+					text-decoration: none
+					transition: 0.5s
+					&.active
+						text-decoration: none
+						background-color: $main_color
+					&:hover
+						text-decoration: none
+						background-color: $main_color
+					&:active
+						text-decoration: none
+						background-color: $main_color
+					&:focus
+						text-decoration: none
+						background-color: $main_color
+				.ellipsis
+					font-size: 14px
+					padding: 3px 8.5px
+					background-color: #f2f2f2
+					color: $main_txt_color
 .mfp-zoom-in.mfp-ready.mfp-bg
 	opacity: 0.7
 .mfp-bg
@@ -709,6 +751,11 @@ a.pink-border
 				margin-bottom: 20px
 		.popup-constructor__image-categories
 			flex-direction: column
+		.popup-constructor__image-categories-pagination
+			width: 100%
+			align-items: center
+			.pagination
+				margin: auto
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/

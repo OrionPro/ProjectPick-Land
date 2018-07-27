@@ -189,6 +189,13 @@ $(document).ready(function () {
 	    $('html, body').stop().animate({
 	        scrollTop: $("#" + anchor.data('scroll')).offset().top-100
 	    }, 500);
+		if($(this).data('scroll') === 'can-not-decide' ){
+			if(!$('.can-not-decide .accordion_title p').hasClass('active')) {
+				setTimeout(function () {
+					$('.can-not-decide .accordion_title').trigger('click');
+				},600);
+			}
+		}
 	    return false;
 	});
 
