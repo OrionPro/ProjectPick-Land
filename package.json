@@ -38,6 +38,7 @@
     "webpack-spritesmith": "^0.4.0"
   },
   "dependencies": {
+    "atob": "^2.1.2",
     "cryptiles": "^4.1.2",
     "hoek": "^5.0.3",
     "jquery": "^3.2.1",
