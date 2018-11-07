@@ -13,6 +13,14 @@ function tabs(parent) {
 		parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
 		parent.find(".ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab]").removeClass('active');
 		let data = $(this).data('tab');
+		if(data == '1' || data == '2') {
+			$('.ready-to-create__constructor-steps').removeClass('step3');
+			$('.ready-to-create__constructor-steps').addClass('step1');
+		}
+		if(data == '3') {
+			$('.ready-to-create__constructor-steps').removeClass('step1');
+			$('.ready-to-create__constructor-steps').addClass('step3');
+		}
 		parent.find('.ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab=' + data + ']').addClass('active');
 		parent.find('.tabs-wrap[data-tab]').removeClass("active"); //убираем активные состояния у табов
 		parent.find('.tabs-wrap[data-tab=' + data + ']').addClass('active'); //если таб соответствует тому, какой data

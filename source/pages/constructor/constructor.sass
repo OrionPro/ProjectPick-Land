@@ -329,25 +329,56 @@ a.pink-border
 					background-color: #ffd1ee
 .ready-to-create__constructor-header
 	margin-bottom: 30px
+	padding-left: 100px
+	display: flex
 .ready-to-create__constructor-steps
-	padding-top: 80px
+	padding-top: 75px
+	&.step1
+		.ready-to-create__constructor-step
+			&[data-tab="1"]
+				background-color: #e2f4ef
+			&[data-tab="2"]
+				background-color: #e2f4ef
+			&[data-tab="3"]
+				background-color: #d5d5d5
+			&.active
+				background-color: #353535
+				position: relative
+				.ready-to-create__constructor-step-value
+					color: #fff
+	&.step3
+		.ready-to-create__constructor-step
+			&[data-tab="1"]
+				background-color: #e2f4ef
+			&[data-tab="2"]
+				background-color: #e2f4ef
+			&[data-tab="3"]
+				background-color: #e2f4ef
+			&.active
+				background-color: #353535
+				position: relative
+				.ready-to-create__constructor-step-value
+					color: #fff
 	.ready-to-create__constructor-step
-		width: 270px
+		width: 320px
 		height: 60px
-		border: 2px solid #353535
+		margin-right: 5px
 		display: flex
 		align-items: center
 		justify-content: center
 		position: relative
-		&.center-step
-			margin: auto
+		&.last
+			margin-right: 0
 		.ready-to-create__constructor-step-value
 			@include fz(22)
 		&.active
-			background-color: #353535
-			.ready-to-create__constructor-step-value
-				color: #fff
-
+			position: relative
+			&:after
+				@include css-triangle(#353535,down,10px)
+				bottom: -10px
+				right: 50%
+				transform: translateX(50%)
+				transition: 0.5s
 .ready-to-create__constructor-step-info
 	height: 40px
 	padding-left: 8px
@@ -359,6 +390,7 @@ a.pink-border
 	left: 0
 	display: flex
 	align-items: center
+	display: none
 	&:after
 		content: ""
 		display: block
@@ -626,10 +658,13 @@ a.pink-border
 // Large devices (desktops, less than 1200px)
 @media only screen and (max-width : 1199px)
 	/**/
+	.ready-to-create__constructor-header
+		padding-left: 10px
 	.ready-to-create__constructor-steps
+		width: 100%
+		margin-right: 10px
 		.ready-to-create__constructor-step
-			&.center-step-mobile
-				margin: auto
+			width: 100%
 	.ready-to-create__constructor-phonegroup-item
 		&.center-select-mobile
 			text-align: center
@@ -657,14 +692,12 @@ a.pink-border
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+
 	.ready-to-create__constructor
 		.select
 			display: block
 			.slct
 				width: 100%
-	.ready-to-create__constructor-steps
-		.ready-to-create__constructor-step
-			width: 200px
 	.ready-to-create__constructor-checkout
 		padding-left: 10px
 		padding-right: 10px
@@ -690,10 +723,13 @@ a.pink-border
 	.ready-to-create__constructor-steps
 		padding-top: 10px
 		.ready-to-create__constructor-step
+			height: 40px
 			&.center-step-mobile
 				margin: 0 auto 10px
 			&.center-step
 				margin: 0 auto 10px
+			.ready-to-create__constructor-step-value
+				font-size: 18px
 	.ready-to-create__constructor-step-info
 		display: none
 	.ready-to-create__constructor-design-load
@@ -740,6 +776,18 @@ a.pink-border
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
+	.ready-to-create__constructor-header
+		flex-direction: column
+		padding-right: 10px
+	.ready-to-create__constructor-steps
+		margin-right: 0
+		.ready-to-create__constructor-step
+			height: 25px
+			margin-right: 0
+			&.active
+				height: 40px
+			.ready-to-create__constructor-step-value
+				font-size: 17px
 	.ready-to-create__constructor-checkout-btn
 		button
 			width: 100%
