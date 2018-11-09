@@ -413,28 +413,37 @@ a.pink-border
 	text-align: center
 	&.tab2
 		text-align: left
-		padding-left: 100px
 		.ready-to-create__constructor-divider
 			margin: 0
 .ready-to-create__constructor-title-val
 	@include fz(20)
 	margin-bottom: 10px
 .ready-to-create__constructor-divider
-	width: 170px
+	width: 100px
 	height: 2px
 	margin: auto
 	background-color: #353535
 .ready-to-create__constructor-model-canvas-container
-	width: 100%
+	width: 230px
+	padding-top: 100px
+	margin-bottom: 60px
+	margin-right: 70px
 	height: auto
-	margin-bottom: 40px
 	overflow: hidden
 	text-align: center
+	&.step1
+		width: 100%
+		padding-top: 0
 .ready-to-create__constructor-phonegroup-item
 	&.center-select
 		text-align: center
 	button
 		width: 270px
+.ready-to-create__constructor-wrap
+	width: 350px
+	margin-right: 20px
+	margin-left: 100px
+	flex-shrink: 0
 .ready-to-create__constructor-instruction-item
 	display: flex
 	margin-bottom: 20px
@@ -450,10 +459,21 @@ a.pink-border
 	align-items: center
 	justify-content: center
 	background-color: #e2f4ef
+	span
+		@include fz(22)
 .ready-to-create__constructor-instruction-item-txt
+	padding-top: 3px
 	p
 		line-height: 1.1
-		font-size: 15px
+		@include fz(15)
+.ready-to-create__constructor-instruction-item-title
+
+	@include fz(16)
+	color: #de04e1
+	text-transform: uppercase
+.ready-to-create__constructor-instruction-item-text-info
+	line-height: 1.2
+	@include fz(16)
 .ready-to-create__constructor-design-load
 	margin-bottom: 40px
 	button
@@ -513,8 +533,11 @@ a.pink-border
 		font-size: 600px
 		z-index: 2
 		cursor: pointer
+.ready-to-create__constructor-level3-wrap
+	display: flex
+	flex-wrap: wrap
 .ready-to-create__constructor-design-option
-	margin-bottom: 40px
+	width: 100%
 	.select
 		display: block
 		.slct
@@ -572,6 +595,8 @@ a.pink-border
 			outline: 0
 		&:focus
 			outline: 0
+.ready-to-create__constructor-level2-wrap
+	display: flex
 .ready-to-create__constructor-design-option-toolbar
 	display: flex
 	align-items: center
@@ -579,35 +604,32 @@ a.pink-border
 	&.mobile
 		display: none
 .ready-to-create__constructor-design-option-toolbar-backward
+	width: 200px
+	height: 60px
+	display: flex
+	align-items: center
+	padding-left: 18px
+	background-color: #d5d5d5
 	@include fz(22)
 	cursor: pointer
 	i
 		margin-right: 7px
 .ready-to-create__constructor-design-option-toolbar-order
+	width: 200px
+	height: 60px
 	margin-left: auto
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: #e2f4ef
 	@include fz(22)
 	cursor: pointer
 	i
 		margin-left: 7px
 .ready-to-create__constructor-design-option-toolbar-content
+	width: 300px
 	display: flex
-	flex-wrap: wrap
-	margin-left: auto
-	margin-right: auto
-	align-items: center
-	justify-content: center
-.ready-to-create__constructor-design-option-toolbar-content-item
-	width: 128px
-	height: 101px
-	margin-bottom: 5px
-	margin-right: 5px
-	border-radius: 10px
-	display: inline-block
-	position: relative
-	background: #f5f5f6
-	overflow: hidden
-	&:last-of-type
-		margin-right: 0
+
 .ready-to-create__constructor-checkout
 	.select
 		display: block

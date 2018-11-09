@@ -241,7 +241,7 @@ html(class="no-js" lang="ru")
 						.ready-to-create__constructor-title
 							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone X почти готов
 							.ready-to-create__constructor-divider
-						.ready-to-create__constructor-model-canvas-container
+						.ready-to-create__constructor-model-canvas-container.step1
 							// картинка для примера
 							img(src=require("../../img/constructor-model-canvas-container.jpg"))
 						.ready-to-create__constructor-phonegroup
@@ -313,11 +313,11 @@ html(class="no-js" lang="ru")
 									.ready-to-create__constructor-phonegroup-item.center-select-mobile
 										button(type="submit" class="main_btn tabs-item" data-tab="2") Создать чехол
 					.tabs-wrap(data-tab="2")
-						.ready-to-create__constructor-title.tab2
-							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone X почти готов
-							.ready-to-create__constructor-divider
-						.row
-							.col-lg-12.col-xl-3.offset-xl-1
+						.ready-to-create__constructor-level2-wrap
+							.ready-to-create__constructor-wrap
+								.ready-to-create__constructor-title.tab2
+									p.ready-to-create__constructor-title-val Инструкция
+									.ready-to-create__constructor-divider
 								.ready-to-create__constructor-instruction
 									.ready-to-create__constructor-instruction-item
 										.ready-to-create__constructor-instruction-item-img
@@ -343,98 +343,70 @@ html(class="no-js" lang="ru")
 												| возможности управления в конструкторе.
 									.ready-to-create__constructor-instruction-item
 										.ready-to-create__constructor-instruction-item-img
-											img(src=require("../../img/ready-to-create__constructor-instruction-item-img.jpg"))
+											.ready-to-create__constructor-instruction-item-img-digi-block
+												span 4
 										.ready-to-create__constructor-instruction-item-txt
 											p
 												| Для движения картинки нажмите на нее
 												| левой кнопкой мышки и перемещайте.
 									.ready-to-create__constructor-instruction-item
 										.ready-to-create__constructor-instruction-item-img
-											img(src=require("../../img/ready-to-create__constructor-instruction-item-img2.jpg"))
+											.ready-to-create__constructor-instruction-item-img-digi-block
+												span 5
 										.ready-to-create__constructor-instruction-item-txt
 											p
 												| Для изменения размера изображение
 												| используйте инструмент конструктора, для
 												| увеличения или уменьшения изображения.
-							.col-lg-12.col-xl-4
-								.ready-to-create__constructor-model-canvas-container
-									// картинка для примера
-									img(src=require("../../img/constructor-model-canvas-container.jpg"))
-							.col-lg-12.col-xl-3
-								.ready-to-create__constructor-design-option-toolbar-content
-									.ready-to-create__constructor-design-option-toolbar-content-item
-									.ready-to-create__constructor-design-option-toolbar-content-item
+									.ready-to-create__constructor-instruction-item-title
+										| ВАЖНО!
+									.ready-to-create__constructor-instruction-item-text-info
+										| Фото должно быть формата .jpg, .png, .gif
+										| и не менее 1000 пикселей в высоту.
+							.ready-to-create__constructor-model-canvas-container
+								// картинка для примера
+								img(src=require("../../img/constructor-model-canvas-container.jpg"))
+							.ready-to-create__constructor-design-option-toolbar-content
+								.ready-to-create__constructor-design-option
+									ul
+										li
+											a(href="#" class="ready-to-create__constructor-design-link-toggle") Текст на чехле
+												i
+													i.fas.fa-angle-down
+											.ready-to-create__constructor-design-dropdown-wrap
+												input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
+												.select
+													.slct_arrow
+														i.fa.fa-angle-down
+													a(href="#" class="slct") Verdana
+													ul.drop
+														li Roboto
+														li Helvetica
+														li Segoe
+														li BlinkMacSystemFont
+														li sans-serif
+														li Arial
+													input(type="hidden" name="design-option")
+										li
+											a(href="#" class="ready-to-create__constructor-design-link-toggle") Избражение на чехле
+												i
+													i.fas.fa-angle-down
+											.ready-to-create__constructor-design-dropdown-wrap
+												button(type="button" class="main_btn open-popup-link" data-mfp-src="#popup-constructor") Галерея
+												form
+													.ready-to-create__constructor-design-input-file
+														span Загрузить с ПК
+														input(type="file" name='field' id="image-input" multiple)
+												.ready-to-create__constructor-design-social-item
+													p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
+													.ready-to-create__constructor-design-social
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-vk.jpg"))
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-fb.jpg"))
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-inst.jpg"))
 
-									.ready-to-create__constructor-design-option-toolbar-content-item
-									.ready-to-create__constructor-design-option-toolbar-content-item
-									.ready-to-create__constructor-design-option-toolbar-content-item
-
-						.ready-to-create__constructor-design
-							.ready-to-create__constructor-design-load
-								.row
-									.col-xl-3.offset-xl-1.col-lg-5.col-md-5
-										.ready-to-create__constructor-design-txt
-											p.title Выберите изображение:
-											p.description
-												| Фото должно быть формата .jpg, .png,
-												| .gif и не менее 1000 пикселей в высоту.
-									.col-xl-2.col-lg-3.col-md-3
-										button(type="button" class="main_btn open-popup-link" data-mfp-src="#popup-constructor") Галерея
-									.col-xl-2.col-lg-3.col-md-3
-										form
-											.ready-to-create__constructor-design-input-file
-												span Загрузить с ПК
-												input(type="file" name='field' id="image-input" multiple)
-									.col-xl-3
-										.ready-to-create__constructor-design-social-item
-											p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
-											.ready-to-create__constructor-design-social
-												a(href="#")
-													img(src=require("../../img/constructor-design-social-vk.jpg"))
-												a(href="#")
-													img(src=require("../../img/constructor-design-social-fb.jpg"))
-												a(href="#")
-													img(src=require("../../img/constructor-design-social-inst.jpg"))
-						.ready-to-create__constructor-design-option
-							.row
-								.col-lg-4.col-xl-3.offset-xl-1
-									.select
-										.slct_arrow
-											i.fa.fa-angle-down
-										a(href="#" class="slct") Verdana
-										ul.drop
-											li Roboto
-											li Helvetica
-											li Segoe
-											li BlinkMacSystemFont
-											li sans-serif
-											li Arial
-										input(type="hidden" name="design-option")
-								.col-lg-4.col-xl-3
-									input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
-								.col-lg-2.col-md-12
-									.ready-to-create__constructor-design-option-wrap
-										.ready-to-create__constructor-design-option-color-switchs
-											.ready-to-create__constructor-design-option-text-texture-switchs
-												span Цвет шрифта:
-											.ready-to-create__constructor-design-option-font-btn
-												.ready-to-create__constructor-design-option-font-btn-item
-
-												.ready-to-create__constructor-design-option-font-btn-item
-
-												.ready-to-create__constructor-design-option-font-btn-wrap
-													button
-								.col-lg-2.col-md-12
-									.ready-to-create__constructor-design-option-color-switchs
-										.ready-to-create__constructor-design-option-text-texture-switchs
-											span Текстура шрифта:
-										.ready-to-create__constructor-design-option-font-btn
-											.ready-to-create__constructor-design-option-font-btn-item
-												img(src=require("../../img/three-steps__left-img-block.jpg"))
-											.ready-to-create__constructor-design-option-font-btn-item
-
-											.ready-to-create__constructor-design-option-font-btn-wrap
-												button(class="open-popup-link" data-mfp-src="#popup-constructor-textures")
 						.row
 							.col-12.col-xl-10.offset-xl-1
 								.ready-to-create__constructor-design-option-toolbar
@@ -455,35 +427,34 @@ html(class="no-js" lang="ru")
 						.ready-to-create__constructor-title
 							p.ready-to-create__constructor-title-val Ваш персональный дизайн чехла для iPhone 7 готов
 							.ready-to-create__constructor-divider
-						.ready-to-create__constructor-model-canvas-container
-							// картинка для примера
-							img(src=require("../../img/constructor-model-canvas-container.jpg"))
-						.ready-to-create__constructor-checkout
-							.row
-								.col-lg-10.offset-lg-1
-									form
-										.select
-											.slct_arrow
-												i.fa.fa-angle-down
-											a(href="#" class="slct") Выберите материал чехла:
-											ul.drop
-												li Roboto
-												li Helvetica
-												li Segoe
-												li BlinkMacSystemFont
-												li sans-serif
-												li Arial
-											input(type="hidden" name="constructor-checkout")
-										div
-											input(type="text" placeholder="Введите e-mail" class="ready-to-create__constructor-checkout-input")
-										div
-											input(type="text" placeholder="Введите номер телефона" class="ready-to-create__constructor-checkout-input")
-										div
-											textarea(placeholder="Введите ваш комментарий" class="ready-to-create__constructor-checkout-textarea")
-										.ready-to-create__constructor-checkout-btn
-											button(type="submit" class="main_btn") Отправить
-									.ready-to-create__constructor-design-option-wrap
-										.ready-to-create__constructor-design-option-toolbar.mobile-step3
-											.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
-												i.fa.fa-angle-double-left
-												| Свой дизайн
+						form
+							.ready-to-create__constructor-level3-wrap
+								.ready-to-create__constructor-model-canvas-container
+									// картинка для примера
+									img(src=require("../../img/constructor-model-canvas-container.jpg"))
+								.ready-to-create__constructor-checkout
+									.select
+										.slct_arrow
+											i.fa.fa-angle-down
+										a(href="#" class="slct") Выберите материал чехла:
+										ul.drop
+											li Roboto
+											li Helvetica
+											li Segoe
+											li BlinkMacSystemFont
+											li sans-serif
+											li Arial
+										input(type="hidden" name="constructor-checkout")
+									div
+										input(type="text" placeholder="Введите e-mail" class="ready-to-create__constructor-checkout-input")
+									div
+										input(type="text" placeholder="Введите номер телефона" class="ready-to-create__constructor-checkout-input")
+									div
+										textarea(placeholder="Введите ваш комментарий" class="ready-to-create__constructor-checkout-textarea")
+							.ready-to-create__constructor-design-option-wrap
+								.ready-to-create__constructor-design-option-toolbar.mobile-step3
+									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
+										i.fa.fa-angle-double-left
+										| Свой дизайн
+									.ready-to-create__constructor-checkout-btn
+										button(type="submit" class="main_btn") Отправить

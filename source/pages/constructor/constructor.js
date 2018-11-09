@@ -29,6 +29,35 @@ function tabs(parent) {
 }
 
 $(document).ready( function() {
+	// развёртывание прокси в header
+	function dropdownUnfolding(obj) {
+		const menu = $(obj.menu),
+			toggle = menu.find(obj.toggle),
+			current = toggle.first();
+		toggle.click(function (e) {
+			e.preventDefault();
+			sticky.destroy();
+			if ($(this).hasClass('m-open')) {
+				$(this).siblings(obj.subMenu).slideUp();
+				$(this).removeClass("m-open");
+			} else {
+				$(this).addClass('m-open').siblings(obj.subMenu).slideDown();
+				toggle.filter('.m-open').removeClass('m-open').end().add($(this)).parent().removeClass('m-open');
+				$(this).addClass("m-open");
+			}
+			toggle.not($(this)).siblings(obj.subMenu).stop(true,true).slideUp();
+			$(this).parent().toggleClass('m-open');
+		});
+		if ($('.personal-area-nav-dropdown.personal-area-nav-dropdown_open').length) {
+			current.addClass('m-open').next().stop(true,true).slideDown();
+		}
+
+	}
+	dropdownUnfolding({
+		menu: '.header__dropdown_more', // само меню или обёртка
+		toggle: '.ready-to-create__constructor-design-link-toggle', // ссылки на которые навешиваем click
+		subMenu: '.header__dropdown_more-sub' // подменю
+	});
 	// Модальные окна
 	// Определения браузера
 	function get_name_browser() {
