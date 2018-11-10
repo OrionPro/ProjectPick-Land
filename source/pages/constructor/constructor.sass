@@ -486,15 +486,14 @@ a.pink-border
 		@include fz(16)
 		line-height: 1.1
 .ready-to-create__constructor-design-social-item
-	height: 57px
+	display: flex
+	align-items: center
 .ready-to-create__constructor-design-social-title
-	margin-bottom: 10px
+	margin-right: 10px
 	text-align: center
-	@include fz(22)
+	@include fz(21)
 	line-height: 0.8
 .ready-to-create__constructor-design-social
-	display: flex
-	justify-content: center
 	a
 		text-decoration: none
 		margin-right: 5px
@@ -506,10 +505,9 @@ a.pink-border
 			text-decoration: none
 
 .ready-to-create__constructor-design-input-file
-	width: 100%
-	height: 57px
-	border: 2px solid #353535
-	background-color: #fff
+	width: 93%
+	height: 45px
+	background-color: #e5f7fe
 	display: flex
 	align-items: center
 	justify-content: center
@@ -518,9 +516,9 @@ a.pink-border
 	transition: 0.5s
 	cursor: pointer
 	&:hover
-		background-color: $main_txt_color
+		background-color: $main_color3
 	&:hover span
-		color: #fff
+		color: $main_txt_color
 	span
 		@include fz(22)
 	input
@@ -533,19 +531,41 @@ a.pink-border
 		font-size: 600px
 		z-index: 2
 		cursor: pointer
+.ready-to-create__constructor-design-btn-wrap
+	display: flex
+.ready-to-create__constructor-design-btn-item
+	width: 140px
+	height: 57px
+	margin-right: 20px
+	border: 3px solid #e2f4ef
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: 0.5s
+	&:last-of-type
+		margin-right: 0
+	form
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: center
 .ready-to-create__constructor-level3-wrap
 	display: flex
 	flex-wrap: wrap
+.ready-to-create__constructor-design-btn-wrap
+	margin-bottom: 20px
 .ready-to-create__constructor-design-option
 	width: 100%
 	.select
 		display: block
+		margin-bottom: 20px
 		.slct
 			width: 100%
 			margin-bottom: 0
 	.ready-to-create__constructor-design-option-input
 		width: 100%
 		height: 60px
+		margin-bottom: 10px
 		padding-left: 20px
 		@include fz(22)
 		font-family: $font_FuturaBook
@@ -610,8 +630,13 @@ a.pink-border
 	align-items: center
 	padding-left: 18px
 	background-color: #d5d5d5
+	border: 1px solid transparent
 	@include fz(22)
 	cursor: pointer
+	transition: 0.5s
+	&:hover
+		background-color: #fff
+		border: 1px solid $main_txt_color
 	i
 		margin-right: 7px
 .ready-to-create__constructor-design-option-toolbar-order
@@ -621,9 +646,14 @@ a.pink-border
 	display: flex
 	align-items: center
 	justify-content: center
+	border: 1px solid transparent
 	background-color: #e2f4ef
 	@include fz(22)
 	cursor: pointer
+	transition: 0.5s
+	&:hover
+		background-color: #fff
+		border: 1px solid $main_txt_color
 	i
 		margin-left: 7px
 .ready-to-create__constructor-design-option-toolbar-content

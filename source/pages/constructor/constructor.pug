@@ -372,13 +372,13 @@ html(class="no-js" lang="ru")
 										li
 											a(href="#" class="ready-to-create__constructor-design-link-toggle") Текст на чехле
 												i
-													i.fas.fa-angle-down
+													i.fa.fa-angle-down
 											.ready-to-create__constructor-design-dropdown-wrap
 												input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
 												.select
 													.slct_arrow
 														i.fa.fa-angle-down
-													a(href="#" class="slct") Verdana
+													a(href="#" class="slct no-scroll") Verdana
 													ul.drop
 														li Roboto
 														li Helvetica
@@ -390,13 +390,16 @@ html(class="no-js" lang="ru")
 										li
 											a(href="#" class="ready-to-create__constructor-design-link-toggle") Избражение на чехле
 												i
-													i.fas.fa-angle-down
+													i.fa.fa-angle-down
 											.ready-to-create__constructor-design-dropdown-wrap
-												button(type="button" class="main_btn open-popup-link" data-mfp-src="#popup-constructor") Галерея
-												form
-													.ready-to-create__constructor-design-input-file
-														span Загрузить с ПК
-														input(type="file" name='field' id="image-input" multiple)
+												.ready-to-create__constructor-design-btn-wrap
+													.ready-to-create__constructor-design-btn-item
+														button(type="button" class="main_btn3 open-popup-link" data-mfp-src="#popup-constructor") Галерея
+													.ready-to-create__constructor-design-btn-item
+														form
+															.ready-to-create__constructor-design-input-file
+																span Файл с ПК
+																input(type="file" name='field' id="image-input" multiple)
 												.ready-to-create__constructor-design-social-item
 													p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
 													.ready-to-create__constructor-design-social

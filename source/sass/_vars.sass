@@ -119,7 +119,31 @@ $font_main_regular: "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"
 		color: $main_txt_color
 		text-decoration: none
 		outline: 0
-
+.main_btn3
+	width: 93%
+	height: 45px
+	padding: 0 5px
+	background-color: #e5f7fe
+	text-transform: none
+	border: none
+	@include font($main_txt_color, 22, $font_FuturaBook)
+	line-height: 45px
+	transition: 0.5s
+	&:hover
+		background-color: #e2f4ef
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
+	&:active
+		background-color: #e2f4ef
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
+	&:focus
+		background-color: #e2f4ef
+		color: $main_txt_color
+		text-decoration: none
+		outline: 0
 .center
 	text-align: center
 .left

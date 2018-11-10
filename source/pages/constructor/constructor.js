@@ -147,11 +147,13 @@ $(document).ready( function() {
 	$('.slct').click(function () {
 		/* Заносим выпадающий список в переменную */
 		var dropBlock = $(this).parent().find('.drop'),
-			self = $(this);
+			self = $(this).not('.no-scroll');
 		// делаем скролл к селекту
-		$('html, body').stop().animate({
-			scrollTop: self.parents('.select').offset().top
-		}, 500);
+		if(self.length) {
+			$('html, body').stop().animate({
+				scrollTop: self.parents('.select').offset().top
+			}, 500);
+		}
 		//  закрываем все открытые
 		$('.slct').removeClass('active').parent().find('.drop').slideUp("fast");
 		$('.slct').siblings('.slct_arrow').removeClass('active');
