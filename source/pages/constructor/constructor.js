@@ -40,7 +40,6 @@ $(document).ready( function() {
 			current = toggle.first();
 		toggle.click(function (e) {
 			e.preventDefault();
-			sticky.destroy();
 			if ($(this).hasClass('m-open')) {
 				$(this).siblings(obj.subMenu).slideUp();
 				$(this).removeClass("m-open");
@@ -52,15 +51,15 @@ $(document).ready( function() {
 			toggle.not($(this)).siblings(obj.subMenu).stop(true,true).slideUp();
 			$(this).parent().toggleClass('m-open');
 		});
-		if ($('.personal-area-nav-dropdown.personal-area-nav-dropdown_open').length) {
+		if ($('.ready-to-create__constructor-design-dropdown-wrap').length) {
 			current.addClass('m-open').next().stop(true,true).slideDown();
 		}
 
 	}
 	dropdownUnfolding({
-		menu: '.header__dropdown_more', // само меню или обёртка
+		menu: '.ready-to-create__constructor-design-option', // само меню или обёртка
 		toggle: '.ready-to-create__constructor-design-link-toggle', // ссылки на которые навешиваем click
-		subMenu: '.header__dropdown_more-sub' // подменю
+		subMenu: '.ready-to-create__constructor-design-dropdown-wrap' // подменю
 	});
 	// Модальные окна
 	// Определения браузера

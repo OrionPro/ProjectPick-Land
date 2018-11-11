@@ -436,6 +436,11 @@ a.pink-border
 	&.step1
 		width: 100%
 		padding-top: 0
+	&.step3
+		width: 470px
+		padding-top: 0
+		margin-right: 30px
+		margin-left: 100px
 .ready-to-create__constructor-phonegroup-item
 	&.center-select
 		text-align: center
@@ -446,6 +451,33 @@ a.pink-border
 	margin-right: 20px
 	margin-left: 100px
 	flex-shrink: 0
+.ready-to-create__constructor-design-link-toggle
+	display: flex
+	margin-bottom: 18px
+	padding-bottom: 5px
+	color: $main_txt_color
+	@include fz(20)
+	border-bottom: 2px solid #383838
+	transition: 0.5s
+	&:hover
+		color: #609086
+		text-decoration: none
+	&:active
+		color: #609086
+		text-decoration: none
+	&:focus
+		color: #609086
+		text-decoration: none
+	&.m-open
+		i
+			transform: rotate(180deg)
+	i
+		width: 13px
+		display: inline-flex
+		align-items: center
+		margin-left: auto
+		margin-right: 20px
+		transition: 0.5s
 .ready-to-create__constructor-instruction-item
 	display: flex
 	margin-bottom: 20px
@@ -469,11 +501,12 @@ a.pink-border
 		line-height: 1.1
 		@include fz(15)
 .ready-to-create__constructor-instruction-item-title
-
+	padding-left: 10px
 	@include fz(16)
 	color: #de04e1
 	text-transform: uppercase
 .ready-to-create__constructor-instruction-item-text-info
+	padding-left: 10px
 	line-height: 1.2
 	@include fz(16)
 .ready-to-create__constructor-design-load
@@ -495,7 +528,7 @@ a.pink-border
 .ready-to-create__constructor-design-social-title
 	margin-right: 10px
 	text-align: center
-	@include fz(22)
+	@include fz(21)
 	line-height: 0.8
 .ready-to-create__constructor-design-social
 	a
@@ -507,7 +540,39 @@ a.pink-border
 			text-decoration: none
 		&:focus
 			text-decoration: none
-
+.ready-to-create__constructor-design-background-text
+	display: flex
+	margin-bottom: 10px
+.ready-to-create__constructor-design-background-text-item
+	display: flex
+	align-items: center
+	margin-right: 30px
+	&:last-of-type
+		margin-right: 0
+.ready-to-create__constructor-design-background-text-item-label
+	margin-right: 10px
+	@include fz(22)
+	flex-shrink: 0
+.ready-to-create__constructor-design-background-text-item-input
+	width: 78px
+	flex-shrink: 0
+	input
+		width: 100%
+		height: 41px
+		border: 1px solid #c4c4c4
+		padding-left: 10px
+		@include fz(22)
+		font-family: $font_FuturaBook
+		color: $main_txt_color
+		transition: 0.5s
+		&:hover
+			outline: 0
+		&:active
+			border: 1px solid #ec008c
+			outline: 0
+		&:focus
+			border: 1px solid #ec008c
+			outline: 0
 .ready-to-create__constructor-design-input-file
 	width: 93%
 	height: 45px
@@ -535,6 +600,8 @@ a.pink-border
 		font-size: 600px
 		z-index: 2
 		cursor: pointer
+.ready-to-create__constructor-design-dropdown-wrap
+	display: none
 .ready-to-create__constructor-design-btn-wrap
 	display: flex
 .ready-to-create__constructor-design-btn-item
@@ -555,11 +622,45 @@ a.pink-border
 		justify-content: center
 .ready-to-create__constructor-picture-position-item
 	margin-bottom: 10px
-.ready-to-create__constructor-picture-position-item-txt
+	&.last
+		margin-bottom: 28px
+.ready-to-create__constructor-picture-position-item-title
+	margin-bottom: 5px
 	font-size: 22px
+.ready-to-create__constructor-picture-position-slider-wrap
+	display: flex
 .ready-to-create__constructor-picture-position-slider
 	width: 200px
 	margin-right: 30px
+	padding-left: 5px
+	display: flex
+	align-items: center
+.ready-to-create__constructor-picture-position-slider-minus-plus
+	display: flex
+	align-items: center
+	a
+		display: inline-flex
+		align-items: center
+		color: $main_txt_color
+		transition: color 0.5s
+		&:hover
+			color: #609086
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+		&:first-of-type
+			margin-right: 20px
+		i
+			font-size: 20px
+.ready-to-create__constructor-picture-position-cancellation
+	width: 100%
+	margin-bottom: 20px
+	button
+		width: 100%
+		color: $main_txt_color
+		background-color: #d5d5d5
 .ready-to-create__constructor-level3-wrap
 	display: flex
 	flex-wrap: wrap
@@ -631,7 +732,9 @@ a.pink-border
 .ready-to-create__constructor-design-option-toolbar
 	display: flex
 	align-items: center
-
+	&.mobile-step3
+		.ready-to-create__constructor-design-option-toolbar-backward
+			margin-right: 228px
 	&.mobile
 		display: none
 .ready-to-create__constructor-design-option-toolbar-backward
@@ -672,10 +775,12 @@ a.pink-border
 	display: flex
 
 .ready-to-create__constructor-checkout
+	width: 470px
 	.select
 		display: block
 		.slct
 			width: 100%
+			margin-bottom: 10px
 .ready-to-create__constructor-checkout-input
 	width: 100%
 	height: 60px
@@ -695,13 +800,13 @@ a.pink-border
 		border: 1px solid #ec008c
 .ready-to-create__constructor-checkout-textarea
 	width: 100%
-	height: 130px
+	height: 205px
 	margin-bottom: 10px
 	padding-left: 20px
 	padding-top: 10px
 	@include fz(22)
 	font-family: $font_FuturaBook
-	border: 1px solid #353535
+	border: 1px solid #383838
 	transition: 0.5s
 	&:hover
 		outline: 0
@@ -713,6 +818,8 @@ a.pink-border
 		border: 1px solid #ec008c
 .ready-to-create__constructor-checkout-btn
 	text-align: center
+	button
+		width: 270px
 .ready-to-create__constructor-checkout
 	.ready-to-create__constructor-design-option-toolbar
 		margin-top: 0
@@ -728,6 +835,7 @@ a.pink-border
 		height: 17px
 		background-color: #616161
 		border-radius: 50%
+		margin-left: -5px
 		top: -4px
 		border: none
 		transition: background 0.5s
@@ -739,7 +847,7 @@ a.pink-border
 			background: #616161
 		&.ui-state-hover
 			outline: 0
-			background: #e5f7fe
+			background: black
 	.ui-widget-header
 		background: #e87e02
 		border-top: 1px solid #e87e02
@@ -747,7 +855,7 @@ a.pink-border
 .ui-slider-horizontal
 	height: 7px
 	border-radius: 4px
-	top: 4px
+	top: 0
 .ui-corner-all,.ui-corner-left,.ui-corner-tl,.ui-corner-top
 	border-top-left-radius: 4px
 .ui-corner-all,.ui-corner-right,.ui-corner-top,.ui-corner-tr
@@ -787,12 +895,35 @@ a.pink-border
 		margin-bottom: 30px
 		padding-left: 15px
 		padding-right: 15px
-	.ready-to-create__constructor-design-option
-		padding-left: 10px
-		padding-right: 10px
 	.ready-to-create__constructor-design-option-toolbar
 		padding-left: 10px
 		padding-right: 10px
+	.ready-to-create__constructor-level2-wrap
+		flex-wrap: wrap
+	.ready-to-create__constructor-model-canvas-container.step3
+		width: 45%
+		margin-left: 0
+	.ready-to-create__constructor-checkout
+		width: 50%
+		padding-right: 10px
+		margin-left: auto
+	.ready-to-create__constructor-wrap
+		width: 100%
+		margin-left: 0
+	.ready-to-create__constructor-model-canvas-container
+		width: 50%
+		margin-right: 0
+		padding-left: 10px
+		padding-top: 0
+	.ready-to-create__constructor-design-option-toolbar-content
+		width: 48%
+		margin-left: auto
+	.ready-to-create__constructor-design-background-text-item
+		&:last-of-type
+			margin-left: auto
+			margin-right: 0
+	.ready-to-create__constructor-design-btn-item:last-of-type
+		margin-left: auto
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -821,6 +952,8 @@ a.pink-border
 		padding-right: 10px
 	.ready-to-create__constructor-design-option-wrap
 		padding-left: 0
+	.ready-to-create__constructor-design-option-toolbar-content
+		width: 50%
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
@@ -842,8 +975,6 @@ a.pink-border
 		button
 			&:first-of-type
 				margin-bottom: 10px
-	.ready-to-create__constructor-design-input-file
-		margin-bottom: 20px
 	.ready-to-create__constructor-phonegroup
 		padding-left: 10px
 		padding-right: 10px
@@ -869,13 +1000,30 @@ a.pink-border
 			display: block
 			text-align: center
 			.ready-to-create__constructor-design-option-toolbar-order
-				display: block
+				display: flex
+				margin-right: auto
+				margin-bottom: 15px
 			.ready-to-create__constructor-design-option-toolbar-backward
-				display: block
+				display: flex
+				margin: auto
 		&.mobile-step3
 			.ready-to-create__constructor-design-option-toolbar-backward
-				display: block
+				display: flex
+				margin-right: 0
 	.white-popup
+		width: 100%
+	.ready-to-create__constructor-model-canvas-container
+		width: 100%
+	.ready-to-create__constructor-model-canvas-container.step3
+		width: 100%
+		padding-left: 0
+		margin-right: 0
+		margin-left: 0
+	.ready-to-create__constructor-checkout
+		width: 100%
+	.ready-to-create__constructor-checkout-btn
+		margin-left: auto
+	.ready-to-create__constructor-design-option-toolbar-content
 		width: 100%
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
@@ -894,7 +1042,7 @@ a.pink-border
 				font-size: 17px
 	.ready-to-create__constructor-checkout-btn
 		button
-			width: 100%
+			width: 130px
 	.white-popup
 		.modal-loaders
 			flex-direction: column
@@ -917,6 +1065,27 @@ a.pink-border
 		padding-right: 10px
 	.ready-to-create__constructor-design-option-text-texture-switchs
 		line-height: 1
+	.ready-to-create__constructor-design-option-toolbar
+		flex-direction: column
+	.ready-to-create__constructor-checkout-btn
+		margin-right: auto
+	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
+		margin-bottom: 15px
+	.ready-to-create__constructor-design-social-item
+		&.not-modal
+			.ready-to-create__constructor-design-social-title
+				width: 50%
+	.ready-to-create__constructor-design-background-text
+		flex-direction: column
+	.ready-to-create__constructor-design-background-text-item
+		width: 150px
+		margin-right: 0
+		&:last-of-type
+			margin-left: 0
+		&:first-of-type
+			margin-bottom: 15px
+			.ready-to-create__constructor-design-background-text-item-label
+				margin-right: 15px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

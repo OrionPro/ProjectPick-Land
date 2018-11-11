@@ -371,8 +371,7 @@ html(class="no-js" lang="ru")
 									ul
 										li
 											a(href="#" class="ready-to-create__constructor-design-link-toggle") Текст на чехле
-												i
-													i.fa.fa-angle-down
+												i.fa.fa-angle-down
 											.ready-to-create__constructor-design-dropdown-wrap
 												input(type="text" placeholder="Введите текст на крышке" class="ready-to-create__constructor-design-option-input")
 												.select
@@ -387,10 +386,41 @@ html(class="no-js" lang="ru")
 														li sans-serif
 														li Arial
 													input(type="hidden" name="design-option")
+												.ready-to-create__constructor-design-background-text
+													.ready-to-create__constructor-design-background-text-item
+														.ready-to-create__constructor-design-background-text-item-label Фон:
+														.ready-to-create__constructor-design-background-text-item-input
+															input(type="text" placeholder="FFFFFF")
+													.ready-to-create__constructor-design-background-text-item
+														.ready-to-create__constructor-design-background-text-item-label Текст:
+														.ready-to-create__constructor-design-background-text-item-input
+															input(type="text" placeholder="FFFFFF")
+												.ready-to-create__constructor-picture-position
+													.ready-to-create__constructor-picture-position-item
+														.ready-to-create__constructor-picture-position-item-title Повернуть текст:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-item.last
+														.ready-to-create__constructor-picture-position-item-title Изменить размер:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-cancellation
+														button(class="main_btn2" type="button") Убрать все изменения
 										li
 											a(href="#" class="ready-to-create__constructor-design-link-toggle") Избражение на чехле
-												i
-													i.fa.fa-angle-down
+												i.fa.fa-angle-down
 											.ready-to-create__constructor-design-dropdown-wrap
 												.ready-to-create__constructor-design-btn-wrap
 													.ready-to-create__constructor-design-btn-item
@@ -411,12 +441,27 @@ html(class="no-js" lang="ru")
 															img(src=require("../../img/constructor-design-social-inst.jpg"))
 												.ready-to-create__constructor-picture-position
 													.ready-to-create__constructor-picture-position-item
-														.ready-to-create__constructor-picture-position-item-txt Повернуть текст:
-														.ready-to-create__constructor-picture-position-slider
-															.ui-slider
-
-
-
+														.ready-to-create__constructor-picture-position-item-title Повернуть изображение:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-item.last
+														.ready-to-create__constructor-picture-position-item-title Изменить размер:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-cancellation
+														button(class="main_btn2" type="button") Убрать все изменения
 						.row
 							.col-12.col-xl-10.offset-xl-1
 								.ready-to-create__constructor-design-option-toolbar
@@ -439,14 +484,14 @@ html(class="no-js" lang="ru")
 							.ready-to-create__constructor-divider
 						form
 							.ready-to-create__constructor-level3-wrap
-								.ready-to-create__constructor-model-canvas-container
+								.ready-to-create__constructor-model-canvas-container.step3
 									// картинка для примера
 									img(src=require("../../img/constructor-model-canvas-container.jpg"))
 								.ready-to-create__constructor-checkout
 									.select
 										.slct_arrow
 											i.fa.fa-angle-down
-										a(href="#" class="slct") Выберите материал чехла:
+										a(href="#" class="slct no-scroll") Выберите материал чехла:
 										ul.drop
 											li Roboto
 											li Helvetica
