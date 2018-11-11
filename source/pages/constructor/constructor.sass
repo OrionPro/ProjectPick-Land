@@ -1,6 +1,7 @@
 @import "../../sass/vars.sass"
 @import "../../libs/font-awesome.min.css"
 @import "../../libs/magnific-popup.css"
+@import "../../libs/jquery-ui.min.css"
 html, body
 	font-size: 16px
 body
@@ -77,6 +78,7 @@ li
 			margin-right: 30px
 		.ready-to-create__constructor-design-social-title
 			text-align: left
+			margin-bottom: 10px
 		.ready-to-create__constructor-design-social
 			padding-left: 50px
 			justify-content: left
@@ -486,12 +488,14 @@ a.pink-border
 		@include fz(16)
 		line-height: 1.1
 .ready-to-create__constructor-design-social-item
-	display: flex
-	align-items: center
+	&.not-modal
+		margin-bottom: 15px
+		display: flex
+		align-items: center
 .ready-to-create__constructor-design-social-title
 	margin-right: 10px
 	text-align: center
-	@include fz(21)
+	@include fz(22)
 	line-height: 0.8
 .ready-to-create__constructor-design-social
 	a
@@ -549,6 +553,13 @@ a.pink-border
 		display: flex
 		align-items: center
 		justify-content: center
+.ready-to-create__constructor-picture-position-item
+	margin-bottom: 10px
+.ready-to-create__constructor-picture-position-item-txt
+	font-size: 22px
+.ready-to-create__constructor-picture-position-slider
+	width: 200px
+	margin-right: 30px
 .ready-to-create__constructor-level3-wrap
 	display: flex
 	flex-wrap: wrap
@@ -705,6 +716,47 @@ a.pink-border
 .ready-to-create__constructor-checkout
 	.ready-to-create__constructor-design-option-toolbar
 		margin-top: 0
+
+// slider
+.ui-widget.ui-widget-content
+	width: 100%
+	border: none
+	background-color: #b0b0b0
+	position: relative
+	.ui-state-default, .ui-widget-content .ui-state-default
+		width: 17px
+		height: 17px
+		background-color: #616161
+		border-radius: 50%
+		top: -4px
+		border: none
+		transition: background 0.5s
+		&.ui-state-active
+			outline: 0
+			background: #616161
+		&.ui-state-focus
+			outline: 0
+			background: #616161
+		&.ui-state-hover
+			outline: 0
+			background: #e5f7fe
+	.ui-widget-header
+		background: #e87e02
+		border-top: 1px solid #e87e02
+		border-right: 9px solid #d57402
+.ui-slider-horizontal
+	height: 7px
+	border-radius: 4px
+	top: 4px
+.ui-corner-all,.ui-corner-left,.ui-corner-tl,.ui-corner-top
+	border-top-left-radius: 4px
+.ui-corner-all,.ui-corner-right,.ui-corner-top,.ui-corner-tr
+	border-top-right-radius: 4px
+.ui-corner-all,.ui-corner-bl,.ui-corner-bottom,.ui-corner-left
+	border-bottom-left-radius: 4px
+.ui-corner-all,.ui-corner-bottom,.ui-corner-br,.ui-corner-right
+	border-bottom-right-radius: 4px
+
 // media
 
 // Large devices (desktops, less than 1200px)

@@ -52,3 +52,7 @@ exports.sticky = function () {
 exports.mCustomScrollbar = function () {
 	return require("../libs/jquery.mCustomScrollbar.concat.min");
 };
+
+exports.touchPunch = function () {
+	return require("../libs/jquery.ui.touch-punch.min");
+};

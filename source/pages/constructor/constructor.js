@@ -1,6 +1,8 @@
 
 require("../../libs/matchMedia");
 require("../../libs/libs").magnific_popup();
+require("../../libs/libs").jqueryui();
+require("../../libs/libs").touchPunch();
 import './constructor.sass';
 
 //import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
@@ -29,6 +31,8 @@ function tabs(parent) {
 }
 
 $(document).ready( function() {
+	// инициализация слайдера
+	$( ".ui-slider" ).slider();
 	// развёртывание прокси в header
 	function dropdownUnfolding(obj) {
 		const menu = $(obj.menu),
