@@ -500,16 +500,27 @@ html(class="no-js" lang="ru")
 											li sans-serif
 											li Arial
 										input(type="hidden" name="constructor-checkout")
+									.ready-to-create__constructor-form-title
+										| Личные данные:
+									.ready-to-create__constructor-divider.form
 									div
-										input(type="text" placeholder="Введите e-mail" class="ready-to-create__constructor-checkout-input")
+										input(type="text" placeholder="Ваше имя" class="ready-to-create__constructor-checkout-input")
 									div
-										input(type="text" placeholder="Введите номер телефона" class="ready-to-create__constructor-checkout-input")
+										input(type="text" placeholder="Ваш e-mail" class="ready-to-create__constructor-checkout-input")
 									div
+										input(type="text" placeholder="Ваш телефон" class="ready-to-create__constructor-checkout-input")
+									//div
 										textarea(placeholder="Введите ваш комментарий" class="ready-to-create__constructor-checkout-textarea")
+									.ready-to-create-promo
+										input(type="text" placeholder="Введите промокод" class="ready-to-create__constructor-checkout-input")
+										i.fa.fa-times
+										// блок с ошибкой , он скрыт
+										.top-block-promo-hide-error
+											| Такого промокода не существует!
 							.ready-to-create__constructor-design-option-wrap
 								.ready-to-create__constructor-design-option-toolbar.mobile-step3
 									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
 										i.fa.fa-angle-double-left
-										| Свой дизайн
+										| Редактировать дизайн
 									.ready-to-create__constructor-checkout-btn
 										button(type="submit" class="main_btn") Отправить

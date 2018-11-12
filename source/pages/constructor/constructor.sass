@@ -421,10 +421,35 @@ a.pink-border
 	@include fz(20)
 	margin-bottom: 10px
 .ready-to-create__constructor-divider
-	width: 100px
+	width: 170px
 	height: 2px
 	margin: auto
 	background-color: #353535
+	&.form
+		width: 130px
+		margin-left: 0
+		margin-bottom: 20px
+.ready-to-create-promo
+	position: relative
+	input
+		margin-bottom: 0
+		padding-right: 40px
+	i
+		position: absolute
+		top: 50%
+		right: 20px
+		font-size: 20px
+		transform: translateY(-45%)
+		cursor: pointer
+		color: #383838
+		z-index: 10
+.top-block-promo-hide-error
+	display: none
+	position: absolute
+	bottom: -25px
+	left: 20px
+	font-size: 15px
+	color: #e00029
 .ready-to-create__constructor-model-canvas-container
 	width: 230px
 	padding-top: 100px
@@ -692,7 +717,7 @@ a.pink-border
 			outline: 0
 			border: 1px solid #ec008c
 .ready-to-create__constructor-design-option-wrap
-	padding-left: 22px
+	padding-left: 100px
 .ready-to-create__constructor-design-option-color-switchs
 	display: flex
 	flex-direction: column
@@ -734,7 +759,8 @@ a.pink-border
 	align-items: center
 	&.mobile-step3
 		.ready-to-create__constructor-design-option-toolbar-backward
-			margin-right: 228px
+			width: 262px
+			margin-right: 238px
 	&.mobile
 		display: none
 .ready-to-create__constructor-design-option-toolbar-backward
@@ -781,6 +807,9 @@ a.pink-border
 		.slct
 			width: 100%
 			margin-bottom: 10px
+.ready-to-create__constructor-form-title
+	font-size: 20px
+	margin-bottom: 5px
 .ready-to-create__constructor-checkout-input
 	width: 100%
 	height: 60px
@@ -924,6 +953,10 @@ a.pink-border
 			margin-right: 0
 	.ready-to-create__constructor-design-btn-item:last-of-type
 		margin-left: auto
+	.ready-to-create__constructor-design-option-wrap
+		padding-left: 0
+	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
+		margin-right: 192px
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -954,6 +987,8 @@ a.pink-border
 		padding-left: 0
 	.ready-to-create__constructor-design-option-toolbar-content
 		width: 50%
+	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
+		margin-right: 82px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
@@ -1025,6 +1060,11 @@ a.pink-border
 		margin-left: auto
 	.ready-to-create__constructor-design-option-toolbar-content
 		width: 100%
+	.ready-to-create-promo
+		margin-bottom: 20px
+	.ready-to-create__constructor-checkout-btn
+		button
+			width: 150px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/

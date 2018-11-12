@@ -31,6 +31,11 @@ function tabs(parent) {
 }
 
 $(document).ready( function() {
+	//
+	$('.ready-to-create-promo i').on('click', function (e) {
+		e.preventDefault();
+		$(this).siblings('input').val('');
+	});
 	// инициализация слайдера
 	$( ".ui-slider" ).slider();
 	// развёртывание прокси в header
