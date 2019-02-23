@@ -42,10 +42,10 @@ li
 	height: 0
 // Модальное окно
 .white-popup
-	width: 570px
+	width: 1170px
 	margin: auto
-	max-width: 50em
-	padding: 45px 30px 30px 20px
+	max-width: 75em
+	padding: 20px 30px 45px 20px
 	position: relative
 	border: 1px solid #ffd1ee
 	background-color: #fff
@@ -86,21 +86,55 @@ li
 			width: 170px
 	.popup-constructor__image-categories
 		display: flex
+		flex-direction: column
 	.popup-constructor__image-categories-links
-		width: 250px
-		margin-right: 15px
-		font-size: 22px
+		width: 320px
+		padding: 20px
+		margin-right: 25px
+		background-color: #f7f7f7
 		flex-shrink: 0
 		a
-			margin-right: 10px
-			&:last-of-type
-				margin-right: 0
+			@include truncate(100%)
+		.select
+			display: none
+			.drop
+				li
+					transition: 0.5s
+					&:hover
+						background-color: $main_color2
+
+	.popup-constructor__image-categories-desktop
+		height: 100%
+	.popup-constructor__image-categories-desktop-title
+		@include fz(22)
+	.popup-constructor__image-categories-desktop-list
+		display: block
+		overflow: auto
+		height: 100%
+		//внешний вид скроллбара
+		scrollbar-base-color: $main_color   //для IE
+		scrollbar-arrow-color: $main_color	//для IE
+		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+		&::-webkit-scrollbar
+			width: 5px
+		&::-webkit-scrollbar-thumb
+			background-color: #ffd1ee
+			&:hover
+				background-color: darken(#ffd1ee, 10%)
+		&::-webkit-scrollbar-track-piece
+			background-color: lighten(#ffd1ee, 60%)
+	.popup-constructor__image-categories-desktop-list-item
+		display: flex
+		padding-right: 5px
 	.popup-constructor__image-categories-links-title
 		margin-bottom: 5px
 	.popup-constructor__image-categories-wrap
-		height: 100%
-		margin-top: 30px
 		display: flex
+	.popup-constructor__image-categories-wrap-img
+		height: 100%
+		display: flex
+		align-items: flex-start
+		justify-content: flex-start
 		flex-wrap: wrap
 		.popup-constructor__image-categories-item
 			width: 74px
@@ -114,37 +148,39 @@ li
 				height: auto
 	.popup-constructor__image-categories-pagination
 		display: flex
-	.wrap__pagination
-		text-align: center
-		margin-top: 10px
-		.pagination
-			li
-				display: inline-block
-				a
-					font-size: 14px
-					border-radius: 5px
-					background-color: $main_txt_color
-					color: #fff
-					padding: 3px 8.5px
-					text-decoration: none
-					transition: 0.5s
-					&.active
+		width: 100%
+		margin-left: 350px
+		&.wrap__pagination
+			text-align: center
+			margin-top: 20px
+			.pagination
+				li
+					display: inline-block
+					a
+						font-size: 18px
+						border-radius: 50%
+						background-color: transparent
+						color: $main_txt_color
+						padding: 3px 8.5px
 						text-decoration: none
-						background-color: $main_color
-					&:hover
-						text-decoration: none
-						background-color: $main_color
-					&:active
-						text-decoration: none
-						background-color: $main_color
-					&:focus
-						text-decoration: none
-						background-color: $main_color
-				.ellipsis
-					font-size: 14px
-					padding: 3px 8.5px
-					background-color: #f2f2f2
-					color: $main_txt_color
+						transition: 0.5s
+						&.active
+							text-decoration: none
+							background-color: #ff99e8
+						&:hover
+							text-decoration: none
+							background-color: $main_color
+						&:active
+							text-decoration: none
+							background-color: $main_color
+						&:focus
+							text-decoration: none
+							background-color: $main_color
+					.ellipsis
+						font-size: 18px
+						padding: 3px 8.5px
+						background-color: transparent
+						color: $main_txt_color
 .mfp-zoom-in.mfp-ready.mfp-bg
 	opacity: 0.7
 .mfp-bg
@@ -430,10 +466,29 @@ a.pink-border
 		margin-left: 0
 		margin-bottom: 20px
 .ready-to-create-promo
+	min-height: 60px
+	line-height: 60px
+	margin-bottom: 20px
 	position: relative
+	a
+		&.promo
+			text-decoration: underline
+			color: $main_txt_color
+			transition: color 0.2s
+			&:hover
+				color: $auxiliary_txt_color
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+
 	input
+		display: none
 		margin-bottom: 0
 		padding-right: 40px
+		&.active
+			display: block!important
 	i
 		position: absolute
 		top: 50%
@@ -441,15 +496,19 @@ a.pink-border
 		font-size: 20px
 		transform: translateY(-45%)
 		cursor: pointer
+		display: none
 		color: #383838
 		z-index: 10
 		transition: color 0.5s
 		&:hover
 			color: #e00029
+.ready-to-create__constructor-price
+	margin-bottom: 20px
+	font-family: $font_FuturaDemic
 .top-block-promo-hide-error
 	display: none
 	position: absolute
-	bottom: -25px
+	bottom: -40px
 	left: 20px
 	font-size: 15px
 	color: #e00029
@@ -765,8 +824,8 @@ a.pink-border
 	align-items: center
 	&.mobile-step3
 		.ready-to-create__constructor-design-option-toolbar-backward
-			width: 262px
-			margin-right: 238px
+			width: 250px
+			margin-right: 250px
 	&.mobile
 		display: none
 .ready-to-create__constructor-design-option-toolbar-backward
@@ -779,7 +838,7 @@ a.pink-border
 	border: 1px solid transparent
 	@include fz(22)
 	cursor: pointer
-	transition: 0.5s
+	transition: border 0.5s, background 0.5s
 	&:hover
 		background-color: #fff
 		border: 1px solid $main_txt_color
@@ -905,6 +964,8 @@ a.pink-border
 // Large devices (desktops, less than 1200px)
 @media only screen and (max-width : 1199px)
 	/**/
+	.white-popup
+		width: 100%
 	.ready-to-create__constructor-header
 		padding-left: 10px
 	.ready-to-create__constructor-steps
@@ -962,11 +1023,21 @@ a.pink-border
 	.ready-to-create__constructor-design-option-wrap
 		padding-left: 0
 	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
-		margin-right: 192px
+		margin-right: 204px
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
-
+	.white-popup
+		.popup-constructor__image-categories-links
+			width: 250px
+		.popup-constructor__image-categories-desktop-list
+			a
+				@include fz(18)
+		.popup-constructor__image-categories-desktop-title
+			line-height: 1.1
+			@include fz(20)
+		.popup-constructor__image-categories-pagination
+			margin-left: 278px
 	.ready-to-create__constructor
 		.select
 			display: block
@@ -994,10 +1065,34 @@ a.pink-border
 	.ready-to-create__constructor-design-option-toolbar-content
 		width: 50%
 	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
-		margin-right: 82px
+		margin-right: 94px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
+	.white-popup
+		.popup-constructor__image-categories-desktop
+			display: none
+		.popup-constructor__image-categories-links
+			width: 100%
+			.select
+				display: block
+				.slct
+					height: 50px
+					line-height: 50px
+					margin-bottom: 15px
+				.slct_arrow
+					top: 15px
+				.drop
+					top: 50px
+		.popup-constructor__image-categories-wrap
+			flex-wrap: wrap
+		.popup-constructor__image-categories-wrap-img
+			justify-content: center
+		.popup-constructor__image-categories-pagination
+			margin-left: auto
+			margin-right: auto
+			.pagination
+				margin: auto
 	.ready-to-create__constructor-steps
 		padding-top: 10px
 		.ready-to-create__constructor-step
@@ -1071,10 +1166,16 @@ a.pink-border
 		margin-bottom: 20px
 	.ready-to-create__constructor-checkout-btn
 		button
-			width: 150px
+			width: 180px
+
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
+	.white-popup .title-modal-top
+		padding-left: 5px
+		padding-right: 5px
+		text-align: center
+		line-height: 1
 	.ready-to-create__constructor-header
 		flex-direction: column
 		padding-right: 10px
@@ -1089,7 +1190,7 @@ a.pink-border
 				font-size: 17px
 	.ready-to-create__constructor-checkout-btn
 		button
-			width: 130px
+			width: 175px
 	.white-popup
 		.modal-loaders
 			flex-direction: column
@@ -1101,8 +1202,6 @@ a.pink-border
 		.popup-constructor__image-categories-pagination
 			width: 100%
 			align-items: center
-			.pagination
-				margin: auto
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
@@ -1113,9 +1212,10 @@ a.pink-border
 	.ready-to-create__constructor-design-option-text-texture-switchs
 		line-height: 1
 	.ready-to-create__constructor-design-option-toolbar
-		flex-direction: column
+		flex-direction: column-reverse
 	.ready-to-create__constructor-checkout-btn
 		margin-right: auto
+		margin-bottom: 15px
 	.ready-to-create__constructor-design-option-toolbar.mobile-step3 .ready-to-create__constructor-design-option-toolbar-backward
 		margin-bottom: 15px
 	.ready-to-create__constructor-design-social-item

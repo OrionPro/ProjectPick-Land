@@ -29,12 +29,30 @@ function tabs(parent) {
 
 	});
 }
-
+// решаем вопрос с min-height 100% у safari до версии 11
+function heightItemSafari(obj) {
+	let heightItem =  $(obj.itemHeight).height();
+	$(obj.item).css("height", heightItem);
+}
 $(document).ready( function() {
-	//
-	$('.ready-to-create-promo i').on('click', function (e) {
+	// вызов функции
+	heightItemSafari({
+		itemHeight: '.white-popup .popup-constructor__image-categories-wrap-img',
+		item:  '.white-popup .popup-constructor__image-categories-desktop-list'
+	});
+	//Клик на ссылке promo
+	$('.ready-to-create-promo .promo').on("click", function (e) {
 		e.preventDefault();
-		$(this).siblings('input').val('');
+		$(this).parents('.ready-to-create-promo').find(".enter_promo_wrap_link").hide();
+		$(this).parents('.ready-to-create-promo').find("input[type=text]").show("fade", 500).addClass('active').add(this).hide();
+		$(this).parents('.ready-to-create-promo').find("i.fa-times").show("fade", 500);
+
+	});
+	$('.ready-to-create-promo i.fa-times').on("click", function (e) {
+		e.preventDefault();
+		$(this).parents('.ready-to-create-promo').find(".promo").show("fade", 500);
+		$(this).parents('.ready-to-create-promo').find("a.promo").show("fade", 500).add(this).siblings('input').hide().removeClass('active').add(this).hide();
+
 	});
 	// инициализация слайдера
 	$( ".ui-slider" ).slider();
@@ -125,6 +143,10 @@ $(document).ready( function() {
 					}
 				},
 				open: function () {
+					heightItemSafari({
+						itemHeight: '.white-popup .popup-constructor__image-categories-wrap-img',
+						item:  '.white-popup .popup-constructor__image-categories-desktop-list'
+					});
 				}
 			},
 			closeOnBgClick: true,

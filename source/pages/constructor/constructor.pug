@@ -56,12 +56,9 @@ html(class="no-js" lang="ru")
 		#popup-constructor.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
 			form
 				p.title-modal-top
-					span Выберите изображение:
-					|
-					| Фото должно быть формата .jpg, .png,
-					| .gif и не менее 1000 пикселей в высоту.
+					span Выберите изображения из галереи
 				.modal-loaders
-					.ready-to-create__constructor-design-social-item
+					//.ready-to-create__constructor-design-social-item
 						p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
 						.ready-to-create__constructor-design-social
 							a(href="#")
@@ -70,73 +67,159 @@ html(class="no-js" lang="ru")
 								img(src=require("../../img/constructor-design-social-fb.jpg"))
 							a(href="#")
 								img(src=require("../../img/constructor-design-social-inst.jpg"))
-					.ready-to-create__constructor-design-input-file
+					//.ready-to-create__constructor-design-input-file
 						span Загрузить с ПК
 						input(type="file" name='field' multiple)
 				.popup-constructor__image-categories
-					.popup-constructor__image-categories-links
-						p.popup-constructor__image-categories-links-title
-							| Категории изображений:
-						a(href="#").pink-border стиль дизайна длинный
-						a(href="#").pink-border стиль дизайна 5
-						a(href="#").pink-border стиль дизайна 5
-						a(href="#").pink-border стиль
 					.popup-constructor__image-categories-wrap
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-item
-							a(href="#")
-								img(src=require("../../img/popup-constructor__image-categories.jpg"))
-						.popup-constructor__image-categories-pagination.wrap__pagination
-							ul.pagination
-								li
-									a(href="#" class="active") 1
-								li
-									a(href="#") 2
-								li
-									a(href="#") 3
-								li
-									span(class="ellipsis") ...
-								li
-									a(href="#") 20
-								li
-									a(href="#") 21
-								li
-									a(href="#")
-										i.fa.fa-long-arrow-right
-								li
-									a(href="#") Последняя
+						.popup-constructor__image-categories-links
+							.popup-constructor__image-categories-desktop
+								.popup-constructor__image-categories-desktop-title
+									| Категории изображений:
+								.popup-constructor__image-categories-desktop-list
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна длинный стиль дизайна длинный
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна длинный
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна длинный
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна длинный
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль дизайна 5
+									.popup-constructor__image-categories-desktop-list-item
+										a(href="#").pink-border стиль
+							.select
+								.slct_arrow
+									i.fa.fa-angle-down
+								a(href="#" class="slct") Категории изображений:
+								ul.drop
+									li
+										| стиль дизайна длинный 2
+									li
+										| стиль дизайна 1
+									li
+										| стиль дизайна 2
+									li
+										| стиль дизайна 3
+									li
+										| стиль дизайна длинный 2134
+								input(type="hidden" name="phonegroup-model")
+							//p.popup-constructor__image-categories-links-title
+							//	| Категории изображений:
+							//a(href="#").pink-border стиль дизайна длинный
+							//a(href="#").pink-border стиль дизайна 5
+							//a(href="#").pink-border стиль дизайна 5
+							//a(href="#").pink-border стиль
+						.popup-constructor__image-categories-wrap-img
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+							.popup-constructor__image-categories-item
+								a(href="#")
+									img(src=require("../../img/popup-constructor__image-categories.jpg"))
+					.popup-constructor__image-categories-pagination.wrap__pagination
+						ul.pagination
+							li
+								a(href="#" class="active") 1
+							li
+								a(href="#") 2
+							li
+								a(href="#") 3
+							li
+								a(href="#") 4
+							li
+								a(href="#") 5
+							li
+								span(class="ellipsis") ...
+							li
+								a(href="#") 55
 		#popup-constructor-textures.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
 			form
 				.popup-constructor__image-categories
@@ -308,7 +391,7 @@ html(class="no-js" lang="ru")
 												li Nexus 6
 												li Nexus 5
 												li Nexus 6
-										input(type="hidden" name="phonegroup-model")
+											input(type="hidden" name="phonegroup-model")
 								.col-xl-3.col-lg-4.col-md-4
 									.ready-to-create__constructor-phonegroup-item.center-select-mobile
 										button(type="submit" class="main_btn tabs-item" data-tab="2") Создать чехол
@@ -370,6 +453,50 @@ html(class="no-js" lang="ru")
 								.ready-to-create__constructor-design-option
 									ul
 										li
+											a(href="#" class="ready-to-create__constructor-design-link-toggle") Избражение на чехле
+												i.fa.fa-angle-down
+											.ready-to-create__constructor-design-dropdown-wrap
+												.ready-to-create__constructor-design-btn-wrap
+													.ready-to-create__constructor-design-btn-item
+														button(type="button" class="main_btn3 open-popup-link" data-mfp-src="#popup-constructor") Галерея
+													.ready-to-create__constructor-design-btn-item
+														form
+															.ready-to-create__constructor-design-input-file
+																span Файл с ПК
+																input(type="file" name='field' id="image-input" multiple)
+												.ready-to-create__constructor-design-social-item.not-modal
+													p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
+													.ready-to-create__constructor-design-social
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-vk.jpg"))
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-fb.jpg"))
+														a(href="#")
+															img(src=require("../../img/constructor-design-social-inst.jpg"))
+												.ready-to-create__constructor-picture-position
+													.ready-to-create__constructor-picture-position-item
+														.ready-to-create__constructor-picture-position-item-title Повернуть изображение:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-item.last
+														.ready-to-create__constructor-picture-position-item-title Изменить размер:
+														.ready-to-create__constructor-picture-position-slider-wrap
+															.ready-to-create__constructor-picture-position-slider
+																.ui-slider
+															.ready-to-create__constructor-picture-position-slider-minus-plus
+																a(href="#")
+																	i.fa.fa-minus
+																a(href="#")
+																	i.fa.fa-plus
+													.ready-to-create__constructor-picture-position-cancellation
+														button(class="main_btn2" type="button") Убрать все изменения
+										li
 											a(href="#" class="ready-to-create__constructor-design-link-toggle") Текст на чехле
 												i.fa.fa-angle-down
 											.ready-to-create__constructor-design-dropdown-wrap
@@ -398,50 +525,6 @@ html(class="no-js" lang="ru")
 												.ready-to-create__constructor-picture-position
 													.ready-to-create__constructor-picture-position-item
 														.ready-to-create__constructor-picture-position-item-title Повернуть текст:
-														.ready-to-create__constructor-picture-position-slider-wrap
-															.ready-to-create__constructor-picture-position-slider
-																.ui-slider
-															.ready-to-create__constructor-picture-position-slider-minus-plus
-																a(href="#")
-																	i.fa.fa-minus
-																a(href="#")
-																	i.fa.fa-plus
-													.ready-to-create__constructor-picture-position-item.last
-														.ready-to-create__constructor-picture-position-item-title Изменить размер:
-														.ready-to-create__constructor-picture-position-slider-wrap
-															.ready-to-create__constructor-picture-position-slider
-																.ui-slider
-															.ready-to-create__constructor-picture-position-slider-minus-plus
-																a(href="#")
-																	i.fa.fa-minus
-																a(href="#")
-																	i.fa.fa-plus
-													.ready-to-create__constructor-picture-position-cancellation
-														button(class="main_btn2" type="button") Убрать все изменения
-										li
-											a(href="#" class="ready-to-create__constructor-design-link-toggle") Избражение на чехле
-												i.fa.fa-angle-down
-											.ready-to-create__constructor-design-dropdown-wrap
-												.ready-to-create__constructor-design-btn-wrap
-													.ready-to-create__constructor-design-btn-item
-														button(type="button" class="main_btn3 open-popup-link" data-mfp-src="#popup-constructor") Галерея
-													.ready-to-create__constructor-design-btn-item
-														form
-															.ready-to-create__constructor-design-input-file
-																span Файл с ПК
-																input(type="file" name='field' id="image-input" multiple)
-												.ready-to-create__constructor-design-social-item.not-modal
-													p.ready-to-create__constructor-design-social-title Загрузить с соцсетей:
-													.ready-to-create__constructor-design-social
-														a(href="#")
-															img(src=require("../../img/constructor-design-social-vk.jpg"))
-														a(href="#")
-															img(src=require("../../img/constructor-design-social-fb.jpg"))
-														a(href="#")
-															img(src=require("../../img/constructor-design-social-inst.jpg"))
-												.ready-to-create__constructor-picture-position
-													.ready-to-create__constructor-picture-position-item
-														.ready-to-create__constructor-picture-position-item-title Повернуть изображение:
 														.ready-to-create__constructor-picture-position-slider-wrap
 															.ready-to-create__constructor-picture-position-slider
 																.ui-slider
@@ -512,17 +595,20 @@ html(class="no-js" lang="ru")
 									//div
 										textarea(placeholder="Введите ваш комментарий" class="ready-to-create__constructor-checkout-textarea")
 									.ready-to-create-promo
+										a(href="#" class="promo") Есть промокод?
 										input(type="text" placeholder="Введите промокод" class="ready-to-create__constructor-checkout-input")
 										i.fa.fa-times
 										// блок с ошибкой , он скрыт
 										.top-block-promo-hide-error
 											| Такого промокода не существует!
+									.ready-to-create__constructor-price
+										| Цена: #[span 200] грн.
 							.ready-to-create__constructor-design-option-wrap
 								.ready-to-create__constructor-design-option-toolbar.mobile-step3
 									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="2")
 										i.fa.fa-angle-double-left
 										| Редактировать дизайн
 									.ready-to-create__constructor-checkout-btn
-										button(type="submit" class="main_btn") Отправить
+										button(type="submit" class="main_btn") Отправить заказ
 		block script
 
