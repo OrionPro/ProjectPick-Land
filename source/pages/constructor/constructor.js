@@ -105,7 +105,7 @@ $(document).ready( function() {
 	}
 
 	// Вешаем обработочик на свою кнопку close
-	$(document).on("click", ".mfp-close", function () {
+	$(document).on("click", ".mfp-close, .white-popup .popup-constructor__image-categories-wrap-img .popup-constructor__image-categories-item", function () {
 		let magnificPopup = $.magnificPopup.instance;
 		magnificPopup.close();
 	});
