@@ -7,6 +7,36 @@ import './constructor.sass';
 
 //import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
+// функция throttle
+function throttle(func, ms) {
+
+	var isThrottled = false,
+		savedArgs,
+		savedThis;
+
+	function wrapper() {
+
+		if (isThrottled) { // (2)В этом состоянии все новые вызовы запоминаются в замыкании через savedArgs/savedThis. Обратим внимание, что и контекст вызова и аргументы для нас одинаково важны и запоминаются одновременно. Только зная и то и другое, можно воспроизвести вызов правильно.
+			savedArgs = arguments;
+			savedThis = this;
+			return;
+		}
+
+		func.apply(this, arguments); // (1)Декоратор throttle возвращает функцию-обёртку wrapper, которая при первом вызове запускает func и переходит в состояние «паузы» (isThrottled = true).
+
+		isThrottled = true;
+
+		setTimeout(function () {
+			isThrottled = false; // (3)Далее, когда пройдёт таймаут ms миллисекунд – пауза будет снята, а wrapper – запущен с последними аргументами и контекстом (если во время паузы были вызовы).
+			if (savedArgs) {
+				wrapper.apply(savedThis, savedArgs);
+				savedArgs = savedThis = null;
+			}
+		}, ms);
+	}
+
+	return wrapper;
+}
 // табы tabs
 function tabs(parent) {
 	parent.find(".tabs-item").on('click', function (event) { //ссылки которые будут переключать табы
@@ -32,7 +62,12 @@ function tabs(parent) {
 // решаем вопрос с min-height 100% у safari до версии 11
 function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
-	$(obj.item).css("height", heightItem);
+	if(heightItem >= 270) {
+		$(obj.item).css("height", heightItem - 90);
+	} else {
+		$(obj.item).css("height", 150);
+	}
+
 }
 $(document).ready( function() {
 	// вызов функции
@@ -227,10 +262,13 @@ $(document).ready( function() {
 		return false;
 	});
 });
-
-$(window).resize(function() {
-
-});
+$(window).on('resize', throttle(function () {
+	// здесь затормаживаем функции
+	heightItemSafari({
+		itemHeight: '.white-popup .popup-constructor__image-categories-wrap-img',
+		item:  '.white-popup .popup-constructor__image-categories-desktop-list'
+	});
+}, 150));
 
 $(window).scroll(function() {
 
