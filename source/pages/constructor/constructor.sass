@@ -66,6 +66,9 @@ li
 		&.popup-constructor-order-not-created
 			.order-created__title
 				color: #c01a2b
+	&.popup-constructor-order-instruction
+		.order-created__title
+			margin-bottom: 10px
 	.title-modal-top
 		margin-bottom: 20px
 		line-height: 1.2
@@ -960,6 +963,38 @@ a.pink-border
 .ui-corner-all,.ui-corner-bottom,.ui-corner-br,.ui-corner-right
 	border-bottom-right-radius: 4px
 
+
+.ready-to-create__constructor-title-link
+	display: none
+	a
+		color: $main_txt_color
+		font-size: 18px
+		text-decoration: none
+		position: relative
+		transition: 0.4s
+		&:after
+			content: ""
+			display: block
+			width: 100%
+			height: 1px
+			border: 1px dashed #353535
+			position: absolute
+			bottom: 2px
+			left: 0
+			transition: 0.4s
+		&:hover:after
+			border: 1px dashed #ffc5f2
+		&:focus:after
+			border: 1px dashed #ffc5f2
+		&:hover
+			color: #ffc5f2
+			text-decoration: none
+		&:active
+			color: #ffc5f2
+			text-decoration: none
+		&:focus
+			color: #ffc5f2
+			text-decoration: none
 // media
 
 // Large devices (desktops, less than 1200px)
@@ -967,6 +1002,17 @@ a.pink-border
 	/**/
 	.white-popup
 		width: 100%
+		.ready-to-create__constructor-instruction
+			display: block
+	.ready-to-create__constructor-title-link
+		display: block
+	.ready-to-create__constructor-title.tab2
+		.ready-to-create__constructor-title-val
+			display: none
+		.ready-to-create__constructor-divider
+			display: none
+	.ready-to-create__constructor-instruction
+		display: none
 	.ready-to-create__constructor-header
 		padding-left: 10px
 	.ready-to-create__constructor-steps

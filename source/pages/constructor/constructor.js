@@ -182,6 +182,11 @@ $(document).ready( function() {
 						itemHeight: '.white-popup .popup-constructor__image-categories-wrap-img',
 						item:  '.white-popup .popup-constructor__image-categories-desktop-list'
 					});
+					if(window.matchMedia("(max-width: 992px)").matches) (
+						$('html, body').stop().animate({
+							scrollTop: $(this.st.el.attr('data-mfp-src') + ' > *').offset().top-30
+						}, 100)
+					)
 				}
 			},
 			closeOnBgClick: true,

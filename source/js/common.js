@@ -122,7 +122,7 @@ function searchRadio (id,array){
 	});
 }
 $(document).ready(function () {
-
+	// собираем чекнутые радио кнопки и чекбоксы
 	var arr_check = [];
 	searchCheckbox('accordion__check', arr_check);
 	var arr_radio = [];
