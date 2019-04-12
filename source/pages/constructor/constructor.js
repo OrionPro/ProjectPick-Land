@@ -166,6 +166,7 @@ $(document).ready( function() {
 			}
 		}
 	});
+
 	$(document).on('click', '.open-popup-link', function () {
 		$(this).magnificPopup({
 			type: 'inline',
@@ -184,7 +185,7 @@ $(document).ready( function() {
 					});
 					if(window.matchMedia("(max-width: 992px)").matches) (
 						$('html, body').stop().animate({
-							scrollTop: $(this.st.el.attr('data-mfp-src') + ' > *').offset().top-30
+							scrollTop: $(this.st.el.attr('data-mfp-src') + ' > *').offset().top-100
 						}, 100)
 					)
 				}
