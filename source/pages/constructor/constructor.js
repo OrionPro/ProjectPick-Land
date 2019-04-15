@@ -45,11 +45,35 @@ function tabs(parent) {
 		parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
 		parent.find(".ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab]").removeClass('active');
 		let data = $(this).data('tab');
-		if(data == '1' || data == '2') {
+
+		if(data == '1') {
+			// связь между фреймом (конструктором) и сайтом
+			if(window.matchMedia("(max-width: 767px)").matches) {
+				// связь между фреймом (конструктором) и сайтом
+				window.parent.postMessage("dataTab1", "*");
+				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
+			}
+
+			$('.ready-to-create__constructor-steps').removeClass('step3');
+			$('.ready-to-create__constructor-steps').addClass('step1');
+		}
+		if(data == '2') {
+			// связь между фреймом (конструктором) и сайтом
+			if(window.matchMedia("(max-width: 767px)").matches) {
+				// связь между фреймом (конструктором) и сайтом
+				window.parent.postMessage("dataTab2", "*")
+			}
+
 			$('.ready-to-create__constructor-steps').removeClass('step3');
 			$('.ready-to-create__constructor-steps').addClass('step1');
 		}
 		if(data == '3') {
+			// связь между фреймом (конструктором) и сайтом
+			if(window.matchMedia("(max-width: 767px)").matches) {
+				// связь между фреймом (конструктором) и сайтом
+				window.parent.postMessage("dataTab3", "*")
+				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
+			}
 			$('.ready-to-create__constructor-steps').removeClass('step1');
 			$('.ready-to-create__constructor-steps').addClass('step3');
 		}
@@ -69,7 +93,17 @@ function heightItemSafari(obj) {
 	}
 
 }
+
 $(document).ready( function() {
+	// связь между фреймом (конструктором) и сайтом
+	window.parent.postMessage("ready", "*");
+
+	$('.open-popup-link').click(function(){
+		event.preventDefault();
+		var blockId = $(this).data('mfp-src');
+		window.parent.postMessage({"setBlockId": blockId}, "*");
+		window.parent.postMessage("offsetTop", "*");
+	});
 	// вызов функции
 	heightItemSafari({
 		itemHeight: '.white-popup .popup-constructor__image-categories-wrap-img',
@@ -184,9 +218,15 @@ $(document).ready( function() {
 						item:  '.white-popup .popup-constructor__image-categories-desktop-list'
 					});
 					if(window.matchMedia("(max-width: 992px)").matches) (
-						$('html, body').stop().animate({
-							scrollTop: $(this.st.el.attr('data-mfp-src') + ' > *').offset().top-100
-						}, 100)
+						// связь между фреймом (конструктором) и сайтом
+						window.addEventListener('message', function(event) {
+							let anchor;
+							if(anchor = event.data['findElement']) {
+								var data = $(`#${anchor}`);
+
+								window.parent.postMessage({"offset": data.offset().top}, "*");
+							}
+						})
 					)
 				}
 			},

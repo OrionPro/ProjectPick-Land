@@ -123,33 +123,78 @@ function searchRadio (id,array){
 }
 
 $(document).ready(function () {
+	// работаем с связью конструктора и сайта
 	window.addEventListener('message', function (event) {
-		var anchor, offset;
+		var offset;
 		if (event.data == 'ready') {
 			sendFrame();
-			console.log("есть связь");
+			//console.log("есть связь с конструктором");
 
 		}
 
 		if (event.data['setBlockId']) {
 			window.location.href = event.data['setBlockId'];
+		}
 
+		if (event.data == 'dataTab1') {
+			if(window.matchMedia("(max-width: 767px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1000)
+			);
+
+
+			if(window.matchMedia("(max-width: 575px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1070)
+			);
+		}
+
+		if (event.data == 'dataTab2') {
+			if(window.matchMedia("(max-width: 767px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1390)
+			);
+
+
+			if(window.matchMedia("(max-width: 575px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1440)
+			);
+		}
+
+		if (event.data == 'dataTab3') {
+			if(window.matchMedia("(max-width: 767px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1290)
+			);
+
+
+			if(window.matchMedia("(max-width: 575px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1360)
+			);
+
+			if(window.matchMedia("(max-width: 480px)").matches) (
+				$('.ready-to-create__constructor iframe').css('height', 1480)
+			);
+		}
+
+		if (event.data == 'offsetTop') {
+			sendFrame();
 		}
 
 		if (offset = event.data['offset']) {
-			console.log('офсет ' + event.data['offset']);
-			window.scrollTo(0, $('.ready-to-create__constructor#ready-to-create__constructor iframe').offset().top + offset);
+			//console.log('офсет ' + event.data['offset']);
+			window.scrollTo(0, $('.ready-to-create__constructor#ready-to-create__constructor iframe').offset().top + offset - 60);
+		}
+
+		if (event.data == 'scrollToConstructorPhonegroup') {
+			//console.log('офсет ' + event.data['offset']);
+			window.scrollTo(0, $('.ready-to-create__constructor#ready-to-create__constructor iframe').offset().top + 300);
 		}
 	});
 
 	var sendFrame = function () {
 		var hash = window.location.hash.substring(1);
-		console.log(hash);
-
 		$('.ready-to-create__constructor#ready-to-create__constructor iframe')[0].contentWindow.postMessage({"findElement": hash}, '*');
 	};
+	// если надо мониторить изменение hash
+	//$(window).on('hashchange', sendFrame);
 
-	$(window).on('hashchange', sendFrame);
 	// собираем чекнутые радио кнопки и чекбоксы
 	var arr_check = [];
 	searchCheckbox('accordion__check', arr_check);
