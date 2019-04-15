@@ -121,7 +121,35 @@ function searchRadio (id,array){
 		$("#"+id+" input[type='hidden']").val(array);
 	});
 }
+
 $(document).ready(function () {
+	window.addEventListener('message', function (event) {
+		var anchor, offset;
+		if (event.data == 'ready') {
+			sendFrame();
+			console.log("есть связь");
+
+		}
+
+		if (event.data['setBlockId']) {
+			window.location.href = event.data['setBlockId'];
+
+		}
+
+		if (offset = event.data['offset']) {
+			console.log('офсет ' + event.data['offset']);
+			window.scrollTo(0, $('.ready-to-create__constructor#ready-to-create__constructor iframe').offset().top + offset);
+		}
+	});
+
+	var sendFrame = function () {
+		var hash = window.location.hash.substring(1);
+		console.log(hash);
+
+		$('.ready-to-create__constructor#ready-to-create__constructor iframe')[0].contentWindow.postMessage({"findElement": hash}, '*');
+	};
+
+	$(window).on('hashchange', sendFrame);
 	// собираем чекнутые радио кнопки и чекбоксы
 	var arr_check = [];
 	searchCheckbox('accordion__check', arr_check);
