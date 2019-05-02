@@ -42,7 +42,7 @@
     "atob": "^2.1.2",
     "cryptiles": "^4.1.2",
     "hoek": "^5.0.3",
-    "jquery": "^3.2.1",
+    "jquery": "^3.4.1",
     "jquery-inputmask": "^1.0.1",
     "jquery-validation": "^1.17.0",
     "lodash": "^4.17.10",
