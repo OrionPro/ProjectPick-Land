@@ -197,7 +197,7 @@
 		h1
 			@include fz(30)
 		p
-			@include fz(18)
+			@include fz(25)
 	.header__modal
 		margin-top: 40px
 	[off-canvas*=left]
@@ -237,6 +237,19 @@
 				height:  auto!important
 	.ready-to-create__video-inner-left-txt-links
 		column-count: auto
+	.three-steps
+		padding-bottom: 50px
+	.three-steps__right-block-item-img
+		display: none
+	.three-steps__right-block-item
+		margin-bottom: 20px
+	.three-steps__right-block-item-txt .title
+		margin-bottom: 5px
+	.three-steps__left-img-block
+		img
+			width: 92%
+	.three-steps__right-block
+		padding-top: 15px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 665px)
 	.header__logo
@@ -264,6 +277,8 @@
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
+	.three-steps__right-block-item
+		margin-bottom: 15px
 	.ready-to-create__constructor
 		iframe
 			height: 1070px
