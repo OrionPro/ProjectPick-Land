@@ -86,6 +86,24 @@
 		justify-content: center
 	.footer__sign-up-widget
 		width: 270px
+	.can-not-decide .accordion__check-list-items
+		padding-left: 0
+		& > span
+			width: 90px
+			flex-shrink: 0
+		label.check i
+			margin-right: 10px
+	.can-not-decide
+		.accordion__select-wrap
+			.select.sex
+				width: 100%
+				.slct
+					width: 100%
+					margin-bottom: 20px
+			.select.color
+				width: 100%
+				.slct
+					width: 100%
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -140,15 +158,6 @@
 		.select-cover__btn
 			margin-bottom: 40px
 	.can-not-decide
-		.accordion__select-wrap
-			.select.sex
-				width: 100%
-				.slct
-					width: 100%
-			.select.color
-				width: 100%
-				.slct
-					width: 100%
 		.accordion__check-list-items
 			flex-direction: column
 	.ready-to-create__video-inner-left-txt-links
