@@ -26,6 +26,10 @@ if ($_POST) {
         $phone = $_POST['phone'];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone . '</div>';
     }
+    if (isset($_POST['instagramPage']) and $_POST['instagramPage'] != "") {
+        $phoneinstagramPage = $_POST['instagramPage'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Ваша instagram страничка: ' . $phoneinstagramPage . '</div>';
+    }
     if (isset($_POST['phone_mask']) and $_POST['phone_mask'] != "") {
         $phone_mask = $_POST['phone_mask'];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone_mask . '</div>';
@@ -36,7 +40,7 @@ if ($_POST) {
 	}
 	if (isset($_POST['textarea']) and $_POST['textarea'] != "") {
 		$textarea = $_POST['textarea'];
-		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Описание в texarea: ' . $textarea . '</div>';
+		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Описание в textarea: ' . $textarea . '</div>';
 	}
 	 if(isset($_POST["sex"]) and $_POST['sex'] != "") {
 		$sex = $_POST["sex"];

@@ -33,15 +33,15 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "^3.10.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "3.0.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "2.9.7",
     "webpack-merge": "^4.1.0",
     "webpack-spritesmith": "^0.4.0"
   },
   "dependencies": {
     "atob": "^2.1.2",
     "cryptiles": "^4.1.2",
-    "hoek": "^5.0.3",
+    "hoek": "^6.1.2",
     "jquery": "^3.4.1",
     "jquery-inputmask": "^1.0.1",
     "jquery-validation": "^1.17.0",

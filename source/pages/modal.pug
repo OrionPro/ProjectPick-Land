@@ -65,6 +65,153 @@
 // Модальное окно success
 #popup-success.mfp-hide.white-popup.mfp-with-anim.popup
 	p.success_mail Заявка отправлена
+//	Модальное окно для формы
+#popup-big-form.mfp-hide.white-popup.mfp-with-anim.popup.popup-big-form
+	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
+	.can-not-decide
+		.section-title
+			h2
+				| Не можете определиться? Наши дизайнеры помогут в подборе чехла!
+			.top-section__title-divider.center
+			p
+				| Заполните общие данные о себе и мы подберем дизайн в соответсвии с вашими предпочтениями.
+		.accordion
+			.accordion_title
+				p Кликайте, чтобы заполнить форму!
+				i.fa.fa-angle-down
+			.accordion_content
+				form
+					.row
+						.col-md-6.col-12
+							.accordion__select-wrap
+								.select.sex
+									.slct_arrow
+										i.fa.fa-angle-down
+									a(href="#" class="slct") Пол
+									ul.drop
+										li Мужской
+										li Женский
+									input(type="hidden" name="sex")
+								.select.color
+									.slct_arrow
+										i.fa.fa-angle-down
+									a(href="#" class="slct") Любимый цвет
+										i.color.blue
+									ul.drop
+										li Красный
+											i.color.red
+										li Зелёный
+											i.color.green
+										li Чёрный
+											i.color.black
+										li Оранжевый
+											i.color.red
+										li Коричневый
+											i.color.brown
+										li Голубой
+											i.color.blue
+										li Желтый
+											i.color.yellow
+										li Белый
+											i.color.white
+										li Серый
+											i.color.gray
+										li Розовый
+											i.color.pink
+									input(type="hidden" name="color")
+							.accordion__check-list-items#accordion__check
+								span
+									| Стиль дизайна:
+								input(type="hidden" name="designStyle")
+								.accordion__check-list
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Классический
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Поп-арт
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Минимализм
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Винтаж
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Абстракция
+								.accordion__check-list
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Надписи
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Текстуры
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Новинки
+									.accordion__check
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Популярные
+							.accordion__check-list-items#accordion__radio
+								span
+									| Любимый шоколад:
+								input(type="hidden" name="favorite_chocolate")
+								.accordion__check-list
+									.accordion__check
+										label.radio.noselect
+											input(type='radio', name='radio')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Молочный
+									.accordion__check
+										label.radio.noselect
+											input(type='radio', name='radio')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Черный
+									.accordion__check
+										label.radio.noselect
+											input(type='radio', name='radio')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square-o
+											span Белый
+						.col-md-6.col-12
+							input(type="text" name="modelPhone" placeholder="Модель телефона")
+							input(type="text" name="instagramPage" placeholder="Ваша instagram страничка")
+							input(type="text" name="numPhone" placeholder="Номер телефона")
+							input(type="text" name="email" placeholder="E-mail")
+							textarea(name="textarea" placeholder="Дополнительное пожелание")
+							input(type="hidden" name="form_name" value="Кликайте, чтобы заполнить форму!")
+							input(type="hidden" name="form_type" value="modal")
+					.accordion_content_button
+						button.main_btn(type="submit") Отправить
 
 
 
