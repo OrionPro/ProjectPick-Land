@@ -115,6 +115,8 @@ li
 		width: 1170px
 		max-width: 1170px
 		padding: 0
+		.success_mail
+			padding: 40px 20px
 	&.popup-sign
 		width: 570px
 		padding: 50px 60px 30px 60px
@@ -207,6 +209,10 @@ li
 		display: none
 		&.active
 			display: block
+			animation: fade
+			animation-duration: 0.4s
+			animation-delay: 0.3s
+			animation-fill-mode: backwards
 	input[type=submit]
 		width: 170px
 		margin-bottom: 0

@@ -27,8 +27,8 @@ if ($_POST) {
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone . '</div>';
     }
     if (isset($_POST['instagramPage']) and $_POST['instagramPage'] != "") {
-        $phoneinstagramPage = $_POST['instagramPage'];
-        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Ваша instagram страничка: ' . $phoneinstagramPage . '</div>';
+        $instagramPage = $_POST['instagramPage'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Instagram страничка: ' . $instagramPage . '</div>';
     }
     if (isset($_POST['phone_mask']) and $_POST['phone_mask'] != "") {
         $phone_mask = $_POST['phone_mask'];
@@ -37,10 +37,6 @@ if ($_POST) {
 	if (isset($_POST['email']) and $_POST['email'] != "") {
 		$email = $_POST['email'];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Email: ' . $email . '</div>';
-	}
-	if (isset($_POST['textarea']) and $_POST['textarea'] != "") {
-		$textarea = $_POST['textarea'];
-		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Описание в textarea: ' . $textarea . '</div>';
 	}
 	 if(isset($_POST["sex"]) and $_POST['sex'] != "") {
 		$sex = $_POST["sex"];
@@ -65,6 +61,10 @@ if ($_POST) {
     if(isset($_POST["favorite_chocolate"]) and $_POST['favorite_chocolate'] != "") {
         $favorite_chocolate = $_POST["favorite_chocolate"];
         $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Любимый шоколад: ' . $favorite_chocolate . '</div>';
+    }
+    if (isset($_POST['textarea']) and $_POST['textarea'] != "") {
+        $textarea = $_POST['textarea'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Описание в textarea: ' . $textarea . '</div>';
     }
 	$mailer = new PHPMailer();
 	$subject = "Заявка с сайта pickcase.com.ua";

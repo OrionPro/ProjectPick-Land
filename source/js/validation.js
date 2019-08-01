@@ -136,11 +136,12 @@ $(document).ready(function () {
 				data: data,
 				dataType: "json",
 				beforeSend: function () { // событие до отправки
+
 					self.find('input[type="submit"]').attr('disabled', 'disabled'); // например, отключим кнопку, чтобы не жали по 100 раз
 				},
 				success: function (data) {
 					if (data['form_type'] == 'modal') {
-						$('.white-popup form').hide();
+						$('.white-popup .can-not-decide').hide();
 						$('.white-popup .mfp-close').hide();
 						self.trigger('reset');
 						$('.white-popup .success_mail').addClass('active');
@@ -148,7 +149,7 @@ $(document).ready(function () {
 							$.magnificPopup.close();
 						}, 2500);
 						setTimeout(function () {
-							$('.white-popup form').show();
+							$('.white-popup .can-not-decide').show();
 							$('.white-popup .mfp-close').show();
 							$('.white-popup .input_wrap i').hide();
 							$('.white-popup .success_mail').removeClass('active');
