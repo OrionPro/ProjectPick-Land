@@ -376,7 +376,7 @@ a.pink-border
 	display: flex
 .ready-to-create__constructor-steps
 	padding-top: 75px
-	&.step1
+	&.step1, &.step2
 		.ready-to-create__constructor-step
 			&[data-tab="1"]
 				background-color: #e2f4ef
@@ -1176,10 +1176,19 @@ a.pink-border
 		display: flex
 		align-items: center
 		justify-content: center
+		padding-left: 15px
+		padding-right: 15px
 		.ready-to-create__constructor-design-option-toolbar-order
-			display: none
+			width: calc(50% - 10px)
+			padding-left: 0
+			justify-content: center
+			font-size: 16px
 		.ready-to-create__constructor-design-option-toolbar-backward
-			display: none
+			width: calc(50% - 10px)
+			margin-right: 10px
+			padding-left: 0
+			justify-content: center
+			font-size: 16px
 		&.mobile
 			margin-top: 10px
 			display: block
@@ -1226,17 +1235,37 @@ a.pink-border
 		text-align: center
 		line-height: 1
 	.ready-to-create__constructor-header
-		flex-direction: column
-		padding-right: 10px
+		padding-left: 0
+		align-items: center
 	.ready-to-create__constructor-steps
 		margin-right: 0
+		&.step1
+			width: 30%
+			&:nth-of-type(1)
+				width: 70%
+		&.step2
+			width: 30%
+			&:nth-of-type(2)
+				width: 70%
+		&.step3
+			width: 30%
+			&:nth-of-type(3)
+				width: 70%
+			&:nth-of-type(1)
+				.ready-to-create__constructor-step
+					border-right: 1px solid $main_txt_color
 		.ready-to-create__constructor-step
 			height: 25px
 			margin-right: 0
 			&.active
 				height: 40px
 			.ready-to-create__constructor-step-value
-				font-size: 17px
+				padding-left: 3px
+				padding-right: 3px
+				text-overflow: ellipsis
+				white-space: nowrap
+				overflow: hidden
+				font-size: 16px
 	.ready-to-create__constructor-checkout-btn
 		button
 			width: 175px
@@ -1258,10 +1287,18 @@ a.pink-border
 		margin-bottom: 20px
 		padding-left: 10px
 		padding-right: 10px
+	.ready-to-create__constructor-design-option-toolbar.mobile-step3
+		flex-direction: column-reverse
+	.ready-to-create__constructor-design-option-toolbar
+		padding-left: 5px
+		padding-right: 5px
+		.ready-to-create__constructor-design-option-toolbar-backward,.ready-to-create__constructor-design-option-toolbar-order
+			width: calc(50% - 5px)
+			font-size: 15px
 	.ready-to-create__constructor-design-option-text-texture-switchs
 		line-height: 1
-	.ready-to-create__constructor-design-option-toolbar
-		flex-direction: column-reverse
+	.ready-to-create__constructor-design-option-toolbar-backward
+		margin-right: 0
 	.ready-to-create__constructor-checkout-btn
 		margin-right: auto
 		margin-bottom: 15px
@@ -1282,6 +1319,8 @@ a.pink-border
 			margin-bottom: 15px
 			.ready-to-create__constructor-design-background-text-item-label
 				margin-right: 15px
+	.ready-to-create__constructor-steps .ready-to-create__constructor-step .ready-to-create__constructor-step-value
+		font-size: 15px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

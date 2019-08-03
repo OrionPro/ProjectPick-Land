@@ -54,7 +54,7 @@ function tabs(parent) {
 				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
 			}
 
-			$('.ready-to-create__constructor-steps').removeClass('step3');
+			$('.ready-to-create__constructor-steps').removeClass('step3 step2');
 			$('.ready-to-create__constructor-steps').addClass('step1');
 		}
 		if(data == '2') {
@@ -64,8 +64,8 @@ function tabs(parent) {
 				window.parent.postMessage("dataTab2", "*")
 			}
 
-			$('.ready-to-create__constructor-steps').removeClass('step3');
-			$('.ready-to-create__constructor-steps').addClass('step1');
+			$('.ready-to-create__constructor-steps').removeClass('step3 step1');
+			$('.ready-to-create__constructor-steps').addClass('step2');
 		}
 		if(data == '3') {
 			// связь между фреймом (конструктором) и сайтом
@@ -74,7 +74,7 @@ function tabs(parent) {
 				window.parent.postMessage("dataTab3", "*")
 				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
 			}
-			$('.ready-to-create__constructor-steps').removeClass('step1');
+			$('.ready-to-create__constructor-steps').removeClass('step1 step2');
 			$('.ready-to-create__constructor-steps').addClass('step3');
 		}
 		parent.find('.ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab=' + data + ']').addClass('active');
