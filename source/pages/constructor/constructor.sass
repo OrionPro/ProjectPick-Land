@@ -413,6 +413,11 @@ a.pink-border
 		&.last
 			margin-right: 0
 		.ready-to-create__constructor-step-value
+			padding-left: 3px
+			padding-right: 3px
+			text-overflow: ellipsis
+			white-space: nowrap
+			overflow: hidden
 			@include fz(22)
 		&.active
 			position: relative
@@ -1016,7 +1021,7 @@ a.pink-border
 	.ready-to-create__constructor-header
 		padding-left: 10px
 	.ready-to-create__constructor-steps
-		width: 100%
+		width: 33%
 		margin-right: 10px
 		.ready-to-create__constructor-step
 			width: 100%
@@ -1151,7 +1156,7 @@ a.pink-border
 			&.center-step
 				margin: 0 auto 10px
 			.ready-to-create__constructor-step-value
-				font-size: 18px
+				font-size: 17px
 	.ready-to-create__constructor-step-info
 		display: none
 	.ready-to-create__constructor-design-load
@@ -1240,17 +1245,17 @@ a.pink-border
 	.ready-to-create__constructor-steps
 		margin-right: 0
 		&.step1
-			width: 30%
+			width: 28%
 			&:nth-of-type(1)
-				width: 70%
+				width: 44%
 		&.step2
-			width: 30%
+			width: 28%
 			&:nth-of-type(2)
-				width: 70%
+				width: 44%
 		&.step3
-			width: 30%
+			width: 28%
 			&:nth-of-type(3)
-				width: 70%
+				width: 44%
 			&:nth-of-type(1)
 				.ready-to-create__constructor-step
 					border-right: 1px solid $main_txt_color
@@ -1260,12 +1265,7 @@ a.pink-border
 			&.active
 				height: 40px
 			.ready-to-create__constructor-step-value
-				padding-left: 3px
-				padding-right: 3px
-				text-overflow: ellipsis
-				white-space: nowrap
-				overflow: hidden
-				font-size: 16px
+				font-size: 15px
 	.ready-to-create__constructor-checkout-btn
 		button
 			width: 175px
@@ -1321,6 +1321,11 @@ a.pink-border
 				margin-right: 15px
 	.ready-to-create__constructor-steps .ready-to-create__constructor-step .ready-to-create__constructor-step-value
 		font-size: 15px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 380px)
+	/**/
+	.ready-to-create__constructor-steps .ready-to-create__constructor-step .ready-to-create__constructor-step-value
+		font-size: 13px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
