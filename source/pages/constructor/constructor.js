@@ -4,6 +4,7 @@ require("../../libs/libs").magnific_popup();
 require("../../libs/libs").jqueryui();
 require("../../libs/libs").touchPunch();
 import './constructor.sass';
+import Swiper from 'swiper';
 
 //import '../../pages/constructor/constructor.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
@@ -63,6 +64,9 @@ function tabs(parent) {
 				// связь между фреймом (конструктором) и сайтом
 				window.parent.postMessage("dataTab2", "*")
 			}
+      setTimeout(function () {
+        mySwiper.init();
+      }, 100);
 
 			$('.ready-to-create__constructor-steps').removeClass('step3 step1');
 			$('.ready-to-create__constructor-steps').addClass('step2');
@@ -74,6 +78,7 @@ function tabs(parent) {
 				window.parent.postMessage("dataTab3", "*")
 				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
 			}
+
 			$('.ready-to-create__constructor-steps').removeClass('step1 step2');
 			$('.ready-to-create__constructor-steps').addClass('step3');
 		}
@@ -94,7 +99,20 @@ function heightItemSafari(obj) {
 
 }
 
+// создаём экземпляр Swiper
+var mySwiper = new Swiper('.swiper-container', {
+  init: false,
+  slidesPerView: 5,
+  observer: true,
+  observeParents: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 $(document).ready( function() {
+
 	// связь между фреймом (конструктором) и сайтом
 	window.parent.postMessage("ready", "*");
 
