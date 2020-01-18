@@ -1009,10 +1009,59 @@ a.pink-border
 	justify-content: flex-end
 .constructor-swiper
 	width: 500px
-	.swiper-button-prev
-		left: 0
-	.swiper-button-next
+	position: relative
+	&:after
+		content: ""
+		display: block
+		position: absolute
+		top: 0
 		right: 0
+		width: 24px
+		height: 100%
+		background: linear-gradient(90deg, #FFFFFF 0.45%, rgba(255, 255, 255, 0) 100%)
+	&:before
+		content: ""
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 24px
+		height: 100%
+		background: linear-gradient(90deg, #FFFFFF 0.45%, rgba(255, 255, 255, 0) 100%)
+	.swiper-button-prev
+		@include fz(18)
+		left: 0
+		color: #a3a3a3
+	.swiper-button-next
+		@include fz(18)
+		right: 0
+		color: #a3a3a3
+	.swiper-slide
+		display: flex
+		flex-direction: column
+		align-items: center
+		@include fz(16)
+		border-right: 1px solid #e8e8e8
+		color: #a3a3a3
+		button
+			padding: 0
+			background: none
+			border: none
+			position: absolute
+			top: 0
+			right: 16px
+		.numb
+			color: #D00184
+			font-size: 20px
+			line-height: 23px
+.constructor-swiper-title
+	color: #d00184
+	font-Size: 20px
+	line-height: 23px
+	p
+		color: #a3a3a3
+		font-size: 16px
+		line-height: 18px
 // media
 
 // Large devices (desktops, less than 1200px)

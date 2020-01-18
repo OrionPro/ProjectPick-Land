@@ -423,11 +423,26 @@ html(class="no-js" lang="ru")
 									// Additional required wrapper
 									.swiper-wrapper
 										// Slides
-										.swiper-slide Slide 1
-										.swiper-slide Slide 2
-										.swiper-slide Slide 3
+										.swiper-slide
+											p.numb 1
+											p Макет
+											button
+												img(src=require("../../img/close-maket-slider.svg"))
+										.swiper-slide
+											p.numb 2
+											p Макет
+											button
+												img(src=require("../../img/close-maket-slider.svg"))
+										.swiper-slide
+											p.numb 3
+											p Макет
+											button
+												img(src=require("../../img/close-maket-slider.svg"))
 									.swiper-button-prev
 									.swiper-button-next
+							.constructor-swiper-title
+								| Добавить чехол
+								p до 20 штук
 						.ready-to-create__constructor-level2-wrap
 							.ready-to-create__constructor-wrap
 								.ready-to-create__constructor-title.tab2
