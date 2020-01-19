@@ -104,7 +104,7 @@ var mySwiper = new Swiper('.swiper-container', {
   init: false,
   slidesPerView: 5,
   observer: true,
-  observeParents: true,
+  centeredSlides: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -112,7 +112,38 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 
 $(document).ready( function() {
+  // отслеживаем клик на закрытие элемента слайдера (убрать макет и добавить)
+  $('.constructor-swiper-title a').on('click', function () {
+    const slides = `
+      <div class="swiper-slide" >
+        <a class="overlay"></a>
+        <p class="numb"></p>
+        <p>Макет</p>
+        <button class="close">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.97999 6.00041L11.6923 2.28806C12.1025 1.87788 12.1025 1.21288 11.6923 0.803344L11.1974 0.30844C10.7871 -0.101865 10.1221 -0.101865 9.7126 0.30844L6.00037 4.02067L2.28802 0.307671C1.87784 -0.102506 1.21284 -0.102506 0.803306 0.307671L0.307633 0.802575C-0.102544 1.21288 -0.102544 1.87788 0.307633 2.28741L4.02063 6.00041L0.308402 9.71264C-0.101903 10.1229 -0.101903 10.7879 0.308402 11.1975L0.803306 11.6924C1.21348 12.1026 1.87848 12.1026 2.28802 11.6924L6.00037 7.98003L9.7126 11.6924C10.1229 12.1026 10.7879 12.1026 11.1974 11.6924L11.6923 11.1975C12.1025 10.7872 12.1025 10.1222 11.6923 9.71264L7.97999 6.00041Z" fill="#383838"></path>
+</svg>
+         </button>
+       </div>
+    `;
+    if( ($('.constructor-swiper .swiper-slide').length + 1) <= 20) {
+      mySwiper.appendSlide(slides);
+      setTimeout(function () {
+        mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-slide').length - 1));
+      }, 500);
+      $('.constructor-swiper-title .limit').html('');
+    } else {
+      $('.constructor-swiper-title .limit').html('Достигнут предел');
+    }
 
+  });
+  $(document).on('click', '.constructor-swiper .swiper-slide .close', function (e) {
+    e.preventDefault();
+    $(this).parents('.swiper-slide').remove();
+    if( ($('.constructor-swiper .swiper-slide').length + 1) <= 20) {
+      $('.constructor-swiper-title .limit').html('');
+    }
+  });
 	// связь между фреймом (конструктором) и сайтом
 	window.parent.postMessage("ready", "*");
 

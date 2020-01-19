@@ -424,25 +424,47 @@ html(class="no-js" lang="ru")
 									.swiper-wrapper
 										// Slides
 										.swiper-slide
-											p.numb 1
+											a.overlay
+											p.numb
 											p Макет
-											button
-												img(src=require("../../img/close-maket-slider.svg"))
+											button.close
+												include ../../img/close-maket-slider.svg
 										.swiper-slide
-											p.numb 2
+											a.overlay
+											p.numb
 											p Макет
-											button
-												img(src=require("../../img/close-maket-slider.svg"))
+											button.close
+												include ../../img/close-maket-slider.svg
 										.swiper-slide
-											p.numb 3
+											a.overlay
+											p.numb
 											p Макет
-											button
-												img(src=require("../../img/close-maket-slider.svg"))
-									.swiper-button-prev
-									.swiper-button-next
+											button.close
+												include ../../img/close-maket-slider.svg
+										.swiper-slide
+											a.overlay
+											p.numb
+											p Макет
+											button.close
+												include ../../img/close-maket-slider.svg
+										.swiper-slide
+											a.overlay
+											p.numb
+											p Макет
+											button.close
+												include ../../img/close-maket-slider.svg
+										.swiper-slide
+											a.overlay
+											p.numb
+											p Макет
+											button.close
+												include ../../img/close-maket-slider.svg
+									.swiper-button-prev.swiper-nav
+									.swiper-button-next.swiper-nav
 							.constructor-swiper-title
-								| Добавить чехол
+								a(href="#") Добавить чехол
 								p до 20 штук
+								p.limit
 						.ready-to-create__constructor-level2-wrap
 							.ready-to-create__constructor-wrap
 								.ready-to-create__constructor-title.tab2
