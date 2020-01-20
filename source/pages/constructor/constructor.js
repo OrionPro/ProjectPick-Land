@@ -68,6 +68,10 @@ function tabs(parent) {
         mySwiper.init();
       }, 100);
 
+      setTimeout(function () {
+        mySwiper.update();
+      }, 200);
+
 			$('.ready-to-create__constructor-steps').removeClass('step3 step1');
 			$('.ready-to-create__constructor-steps').addClass('step2');
 		}
@@ -78,6 +82,14 @@ function tabs(parent) {
 				window.parent.postMessage("dataTab3", "*")
 				window.parent.postMessage("scrollToConstructorPhonegroup", "*");
 			}
+
+      setTimeout(function () {
+        mySwiperStep3.init();
+      }, 100);
+
+      setTimeout(function () {
+        mySwiperStep3.update();
+      }, 200);
 
 			$('.ready-to-create__constructor-steps').removeClass('step1 step2');
 			$('.ready-to-create__constructor-steps').addClass('step3');
@@ -100,15 +112,71 @@ function heightItemSafari(obj) {
 }
 
 // создаём экземпляр Swiper
-var mySwiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.swiper-container-step2', {
   init: false,
-  slidesPerView: 5,
   observer: true,
   centeredSlides: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 12--px
+    1200: {
+      slidesPerView: 5,
+    }
+  }
+});
+
+// создаём экземпляр Swiper
+var mySwiperStep3 = new Swiper('.swiper-container-step3', {
+  init: false,
+  observer: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 12--px
+    1200: {
+      slidesPerView: 5,
+    }
+  }
 });
 
 $(document).ready( function() {
@@ -126,10 +194,11 @@ $(document).ready( function() {
          </button>
        </div>
     `;
-    if( ($('.constructor-swiper .swiper-slide').length + 1) <= 20) {
+    if( ($('.constructor-swiper .swiper-container-step2 .swiper-slide').length + 1) <= 20) {
       mySwiper.appendSlide(slides);
+      mySwiperStep3.appendSlide(slides);
       setTimeout(function () {
-        mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-slide').length - 1));
+        mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1));
       }, 500);
       $('.constructor-swiper-title .limit').html('');
     } else {
@@ -139,8 +208,10 @@ $(document).ready( function() {
   });
   $(document).on('click', '.constructor-swiper .swiper-slide .close', function (e) {
     e.preventDefault();
-    $(this).parents('.swiper-slide').remove();
-    if( ($('.constructor-swiper .swiper-slide').length + 1) <= 20) {
+    var slideIndex = $(this).parents('.swiper-slide').index();
+    mySwiper.removeSlide(slideIndex);
+    mySwiperStep3.removeSlide(slideIndex);
+    if( ($('.constructor-swiper .swiper-container-step2 .swiper-slide').length + 1) <= 20) {
       $('.constructor-swiper-title .limit').html('');
     }
   });
