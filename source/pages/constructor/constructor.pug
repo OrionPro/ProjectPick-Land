@@ -34,7 +34,7 @@ html(class="no-js" lang="ru")
 				top: 50%;
 				position: absolute
 			}
-	body
+	body.body-constructor
 		// Модальное окно
 		//
 			Их можно активировать
@@ -319,6 +319,27 @@ html(class="no-js" lang="ru")
 			p
 				| Проверьте правильность данных!
 			img(src=require("../../img/popup-constructor-order-created__sad.png"))
+		#popup-constructor-checkout.mfp-hide.white-popup.mfp-with-anim.popup.popup-constructor
+			form
+				.popup-constructor__title
+					| При заказе более 2 чехлов в одном заказе предусмотрены скидки:
+				.popup-constructor-checkout__item
+					p.popup-constructor-checkout__item-title
+						| При заказе 2 чехлов:
+					p.popup-constructor-checkout__item-price 179 грн / шт
+				.popup-constructor-checkout__item
+					p.popup-constructor-checkout__item-title
+						| При заказе 3 чехлов:
+					p.popup-constructor-checkout__item-price 169 грн / шт
+				.popup-constructor-checkout__item
+					p.popup-constructor-checkout__item-title
+						| При заказе 4 чехлов:
+					p.popup-constructor-checkout__item-price 159 грн / шт
+				.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
+					| Оформить заказ
+					i(class="fa fa-angle-double-right")
+				.popup-constructor-checkout__link-to-first-step
+					a(href="#" class="tabs-item" data-tab="1") Создать еще один чехол
 		section.constructor-section
 			.container
 				.ready-to-create__constructor
@@ -592,7 +613,7 @@ html(class="no-js" lang="ru")
 									.ready-to-create__constructor-design-option-toolbar-backward(class="tabs-item" data-tab="1")
 										i.fa.fa-angle-double-left
 										| Выбрать модель
-									.ready-to-create__constructor-design-option-toolbar-order(class="tabs-item" data-tab="3")
+									.ready-to-create__constructor-design-option-toolbar-order(class="open-popup-link" data-mfp-src="#popup-constructor-checkout")
 										| Заказать
 										i.fa.fa-angle-double-right
 								//.ready-to-create__constructor-design-option-toolbar.mobile

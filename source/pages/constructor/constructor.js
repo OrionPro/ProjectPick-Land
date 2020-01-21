@@ -40,10 +40,11 @@ function throttle(func, ms) {
 }
 // табы tabs
 function tabs(parent) {
-	parent.find(".tabs-item").on('click', function (event) { //ссылки которые будут переключать табы
+	parent.on('click', '.tabs-item', function (event) { //ссылки которые будут переключать табы
 		event.preventDefault();
+    console.log('tabs click');
 
-		parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
+    parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
 		parent.find(".ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab]").removeClass('active');
 		let data = $(this).data('tab');
 
@@ -202,7 +203,7 @@ $(document).ready( function() {
       }, 500);
       $('.constructor-swiper-title .limit').html('');
     } else {
-      $('.constructor-swiper-title .limit').html('Достигнут предел');
+      $('.constructor-swiper-title .limit').html('Достигнут лимит чехлов!');
     }
 
   });
@@ -294,7 +295,7 @@ $(document).ready( function() {
 	}
 
 	// Вешаем обработочик на свою кнопку close
-	$(document).on("click", ".mfp-close, .white-popup .popup-constructor__image-categories-wrap-img .popup-constructor__image-categories-item", function () {
+	$(document).on("click", ".mfp-close, .white-popup .popup-constructor__image-categories-wrap-img .popup-constructor__image-categories-item, #popup-constructor-checkout .tabs-item ", function () {
 		let magnificPopup = $.magnificPopup.instance;
 		magnificPopup.close();
 	});
@@ -357,7 +358,7 @@ $(document).ready( function() {
 		}).magnificPopup('open');
 	});
 	// Инициализация табов
-	tabs($(".ready-to-create__constructor"));
+	tabs($(".body-constructor"));
 
 	$('.ready-to-create__constructor-step-info i').on('click', function () {
 		$(this).parent().hide('300');

@@ -187,6 +187,42 @@ li
 						padding: 3px 8.5px
 						background-color: transparent
 						color: $main_txt_color
+	&#popup-constructor-checkout
+		width: 642px
+		padding: 48px 20px 45px
+		form
+			display: flex
+			flex-direction: column
+			align-items: center
+			text-align: center
+		.popup-constructor__title
+			margin-bottom: 32px
+			font-size: 32px
+			line-height: 36px
+			color: #000000
+			text-align: center
+		.popup-constructor-checkout__item
+			margin-bottom: 32px
+		.popup-constructor-checkout__item-title
+			margin-bottom: 8px
+			font-size: 24px
+			line-height: 27px
+		.popup-constructor-checkout__item-price
+			font-size: 32px
+			line-height: 36px
+			color: #000000
+		.popup-constructor-checkout__link-to-first-step
+			a
+				font-size: 16px
+				line-height: 18px
+				color: #D00184
+				&:hover
+					text-decoration: underline
+		.ready-to-create__constructor-design-option-toolbar-order
+			width: 236px
+			margin-bottom: 16px
+			margin-left: 0
+/* Main / Second */
 .mfp-zoom-in.mfp-ready.mfp-bg
 	opacity: 0.7
 .mfp-bg
@@ -1249,6 +1285,8 @@ a.pink-border
 	.constructor-swiper
 		width: 310px
 	.white-popup
+		&#popup-constructor-checkout
+			width: 100%
 		&.popup-constructor-order-created
 			width: 100%
 		.popup-constructor__image-categories-desktop
@@ -1399,6 +1437,11 @@ a.pink-border
 		button
 			width: 175px
 	.white-popup
+		&#popup-constructor-checkout
+			.popup-constructor__title, .popup-constructor-checkout__item-price
+				font-size: 24px
+				line-height: 24px
+
 		.modal-loaders
 			flex-direction: column
 			margin-bottom: 0
