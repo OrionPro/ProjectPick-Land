@@ -201,9 +201,11 @@ $(document).ready( function() {
       setTimeout(function () {
         mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1));
       }, 500);
-      $('.constructor-swiper-title .limit').html('');
+      $('.constructor-swiper-title p').removeClass('limit').html('до 20 штук');
+      $('.constructor-swiper-title a').removeClass('limit');
     } else {
-      $('.constructor-swiper-title .limit').html('Достигнут лимит чехлов!');
+      $('.constructor-swiper-title p').addClass('limit').html('Достигнут лимит чехлов!');
+      $('.constructor-swiper-title a').addClass('limit');
     }
 
   });
@@ -213,7 +215,8 @@ $(document).ready( function() {
     mySwiper.removeSlide(slideIndex);
     mySwiperStep3.removeSlide(slideIndex);
     if( ($('.constructor-swiper .swiper-container-step2 .swiper-slide').length + 1) <= 20) {
-      $('.constructor-swiper-title .limit').html('');
+      $('.constructor-swiper-title p').removeClass('limit').html('до 20 штук');
+      $('.constructor-swiper-title a').removeClass('limit');
     }
   });
 	// связь между фреймом (конструктором) и сайтом
