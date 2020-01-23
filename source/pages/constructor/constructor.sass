@@ -1039,7 +1039,8 @@ a.pink-border
 		&:focus
 			color: #ffc5f2
 			text-decoration: none
-
+	i
+		display: none
 .constructor-swiper-wrap
 	margin-bottom: 22px
 	display: flex
@@ -1282,6 +1283,16 @@ a.pink-border
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
+	.ready-to-create__constructor-title
+		margin-bottom: 10px
+	.ready-to-create__constructor-title.tab2
+		padding-left: 0
+	.ready-to-create__constructor-title-link
+		text-align: center
+		a
+			display: none
+		i
+			display: inline-block
 	.constructor-swiper
 		width: 310px
 	.white-popup
