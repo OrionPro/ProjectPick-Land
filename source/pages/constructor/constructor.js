@@ -195,9 +195,8 @@ var mySwiperStep3 = new Swiper('.swiper-container-step3', {
 });
 
 $(document).ready( function() {
-  // отслеживаем клик на закрытие элемента слайдера (убрать макет и добавить)
-  $('.constructor-swiper-title a').on('click', function () {
-    const slides = `
+
+  const slidesTpl = `
       <div class="swiper-slide" >
         <a class="overlay"></a>
         <p class="numb"></p>
@@ -209,9 +208,15 @@ $(document).ready( function() {
          </button>
        </div>
     `;
+
+  // отслеживаем клик на закрытие элемента слайдера (убрать макет и добавить)
+  $('.constructor-swiper-title a').on('click', function () {
+
     if( ($('.constructor-swiper .swiper-container-step2 .swiper-slide').length + 1) <= 20) {
-      mySwiper.appendSlide(slides);
-      mySwiperStep3.appendSlide(slides);
+
+      mySwiper.appendSlide(slidesTpl);
+      mySwiperStep3.appendSlide(slidesTpl);
+
       setTimeout(function () {
         mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1));
       }, 500);
@@ -223,6 +228,14 @@ $(document).ready( function() {
     }
 
   });
+
+  $(document).on('click', '.popup-constructor-checkout__link-to-first-step', function (e) {
+    e.preventDefault();
+
+    mySwiper.appendSlide(slidesTpl);
+    mySwiperStep3.appendSlide(slidesTpl);
+  });
+
   $(document).on('click', '.constructor-swiper-wrap .constructor-swiper .swiper-slide', function (e) {
     e.preventDefault();
     var slideIndex = $(this).index();
