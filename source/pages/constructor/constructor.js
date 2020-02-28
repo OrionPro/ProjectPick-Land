@@ -58,6 +58,8 @@ function tabs(parent) {
 
 			$('.ready-to-create__constructor-steps').removeClass('step3 step2');
 			$('.ready-to-create__constructor-steps').addClass('step1');
+
+
 		}
 		if(data == '2') {
 			// связь между фреймом (конструктором) и сайтом
@@ -74,10 +76,25 @@ function tabs(parent) {
       }, 200);
 
       let layout = parseInt($(this).attr('layout'));
+
+
       setTimeout(function () {
-        $('.constructor-swiper-wrap .swiper-container-step2 .swiper-slide').eq(layout).addClass('active-layout');
-        mySwiper.slideTo(layout );
+
+        if ($('.constructor-swiper .swiper-container-step3 .swiper-slide').hasClass('active-layout')) {
+          if (!$('.constructor-swiper .swiper-container-step2 .swiper-slide').hasClass('active-layout')) {
+            $('.constructor-swiper-wrap .swiper-container-step2 .swiper-slide').eq(layout).addClass('active-layout');
+          }
+
+          mySwiper.slideTo($('.constructor-swiper .swiper-container-step2 .swiper-slide.active-layout').index()  );
+        } else {
+
+          mySwiper.slideTo($('.constructor-swiper .swiper-container-step2 .swiper-slide').length  );
+        }
+
+
+        $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').attr('layout', $('.constructor-swiper .swiper-container-step2 .swiper-slide.active-layout').index());
       },220);
+
 
 			$('.ready-to-create__constructor-steps').removeClass('step3 step1');
 			$('.ready-to-create__constructor-steps').addClass('step2');
@@ -102,8 +119,11 @@ function tabs(parent) {
 
       let layout = parseInt($(this).attr('layout'));
       setTimeout(function () {
-        $('.constructor-swiper-wrap .swiper-container-step3 .swiper-slide').eq(layout).addClass('active-layout');
-        mySwiperStep3.slideTo(layout );
+        if ($('.constructor-swiper .swiper-container-step2 .swiper-slide').hasClass('active-layout')) {
+          $('.constructor-swiper-wrap .swiper-container-step3 .swiper-slide').eq(layout).addClass('active-layout');
+
+          mySwiperStep3.slideTo($('.constructor-swiper .swiper-container-step2 .swiper-slide.active-layout').index()  );
+        }
       },220);
 
 			$('.ready-to-create__constructor-steps').removeClass('step1 step2');
@@ -234,6 +254,12 @@ $(document).ready( function() {
 
     mySwiper.appendSlide(slidesTpl);
     mySwiperStep3.appendSlide(slidesTpl);
+
+    let indexSliderActiveClass = $('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1;
+    $('.constructor-swiper-wrap .constructor-swiper .swiper-slide').removeClass('active-layout');
+
+    $('.constructor-swiper .swiper-container-step2 .swiper-slide').eq(indexSliderActiveClass).addClass('active-layout');
+
   });
 
   $(document).on('click', '.constructor-swiper-wrap .constructor-swiper .swiper-slide', function (e) {
@@ -244,14 +270,21 @@ $(document).ready( function() {
     $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').attr('layout', slideIndex);
     $('.ready-to-create__constructor-design-option-toolbar-backward.tabs-item').attr('layout', slideIndex);
   });
+
   $(document).on('click', '.constructor-swiper .swiper-slide .close', function (e) {
     e.preventDefault();
     var slideIndex = $(this).parents('.swiper-slide').index();
-    mySwiper.removeSlide(slideIndex);
-    mySwiperStep3.removeSlide(slideIndex);
-    if( ($('.constructor-swiper .swiper-container-step2 .swiper-slide').length + 1) <= 20) {
-      $('.constructor-swiper-title p').removeClass('limit').html('до 20 штук');
-      $('.constructor-swiper-title a').removeClass('limit');
+
+    if (($(this).parents('.constructor-swiper').find('.swiper-slide').length ) == 1) {
+      $('.constructor-swiper-title p').addClass('limit').html('Последний макет удалить нельзя.');
+      $('.constructor-swiper-title a').addClass('limit');
+    } else if ($(this).parents('.swiper-slide').hasClass('active-layout')) {
+      $('.constructor-swiper-wrap .constructor-swiper .swiper-slide').removeClass('active-layout');
+      mySwiper.removeSlide(slideIndex);
+      mySwiperStep3.removeSlide(slideIndex);
+    } else {
+      mySwiper.removeSlide(slideIndex);
+      mySwiperStep3.removeSlide(slideIndex);
     }
   });
 	// связь между фреймом (конструктором) и сайтом
