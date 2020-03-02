@@ -238,7 +238,14 @@ $(document).ready( function() {
       mySwiperStep3.appendSlide(slidesTpl);
 
       setTimeout(function () {
-        mySwiper.slideTo(parseInt($('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1));
+        let indexSliderActiveClass = $('.constructor-swiper .swiper-container-step2 .swiper-slide').length - 1;
+
+        mySwiper.slideTo(parseInt(indexSliderActiveClass));
+
+
+        $('.constructor-swiper-wrap .constructor-swiper .swiper-slide').removeClass('active-layout');
+
+        $('.constructor-swiper .swiper-container-step2 .swiper-slide').eq(indexSliderActiveClass).addClass('active-layout');
       }, 500);
       $('.constructor-swiper-title p').removeClass('limit').html('до 20 штук');
       $('.constructor-swiper-title a').removeClass('limit');
