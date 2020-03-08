@@ -501,6 +501,7 @@ a.pink-border
 	&.tab2
 		text-align: left
 		.ready-to-create__constructor-divider
+			width: 100%
 			margin: 0
 .ready-to-create__constructor-title-val
 	@include fz(20)
@@ -561,11 +562,17 @@ a.pink-border
 	left: 20px
 	font-size: 15px
 	color: #e00029
+.ready-to-create__constructor-model-canvas-container-wrap
+	display: flex
+	padding-top: 40px
+	&.step3
+		padding-top: 0
+		justify-content: center
 .ready-to-create__constructor-model-canvas-container
-	width: 300px
-	padding-top: 100px
+	width: 230px
 	margin-bottom: 60px
-	margin-right: 10px
+	margin-right: 14px
+	margin-left: 14px
 	height: auto
 	overflow: hidden
 	text-align: center
@@ -579,13 +586,46 @@ a.pink-border
 		padding-top: 0
 		margin-right: 30px
 		margin-left: 100px
+.control-img-items
+	display: flex
+	flex-direction: column
+	&.left
+		margin-left: 14px
+	&.right
+		margin-right: 14px
+.control-img-item
+	width: 40px
+	height: 66px
+	margin-bottom: 10px
+	display: flex
+	align-items: center
+	justify-content: center
+	background: #FFFFFF
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15)
+	border-radius: 3px
+	cursor: pointer
+	&.arrow-right
+		img
+			transform: rotate(90deg)
+	&.arrow-left
+		img
+			transform: rotate(-90deg)
+	&.arrow-down
+		img
+			transform: rotate(-180deg)
+	&.horizontally
+		img
+			transform: rotate(270deg)
+	img
+		max-width: 100%
+		height: auto
 .ready-to-create__constructor-phonegroup-item
 	&.center-select
 		text-align: center
 	button
 		width: 270px
 .ready-to-create__constructor-wrap
-	width: 350px
+	width: 300px
 	margin-right: 10px
 	margin-left: 100px
 	flex-shrink: 0
@@ -1214,9 +1254,17 @@ a.pink-border
 		padding-right: 10px
 	.ready-to-create__constructor-level2-wrap
 		flex-wrap: wrap
+	.ready-to-create__constructor-model-canvas-container
+		margin-left: 10px
+		margin-right: 10px
+	.ready-to-create__constructor-model-canvas-container-wrap
+		&:not(.step3)
+			width: 50%
+			justify-content: center
 	.ready-to-create__constructor-model-canvas-container.step3
-		width: 45%
+		width: 50%
 		margin-left: 0
+		margin-right: 0
 	.ready-to-create__constructor-checkout
 		width: 50%
 		padding-right: 10px
@@ -1224,11 +1272,6 @@ a.pink-border
 	.ready-to-create__constructor-wrap
 		width: 100%
 		margin-left: 0
-	.ready-to-create__constructor-model-canvas-container
-		width: 50%
-		margin-right: 0
-		padding-left: 10px
-		padding-top: 0
 	.ready-to-create__constructor-design-option-toolbar-content
 		width: 48%
 		margin-left: auto
@@ -1245,6 +1288,9 @@ a.pink-border
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.control-img-item
+		width: 32px
+		height: 63px
 	.white-popup
 		.popup-constructor__image-categories-links
 			width: 250px
@@ -1287,6 +1333,8 @@ a.pink-border
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	/**/
+	.ready-to-create__constructor-model-canvas-container-wrap:not(.step3)
+		width: 100%
 	.ready-to-create__constructor-title
 		margin-bottom: 10px
 	.ready-to-create__constructor-title.tab2
@@ -1520,6 +1568,18 @@ a.pink-border
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 380px)
 	/**/
+	.ready-to-create__constructor-model-canvas-container
+		margin-left: 7px
+		margin-right: 7px
+	.control-img-items
+		&.left
+			margin-left: 3px
+		&.right
+			margin-right: 4px
+	.control-img-item
+		width: 17px
+		padding-left: 2px
+		padding-right: 2px
 	.ready-to-create__constructor-steps .ready-to-create__constructor-step .ready-to-create__constructor-step-value
 		font-size: 13px
 /* Custom, iPhone Retina */
