@@ -47,6 +47,7 @@ function tabs(parent) {
     parent.find(".tabs-items-wrap .tabs-item[data-tab]").removeClass('active'); //убираем активные состояния у ссылок
 		parent.find(".ready-to-create__constructor-steps .ready-to-create__constructor-step[data-tab]").removeClass('active');
 		let data = $(this).data('tab');
+		let that = $(this);
 
 		if(data == '1') {
 			// связь между фреймом (конструктором) и сайтом
@@ -113,9 +114,17 @@ function tabs(parent) {
 
       setTimeout(function () {
         mySwiperStep3.update();
+        console.log('data-deleted)', that.data('deleted'));
+        console.log('data-step3)', that.data('step3'));
 
+        that.data('deleted').forEach(i => {
+          console.log('deleted i', i);
+          mySwiperStep3.removeSlide(i);
+        });
+        window.arrDeleted = [];
+        that.data('deleted', [])
 
-      }, 200);
+      }, 110);
 
       let layout = parseInt($(this).attr('layout'));
       setTimeout(function () {
@@ -214,6 +223,8 @@ var mySwiperStep3 = new Swiper('.swiper-container-step3', {
   }
 });
 
+window.arrDeleted = [];
+
 $(document).ready( function() {
 
   const slidesTpl = `
@@ -282,16 +293,18 @@ $(document).ready( function() {
     e.preventDefault();
     var slideIndex = $(this).parents('.swiper-slide').index();
 
+    window.arrDeleted.push(slideIndex);
+    $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', window.arrDeleted);
     if (($(this).parents('.constructor-swiper').find('.swiper-slide').length ) == 1) {
       $('.constructor-swiper-title p').addClass('limit').html('Последний макет удалить нельзя.');
       $('.constructor-swiper-title a').addClass('limit');
     } else if ($(this).parents('.swiper-slide').hasClass('active-layout')) {
       $('.constructor-swiper-wrap .constructor-swiper .swiper-slide').removeClass('active-layout');
       mySwiper.removeSlide(slideIndex);
-      mySwiperStep3.removeSlide(slideIndex);
+      $(this).parents('.swiper-slide').remove();
     } else {
+      $(this).parents('.swiper-slide').remove();
       mySwiper.removeSlide(slideIndex);
-      mySwiperStep3.removeSlide(slideIndex);
     }
   });
 	// связь между фреймом (конструктором) и сайтом
