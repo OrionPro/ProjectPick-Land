@@ -74,6 +74,7 @@ function tabs(parent) {
 
       setTimeout(function () {
         mySwiper.update();
+        window.arrDeleted = [];
       }, 200);
 
       let layout = parseInt($(this).attr('layout'));
@@ -114,11 +115,8 @@ function tabs(parent) {
 
       setTimeout(function () {
         mySwiperStep3.update();
-        console.log('data-deleted)', that.data('deleted'));
-        console.log('data-step3)', that.data('step3'));
 
         that.data('deleted').forEach(i => {
-          console.log('deleted i', i);
           mySwiperStep3.removeSlide(i);
         });
         window.arrDeleted = [];
