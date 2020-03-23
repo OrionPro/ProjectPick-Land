@@ -115,13 +115,11 @@ function tabs(parent) {
 
       setTimeout(function () {
         mySwiperStep3.update();
-
         that.data('deleted').forEach(i => {
           mySwiperStep3.removeSlide(i);
         });
         window.arrDeleted = [];
-        that.data('deleted', [])
-
+        that.data('deleted', []);
       }, 110);
 
       let layout = parseInt($(this).attr('layout'));
@@ -291,8 +289,6 @@ $(document).ready( function() {
     e.preventDefault();
     var slideIndex = $(this).parents('.swiper-slide').index();
 
-    window.arrDeleted.push(slideIndex);
-    $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', window.arrDeleted);
     if (($(this).parents('.constructor-swiper').find('.swiper-slide').length ) == 1) {
       $('.constructor-swiper-title p').addClass('limit').html('Последний макет удалить нельзя.');
       $('.constructor-swiper-title a').addClass('limit');
@@ -300,9 +296,13 @@ $(document).ready( function() {
       $('.constructor-swiper-wrap .constructor-swiper .swiper-slide').removeClass('active-layout');
       mySwiper.removeSlide(slideIndex);
       $(this).parents('.swiper-slide').remove();
+      window.arrDeleted.push(slideIndex);
+      $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', window.arrDeleted);
     } else {
       $(this).parents('.swiper-slide').remove();
       mySwiper.removeSlide(slideIndex);
+      window.arrDeleted.push(slideIndex);
+      $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', window.arrDeleted);
     }
   });
 	// связь между фреймом (конструктором) и сайтом
