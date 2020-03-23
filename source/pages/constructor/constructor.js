@@ -73,8 +73,10 @@ function tabs(parent) {
       }, 100);
 
       setTimeout(function () {
+
         mySwiper.update();
         window.arrDeleted = [];
+        $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', []);
       }, 200);
 
       let layout = parseInt($(this).attr('layout'));
@@ -115,11 +117,12 @@ function tabs(parent) {
 
       setTimeout(function () {
         mySwiperStep3.update();
+
         that.data('deleted').forEach(i => {
           mySwiperStep3.removeSlide(i);
         });
         window.arrDeleted = [];
-        that.data('deleted', []);
+        $('.ready-to-create__constructor-design-option-toolbar-order.tabs-item').data('deleted', []);
       }, 110);
 
       let layout = parseInt($(this).attr('layout'));
