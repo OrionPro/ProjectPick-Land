@@ -226,6 +226,27 @@ window.arrDeleted = [];
 
 $(document).ready( function() {
 
+  $('.select .drop .search-wrap-input input ').on('keyup', function (e) {
+    var input, filter, ul, li, a, i;
+    input = e.currentTarget;
+    filter = input.value.toUpperCase();
+
+    console.log('filter', filter);
+
+    li = $(input).parents('.select').find(".drop li:not(.search-wrap-input)");
+
+    li.each(function () {
+      const that = $(this);
+      const txtValue = that.text();
+
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        that.show(300);
+      } else {
+        that.hide(300);
+      }
+    });
+  });
+
   const slidesTpl = `
       <div class="swiper-slide" >
         <a class="overlay"></a>
@@ -463,6 +484,8 @@ $(document).ready( function() {
 		$('.slct').removeClass('active');
 		$('.slct_arrow').removeClass('active');
 		$('.slct').parent().find('.drop').slideUp("fast");
+		$('.select .search-wrap-input input').val('');
+    $('.select .drop').find('li:not(.search-wrap-input)').show();
 		event.stopPropagation();
 	});
 	$('.slct_arrow').on('click', function () {
@@ -491,7 +514,7 @@ $(document).ready( function() {
 
 
 			/* Работаем с событием клика по элементам выпадающего списка */
-			$('.drop').find('li').off("click").click(function () {
+			$('.drop').find('li:not(.search-wrap-input)').off("click").click(function () {
 
 				/* Заносим в переменную HTML код элемента
 				 списка по которому кликнули */
@@ -505,6 +528,10 @@ $(document).ready( function() {
 				 открывает наш выпадающий список и удаляем активность */
 				$(this).parents(".select").find(".slct").removeClass('active').html(selectResult);
 				$(".slct_arrow").removeClass('active');
+
+				// показываем если поиск убра лишки и очищаем поле поиска
+        $(this).show();
+        $(this).parent().find('.search-wrap-input input').val('');
 
 				/* Скрываем выпадающий блок */
 				dropBlock.slideUp();
