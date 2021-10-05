@@ -58,6 +58,6 @@
     "tar": "^4.4.8",
     "tooltipster": "^4.2.5",
     "tooltipster-follower": "^0.1.5",
-    "url-parse": "^1.4.3"
+    "url-parse": "^1.5.2"
   }
 }
